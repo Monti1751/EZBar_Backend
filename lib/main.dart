@@ -57,118 +57,123 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    
-    return Scaffold(
-      
-      body: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-          child: Container(
-            padding: const EdgeInsets.all(24),
-            decoration: BoxDecoration(
-              color: const Color(0xFFD2FFBD), // Color del recuadro (#D2FFBD)
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.green.withOpacity(0.2),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  //logo
-                  Container(
-                    padding: const EdgeInsets.all(8), // Espacio entre el borde y la imagen
-                    decoration: BoxDecoration(
-                      color: Colors.white, // Fondo opcional detrás del logo
-                        shape: BoxShape.circle, // Hace que sea circular
-                        border: Border.all(
-                          color: const Color.fromARGB(255, 76, 175, 80), // Color del borde igual que el botón
-                          width: 6, // Grosor del borde
-                        ),
-                      ),
-                      child: ClipOval(
-                        child: Image.asset(
-                          'logo.png',
-                          height: 100,
-                          width: 100,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  
-                  const SizedBox(height: 20),
-                  Text(
-                    "Bienvenido",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.green.shade800,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  TextFormField(
-                    controller: _usernameController,
-                    decoration: const InputDecoration(
-                      labelText: 'Nombre de usuario...',
-                      prefixIcon: Icon(Icons.person_outlined, color: Colors.green),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor, ingresa tu usuario';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  TextFormField(
-                    controller: _passwordController,
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      labelText: 'Contraseña...',
-                      prefixIcon: Icon(Icons.lock_outline, color: Colors.green),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor, ingresa la contraseña';
-                      }
-                      if (value.length < 8) {
-                        return 'Debe tener al menos 8 caracteres';
-                      }
-                      return null;
-                    },
-                  ),
-                  const SizedBox(height: 24),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: _login,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
-                        padding: const EdgeInsets.symmetric(vertical: 14),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      child: const Text(
-                        'Iniciar sesión',
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      ),
-                    ),
+ @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Center(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            // Contenedor del formulario (lo desplazamos hacia abajo)
+            Container(
+              margin: const EdgeInsets.only(top: 90), // deja espacio para el logo
+              padding: const EdgeInsets.fromLTRB(24, 80, 24, 24), // añade espacio arriba para el logo superpuesto
+              decoration: BoxDecoration(
+                color: const Color(0xFFD2FFBD), // Color del recuadro (#D2FFBD)
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const SizedBox(height: 6),
+                    Text(
+                      "Bienvenido",
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green.shade800,
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    TextFormField(
+                      controller: _usernameController,
+                      decoration: const InputDecoration(
+                        labelText: 'Nombre de usuario...',
+                        prefixIcon: Icon(Icons.person_outlined, color: Colors.green),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, ingresa tu usuario';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    TextFormField(
+                      controller: _passwordController,
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        labelText: 'Contraseña...',
+                        prefixIcon: Icon(Icons.lock_outline, color: Colors.green),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor, ingresa la contraseña';
+                        }
+                        if (value.length < 8) {
+                          return 'Debe tener al menos 8 caracteres';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 24),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: _login,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: const Text(
+                          'Iniciar sesión',
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
+
+            // Logo superpuesto
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.green,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: const Color.fromARGB(255, 76, 175, 80),
+                  width: 6,
+                ),
+              ),
+              padding: const EdgeInsets.all(8),
+              child: ClipOval(
+                child: Image.asset(
+                  'logo.png',
+                  height: 130,
+                  width: 130,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }
