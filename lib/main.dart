@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                         controller: _usernameController,
                         decoration: const InputDecoration(
                           labelText: 'Nombre de usuario...',
-                          prefixIcon: Icon(Icons.person_outlined, color: Color(0xFF7BA238)),
+                          prefixIcon: Icon(Icons.person_outlined, color: Color(0xFF4A4025)),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText: true,
                         decoration: const InputDecoration(
                           labelText: 'Contraseña...',
-                          prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF7BA238)),
+                          prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF4A4025)),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -152,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
               // Logo superpuesto
               Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF4A4025),
+                  color: const Color(0xFFF5F5F5),
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: const Color(0xFF4A4025),
