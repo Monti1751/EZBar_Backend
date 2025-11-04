@@ -18,7 +18,7 @@ class LogIn extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFFECF0D5),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: const Color(0xFFF5F5F5),
+          fillColor: const Color(0xFFECF0D5),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: Color(0xFF7BA238)),
