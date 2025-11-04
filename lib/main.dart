@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+import 'ajustes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const LogIn());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LogIn extends StatelessWidget {
+  const LogIn({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -141,6 +142,22 @@ class _LoginPageState extends State<LoginPage> {
                           child: const Text(
                             'Iniciar sesión',
                             style: TextStyle(fontSize: 18, color: Color(0xFFF5F5F5)),
+                          ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const AjustesScreen()),
+                          );
+                        },
+                        child: const Text(
+                          'Ir a Ajustes',
+                          style: TextStyle(
+                            color: Color(0xFF4A4025),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
