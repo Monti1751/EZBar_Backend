@@ -4,6 +4,10 @@ public class Categoria_Productos {
 	private String categoria_id, nombre;
 	private boolean activa;
 	
+	public Categoria_Productos (String categoria_id, String nombre, boolean activa) {
+		
+	}
+	
 	public String getCategoria_id() {
 		return categoria_id;
 	}
