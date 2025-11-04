@@ -15,7 +15,7 @@ class LogIn extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
-        scaffoldBackgroundColor: const Color(0xFFF5F5F5),
+        scaffoldBackgroundColor: const Color(0xFFECF0D5),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: const Color(0xFFF5F5F5),
@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           child: const Text(
                             'Iniciar sesión',
-                            style: TextStyle(fontSize: 18, color: Color(0xFFF5F5F5)),
+                            style: TextStyle(fontSize: 18, color: Color(0xFFECF0D5)),
                           ),
                         ),
                       ),
@@ -169,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
               // Logo superpuesto
               Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF5F5F5),
+                  color: const Color(0xFFECF0D5),
                   shape: BoxShape.circle,
                   border: Border.all(
                     color: const Color(0xFF4A4025),
