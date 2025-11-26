@@ -16,7 +16,6 @@ public class Empleados {
         this.activo = activo;
     }
 
-    // Getters y Setters
     public String getEmpleado_id() { return empleado_id; }
     public void setEmpleado_id(String empleado_id) { this.empleado_id = empleado_id; }
 

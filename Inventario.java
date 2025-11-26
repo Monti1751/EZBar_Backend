@@ -29,9 +29,11 @@ public class Inventario {
     public void setCantidad(double cantidad) { this.cantidad = cantidad; }
 
     public String getTipo_movimiento() { return tipo_movimiento; }
-    public void setTipo_movimiento(short codigo) {
-        if (codigo == 1) this.tipo_movimiento = "entrada";
-        else if (codigo == 2) this.tipo_movimiento = "salida";
-        else System.out.println("Error: tipo de movimiento no válido");
+    public void setTipo_movimiento(short movimiento) {
+    	switch (movimiento) {
+    	case 1 -> this.tipo_movimiento = "entrada";
+    	case 2 -> this.tipo_movimiento = "salida";
+    	default -> System.out.println("Error: tipo de movimiento no válido");}
     }
+    
 }
