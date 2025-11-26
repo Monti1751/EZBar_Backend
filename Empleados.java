@@ -4,8 +4,7 @@ public class Empleados {
     private String empleado_id, nombre_empleado, apellido_empleado, nombre_usuario, dni, puesto_id, password_hash, fecha_creacion;
     private boolean activo;
 
-    public Empleados(String empleado_id, String nombre_empleado, String apellido_empleado, String nombre_usuario,
-                     String dni, String puesto_id, String password_hash, String fecha_creacion, boolean activo) {
+    public Empleados(String empleado_id, String nombre_empleado, String apellido_empleado, String nombre_usuario, String dni, String puesto_id, String password_hash, String fecha_creacion, boolean activo) {
         this.empleado_id = empleado_id;
         this.nombre_empleado = nombre_empleado;
         this.apellido_empleado = apellido_empleado;

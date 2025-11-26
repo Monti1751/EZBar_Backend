@@ -4,8 +4,7 @@ public class Inventario {
     private String inventario_id, producto_id, empleado_id, fecha_movimiento, tipo_movimiento;
     private double cantidad;
 
-    public Inventario(String inventario_id, String producto_id, String empleado_id,
-                      String fecha_movimiento, double cantidad, String tipo_movimiento) {
+    public Inventario(String inventario_id, String producto_id, String empleado_id, String fecha_movimiento, String tipo_movimiento, double cantidad) {
         this.inventario_id = inventario_id;
         this.producto_id = producto_id;
         this.empleado_id = empleado_id;

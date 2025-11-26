@@ -4,8 +4,7 @@ public class Pagos {
     private String pago_id, pedido_id, empleado_id, metodo_pago, fecha_hora_pago;
     private double monto, propina;
 
-    public Pagos(String pago_id, String pedido_id, String empleado_id, String metodo_pago,
-                 double monto, double propina, String fecha_hora_pago) {
+    public Pagos(String pago_id, String pedido_id, String empleado_id, String metodo_pago, String fecha_hora_pago, double monto, double propina) {
         this.pago_id = pago_id;
         this.pedido_id = pedido_id;
         this.empleado_id = empleado_id;

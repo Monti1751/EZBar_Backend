@@ -5,8 +5,7 @@ public class Pedidos {
     private int numero_comensales;
     private double total_pedido;
 
-    public Pedidos(String pedido_id, String mesa_id, String empleado_id, String estado,
-                   int numero_comensales, String observaciones, double total_pedido, String fecha_hora_pedido) {
+    public Pedidos(String pedido_id, String mesa_id, String empleado_id, String estado, String observaciones, String fecha_hora_pedido, int numero_comensales,  double total_pedido) {
         this.pedido_id = pedido_id;
         this.mesa_id = mesa_id;
         this.empleado_id = empleado_id;
