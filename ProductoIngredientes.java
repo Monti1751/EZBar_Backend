@@ -4,7 +4,7 @@ public class ProductoIngredientes {
     private String producto_id, ingrediente_id, unidad_medida;
     private double cantidad;
 
-    public ProductoIngredientes(String producto_id, String ingrediente_id, double cantidad, String unidad_medida) {
+    public ProductoIngredientes(String producto_id, String ingrediente_id, String unidad_medida, double cantidad) {
         this.producto_id = producto_id;
         this.ingrediente_id = ingrediente_id;
         this.cantidad = cantidad;

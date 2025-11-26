@@ -4,8 +4,7 @@ public class DetallePedidos {
     private String detalle_id, pedido_id, producto_id;
     private double cantidad, precio_unitario, total_linea;
 
-    public DetallePedidos(String detalle_id, String pedido_id, String producto_id,
-                          double cantidad, double precio_unitario, double total_linea) {
+    public DetallePedidos(String detalle_id, String pedido_id, String producto_id, double cantidad, double precio_unitario, double total_linea) {
         this.detalle_id = detalle_id;
         this.pedido_id = pedido_id;
         this.producto_id = producto_id;

@@ -6,10 +6,7 @@ public class Productos {
     private int stock_actual, stock_minimo;
     private boolean es_ingrediente, activo;
 
-    public Productos(String producto_id, String categoria_id, String nombre, String descripcion,
-                     double precio, double costo, double iva_porcentaje, int stock_actual,
-                     int stock_minimo, String unidad_medida, boolean es_ingrediente,
-                     boolean activo, String url_imagen) {
+    public Productos(String producto_id, String categoria_id, String nombre, String descripcion, String unidad_medida, double precio, double costo, double iva_porcentaje, int stock_actual, int stock_minimo, boolean es_ingrediente, boolean activo, String url_imagen) {
         this.producto_id = producto_id;
         this.categoria_id = categoria_id;
         this.nombre = nombre;
