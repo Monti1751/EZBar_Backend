@@ -24,11 +24,12 @@ public class Pagos {
     public void setEmpleado_id(String empleado_id) { this.empleado_id = empleado_id; }
 
     public String getMetodo_pago() { return metodo_pago; }
-    public void setMetodo_pago(short codigo) {
-        if (codigo == 1) this.metodo_pago = "efectivo";
-        else if (codigo == 2) this.metodo_pago = "tarjeta";
-        else if (codigo == 3) this.metodo_pago = "transferencia";
-        else System.out.println("Error: método de pago no válido");
+    public void setMetodo_pago(short metodo) {
+    	switch (metodo) {
+    	case 1 -> this.metodo_pago = "efectivo";
+    	case 2 -> this.metodo_pago = "tarjeta";
+    	case 3 -> this.metodo_pago = "transferencia";
+    	default -> System.out.println("Error: método de pago no válido");}
     }
 
     public double getMonto() { return monto; }

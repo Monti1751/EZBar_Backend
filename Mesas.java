@@ -22,10 +22,11 @@ public class Mesas {
 
     public String getEstado() { return estado; }
     public void setEstado(short disposicion) {
-        if (disposicion == 1) this.estado = "libre";
-        else if (disposicion == 2) this.estado = "reservada";
-        else if (disposicion == 3) this.estado = "ocupada";
-        else System.out.println("Error estado mesa");
+    	switch (disposicion) {
+    	case 1 -> this.estado = "libre";
+    	case 2 -> this.estado = "reservada";
+    	case 3 -> this.estado = "ocupada";
+    	default -> System.out.println("Error estado mesa");}
     }
 
     public boolean isActiva() { return activa; }
