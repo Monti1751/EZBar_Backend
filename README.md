@@ -139,19 +139,16 @@ Durante esta etapa se están verificando las funcionalidades principales y la co
 
 Este módulo Backend forma parte del proyecto completo **EZBar**, desarrollado por:
 
-- **Miguel Tomás**  
-  - GitHub: [Tommy23-has](https://github.com/Tommy23-has)  
+- **Miguel Tomás**    
   - GitHub: [ismigue23](https://github.com/ismigue23)
 
-- **Francisco Montesinos**  
-  - GitHub: [FranMontesinos](https://github.com/FranMontesinos)  
+- **Francisco Montesinos**   
   - GitHub: [Monti1751](https://github.com/Monti1751)
 
 - **Miguel Jiménez**  
   - GitHub: [MiguelJimenezSerrano](https://github.com/MiguelJimenezSerrano)
 
 - **Miguel Duque**  
-  - GitHub: [El-Mig](https://github.com/El-Mig)  
-  - GitHub: [Mig56](https://github.com/Mig56)
-
+  - GitHub: [El-Mig](https://github.com/El-Mig)
+    
 > Para más información sobre el proyecto completo, consulta el README principal del repositorio.
