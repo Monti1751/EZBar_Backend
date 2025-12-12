@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    private static final String URL = "jdbc:mariadb://localhost:3306/tu_base";
+    private static final String URL = "jdbc:mariadb://localhost:3306/ezbardb";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
