@@ -1,33 +1,91 @@
 package ClasesBD;
 
-public class DetallePedidos {
-    private String detalle_id, pedido_id, producto_id;
-    private double cantidad, precio_unitario, total_linea;
+import jakarta.persistence.*;
+import java.math.BigDecimal;
 
-    public DetallePedidos(String detalle_id, String pedido_id, String producto_id, double cantidad, double precio_unitario, double total_linea) {
+@Entity
+@Table(name = "DETALLE_PEDIDOS")
+public class DetallePedidos {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer detalle_id;
+
+    @ManyToOne
+    @JoinColumn(name = "pedido_id", nullable = false)
+    private Pedidos pedido;
+
+    @ManyToOne
+    @JoinColumn(name = "producto_id", nullable = false)
+    private Productos producto;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal cantidad = BigDecimal.ONE;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal precio_unitario;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal total_linea;
+
+    public DetallePedidos() {
+    }
+
+    public DetallePedidos(Integer detalle_id, Pedidos pedido, Productos producto, BigDecimal cantidad,
+            BigDecimal precio_unitario, BigDecimal total_linea) {
         this.detalle_id = detalle_id;
-        this.pedido_id = pedido_id;
-        this.producto_id = producto_id;
+        this.pedido = pedido;
+        this.producto = producto;
         this.cantidad = cantidad;
         this.precio_unitario = precio_unitario;
         this.total_linea = total_linea;
     }
 
-    public String getDetalle_id() { return detalle_id; }
-    public void setDetalle_id(String detalle_id) { this.detalle_id = detalle_id; }
+    public Integer getDetalle_id() {
+        return detalle_id;
+    }
 
-    public String getPedido_id() { return pedido_id; }
-    public void setPedido_id(String pedido_id) { this.pedido_id = pedido_id; }
+    public void setDetalle_id(Integer detalle_id) {
+        this.detalle_id = detalle_id;
+    }
 
-    public String getProducto_id() { return producto_id; }
-    public void setProducto_id(String producto_id) { this.producto_id = producto_id; }
+    public Pedidos getPedido() {
+        return pedido;
+    }
 
-    public double getCantidad() { return cantidad; }
-    public void setCantidad(double cantidad) { this.cantidad = cantidad; }
+    public void setPedido(Pedidos pedido) {
+        this.pedido = pedido;
+    }
 
-    public double getPrecio_unitario() { return precio_unitario; }
-    public void setPrecio_unitario(double precio_unitario) { this.precio_unitario = precio_unitario; }
+    public Productos getProducto() {
+        return producto;
+    }
 
-    public double getTotal_linea() { return total_linea; }
-    public void setTotal_linea(double total_linea) { this.total_linea = total_linea; }
+    public void setProducto(Productos producto) {
+        this.producto = producto;
+    }
+
+    public BigDecimal getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(BigDecimal cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public BigDecimal getPrecio_unitario() {
+        return precio_unitario;
+    }
+
+    public void setPrecio_unitario(BigDecimal precio_unitario) {
+        this.precio_unitario = precio_unitario;
+    }
+
+    public BigDecimal getTotal_linea() {
+        return total_linea;
+    }
+
+    public void setTotal_linea(BigDecimal total_linea) {
+        this.total_linea = total_linea;
+    }
 }

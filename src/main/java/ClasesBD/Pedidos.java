@@ -1,14 +1,53 @@
 package ClasesBD;
 
-public class Pedidos {
-    private String pedido_id, mesa_id, empleado_id, estado, observaciones, fecha_hora_pedido;
-    private int numero_comensales;
-    private double total_pedido;
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
-    public Pedidos(String pedido_id, String mesa_id, String empleado_id, String estado, String observaciones, String fecha_hora_pedido, int numero_comensales,  double total_pedido) {
+@Entity
+@Table(name = "PEDIDOS")
+public class Pedidos {
+
+    public enum Estado {
+        pendiente, en_preparacion, listo, entregado, cancelado, pagado
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer pedido_id;
+
+    @ManyToOne
+    @JoinColumn(name = "mesa_id", nullable = false)
+    private Mesas mesa;
+
+    @ManyToOne
+    @JoinColumn(name = "empleado_id", nullable = false)
+    private Empleados empleado;
+
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('pendiente','en_preparacion','listo','entregado','cancelado','pagado') DEFAULT 'pendiente'")
+    private Estado estado = Estado.pendiente;
+
+    @Column(columnDefinition = "INT DEFAULT 1")
+    private Integer numero_comensales = 1;
+
+    @Column(columnDefinition = "TEXT")
+    private String observaciones;
+
+    @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0", precision = 10, scale = 2)
+    private BigDecimal total_pedido = BigDecimal.ZERO;
+
+    @Column(insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Timestamp fecha_hora_pedido;
+
+    public Pedidos() {
+    }
+
+    public Pedidos(Integer pedido_id, Mesas mesa, Empleados empleado, Estado estado, Integer numero_comensales,
+            String observaciones, BigDecimal total_pedido, Timestamp fecha_hora_pedido) {
         this.pedido_id = pedido_id;
-        this.mesa_id = mesa_id;
-        this.empleado_id = empleado_id;
+        this.mesa = mesa;
+        this.empleado = empleado;
         this.estado = estado;
         this.numero_comensales = numero_comensales;
         this.observaciones = observaciones;
@@ -16,40 +55,67 @@ public class Pedidos {
         this.fecha_hora_pedido = fecha_hora_pedido;
     }
 
-    // Método especial para asignar estado por código
-    public void setEstado(short codigo) {
-        switch (codigo) {
-            case 1 -> this.estado = "pendiente";
-            case 2 -> this.estado = "en_preparacion";
-            case 3 -> this.estado = "listo";
-            case 4 -> this.estado = "entregado";
-            case 5 -> this.estado = "cancelado";
-            case 6 -> this.estado = "pagado";
-            default -> System.out.println("Error estado pedido");
-        }
+    public Integer getPedido_id() {
+        return pedido_id;
     }
 
-    public String getPedido_id() { return pedido_id; }
-    public void setPedido_id(String pedido_id) { this.pedido_id = pedido_id; }
+    public void setPedido_id(Integer pedido_id) {
+        this.pedido_id = pedido_id;
+    }
 
-    public String getMesa_id() { return mesa_id; }
-    public void setMesa_id(String mesa_id) { this.mesa_id = mesa_id; }
+    public Mesas getMesa() {
+        return mesa;
+    }
 
-    public String getEmpleado_id() { return empleado_id; }
-    public void setEmpleado_id(String empleado_id) { this.empleado_id = empleado_id; }
+    public void setMesa(Mesas mesa) {
+        this.mesa = mesa;
+    }
 
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    public Empleados getEmpleado() {
+        return empleado;
+    }
 
-    public int getNumero_comensales() { return numero_comensales; }
-    public void setNumero_comensales(int numero_comensales) { this.numero_comensales = numero_comensales; }
+    public void setEmpleado(Empleados empleado) {
+        this.empleado = empleado;
+    }
 
-    public String getObservaciones() { return observaciones; }
-    public void setObservaciones(String observaciones) { this.observaciones = observaciones; }
+    public Estado getEstado() {
+        return estado;
+    }
 
-    public double getTotal_pedido() { return total_pedido; }
-    public void setTotal_pedido(double total_pedido) { this.total_pedido = total_pedido; }
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
 
-    public String getFecha_hora_pedido() { return fecha_hora_pedido; }
-    public void setFecha_hora_pedido(String fecha_hora_pedido) { this.fecha_hora_pedido = fecha_hora_pedido; }
+    public Integer getNumero_comensales() {
+        return numero_comensales;
+    }
+
+    public void setNumero_comensales(Integer numero_comensales) {
+        this.numero_comensales = numero_comensales;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    public BigDecimal getTotal_pedido() {
+        return total_pedido;
+    }
+
+    public void setTotal_pedido(BigDecimal total_pedido) {
+        this.total_pedido = total_pedido;
+    }
+
+    public Timestamp getFecha_hora_pedido() {
+        return fecha_hora_pedido;
+    }
+
+    public void setFecha_hora_pedido(Timestamp fecha_hora_pedido) {
+        this.fecha_hora_pedido = fecha_hora_pedido;
+    }
 }

@@ -1,39 +1,97 @@
 package ClasesBD;
 
-public class Inventario {
-    private String inventario_id, producto_id, empleado_id, fecha_movimiento, tipo_movimiento;
-    private double cantidad;
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 
-    public Inventario(String inventario_id, String producto_id, String empleado_id, String fecha_movimiento, String tipo_movimiento, double cantidad) {
+@Entity
+@Table(name = "INVENTARIO")
+public class Inventario {
+
+    public enum TipoMovimiento {
+        entrada, salida
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer inventario_id;
+
+    @ManyToOne
+    @JoinColumn(name = "producto_id", nullable = false)
+    private Productos producto;
+
+    @ManyToOne
+    @JoinColumn(name = "empleado_id", nullable = false)
+    private Empleados empleado;
+
+    @Column(insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Timestamp fecha_movimiento;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal cantidad;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private TipoMovimiento tipo_movimiento;
+
+    public Inventario() {
+    }
+
+    public Inventario(Integer inventario_id, Productos producto, Empleados empleado, Timestamp fecha_movimiento,
+            BigDecimal cantidad, TipoMovimiento tipo_movimiento) {
         this.inventario_id = inventario_id;
-        this.producto_id = producto_id;
-        this.empleado_id = empleado_id;
+        this.producto = producto;
+        this.empleado = empleado;
         this.fecha_movimiento = fecha_movimiento;
         this.cantidad = cantidad;
         this.tipo_movimiento = tipo_movimiento;
     }
 
-    public String getInventario_id() { return inventario_id; }
-    public void setInventario_id(String inventario_id) { this.inventario_id = inventario_id; }
-
-    public String getProducto_id() { return producto_id; }
-    public void setProducto_id(String producto_id) { this.producto_id = producto_id; }
-
-    public String getEmpleado_id() { return empleado_id; }
-    public void setEmpleado_id(String empleado_id) { this.empleado_id = empleado_id; }
-
-    public String getFecha_movimiento() { return fecha_movimiento; }
-    public void setFecha_movimiento(String fecha_movimiento) { this.fecha_movimiento = fecha_movimiento; }
-
-    public double getCantidad() { return cantidad; }
-    public void setCantidad(double cantidad) { this.cantidad = cantidad; }
-
-    public String getTipo_movimiento() { return tipo_movimiento; }
-    public void setTipo_movimiento(short movimiento) {
-    	switch (movimiento) {
-    	case 1 -> this.tipo_movimiento = "entrada";
-    	case 2 -> this.tipo_movimiento = "salida";
-    	default -> System.out.println("Error: tipo de movimiento no válido");}
+    public Integer getInventario_id() {
+        return inventario_id;
     }
-    
+
+    public void setInventario_id(Integer inventario_id) {
+        this.inventario_id = inventario_id;
+    }
+
+    public Productos getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Productos producto) {
+        this.producto = producto;
+    }
+
+    public Empleados getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleados empleado) {
+        this.empleado = empleado;
+    }
+
+    public Timestamp getFecha_movimiento() {
+        return fecha_movimiento;
+    }
+
+    public void setFecha_movimiento(Timestamp fecha_movimiento) {
+        this.fecha_movimiento = fecha_movimiento;
+    }
+
+    public BigDecimal getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(BigDecimal cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public TipoMovimiento getTipo_movimiento() {
+        return tipo_movimiento;
+    }
+
+    public void setTipo_movimiento(TipoMovimiento tipo_movimiento) {
+        this.tipo_movimiento = tipo_movimiento;
+    }
 }
