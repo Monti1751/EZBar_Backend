@@ -30,17 +30,6 @@ CREATE TABLE EMPLEADOS (
 -- ======================================
 -- 3. Tabla MESAS
 -- ======================================
--- ======================================
--- 11. Tabla ZONAS (Nueva)
--- ======================================
-CREATE TABLE ZONAS (
-    zona_id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(50) UNIQUE NOT NULL
-);
-
--- ======================================
--- 3. Tabla MESAS
--- ======================================
 CREATE TABLE MESAS (
     mesa_id INT PRIMARY KEY AUTO_INCREMENT,
     numero_mesa INT NOT NULL,
@@ -167,4 +156,12 @@ CREATE TABLE INVENTARIO (
     tipo_movimiento ENUM('entrada', 'salida') NOT NULL,
     FOREIGN KEY (producto_id) REFERENCES PRODUCTOS (producto_id),
     FOREIGN KEY (empleado_id) REFERENCES EMPLEADOS (empleado_id)
+);
+
+-- ======================================
+-- 11. Tabla ZONAS (Nueva)
+-- ======================================
+CREATE TABLE ZONAS (
+    zona_id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) UNIQUE NOT NULL
 );
