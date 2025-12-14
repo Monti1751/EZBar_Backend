@@ -43,4 +43,66 @@ public class ZonasRestController {
     public void borrarZona(@PathVariable String nombre) {
         repository.deleteByNombre(nombre);
     }
+
+    @Autowired
+    private Repositorios.MesasRepository mesasRepository;
+
+    @PostMapping("/{nombre}/mesas")
+    public List<ClasesBD.Mesas> guardarMesas(@PathVariable String nombre,
+            @RequestBody Map<String, List<Map<String, Object>>> payload) {
+        List<Map<String, Object>> mesasData = payload.get("mesas");
+        List<ClasesBD.Mesas> savedMesas = new ArrayList<>();
+
+        if (mesasData != null) {
+            for (Map<String, Object> mesaData : mesasData) {
+                ClasesBD.Mesas mesa = new ClasesBD.Mesas();
+
+                // Handle ID
+                Object idObj = mesaData.get("id");
+                if (idObj instanceof Integer) {
+                    mesa.setMesa_id((Integer) idObj);
+                } else if (idObj instanceof String) {
+                    // If string ID (e.g. timestamp from frontend), we ignore it to let DB generate
+                    // new ID
+                    // EXCEPT if it parses to a small int (legacy), but safer to treat text IDs as
+                    // new if not matching DB type
+                    try {
+                        Integer parsedId = Integer.parseInt((String) idObj);
+                        // We could check if it exists, but for now assuming if it parses it might be
+                        // real.
+                        // However, timestamps are too big for Integer, so likely they throw or are new.
+                        // System timestamps (milliseconds) overflow Integer.MAX_VALUE usually.
+                        // So catching exception is good.
+                        mesa.setMesa_id(parsedId);
+                    } catch (NumberFormatException e) {
+                        // New mesa, auto-generate ID
+                    }
+                }
+
+                // Handle other fields
+                mesa.setNombre((String) mesaData.get("nombre"));
+                mesa.setUbicacion(nombre); // Force zone name
+
+                Object numeroObj = mesaData.get("numero_mesa");
+                if (numeroObj instanceof Integer)
+                    mesa.setNumero_mesa((Integer) numeroObj);
+
+                Object capacidadObj = mesaData.get("capacidad");
+                if (capacidadObj instanceof Integer)
+                    mesa.setCapacidad((Integer) capacidadObj);
+
+                String estadoStr = (String) mesaData.get("estado");
+                if (estadoStr != null) {
+                    try {
+                        mesa.setEstado(ClasesBD.Mesas.Estado.valueOf(estadoStr.toLowerCase()));
+                    } catch (IllegalArgumentException e) {
+                        mesa.setEstado(ClasesBD.Mesas.Estado.libre);
+                    }
+                }
+
+                savedMesas.add(mesasRepository.save(mesa));
+            }
+        }
+        return savedMesas;
+    }
 }

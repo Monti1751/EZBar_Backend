@@ -27,14 +27,19 @@ public class Mesas {
     @Column(columnDefinition = "ENUM('libre','ocupada','reservada') DEFAULT 'libre'")
     private Estado estado = Estado.libre;
 
+    @Column(length = 100)
+    private String nombre;
+
     public Mesas() {
     }
 
-    public Mesas(Integer mesa_id, Integer numero_mesa, Integer capacidad, String ubicacion, Estado estado) {
+    public Mesas(Integer mesa_id, Integer numero_mesa, Integer capacidad, String ubicacion, String nombre,
+            Estado estado) {
         this.mesa_id = mesa_id;
         this.numero_mesa = numero_mesa;
         this.capacidad = capacidad;
         this.ubicacion = ubicacion;
+        this.nombre = nombre;
         this.estado = estado;
     }
 
@@ -68,6 +73,14 @@ public class Mesas {
 
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Estado getEstado() {

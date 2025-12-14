@@ -24,6 +24,10 @@ public class SetupController {
     private ProductosRepository productosRepo;
     @Autowired
     private Repositorios.ZonasRepository zonasRepo;
+    @Autowired
+    private Repositorios.PuestosRepository puestosRepo;
+    @Autowired
+    private Repositorios.EmpleadosRepository empleadosRepo;
 
     @GetMapping
     public String setupData() {
@@ -49,12 +53,31 @@ public class SetupController {
             ensureZona("Interior");
             zonasRepo.flush();
 
-            // 4. Mesas (Disabled to avoid FK issues. User adds manually.)
+            // 4. Puestos y Empleados (Fix for 500 error)
+            if (puestosRepo.count() == 0) {
+                ClasesBD.Puestos puestoAdmin = new ClasesBD.Puestos(null, "Administrador");
+                puestosRepo.save(puestoAdmin);
+
+                // Empleado Admin (dummy password for now)
+                ClasesBD.Empleados admin = new ClasesBD.Empleados(
+                        null,
+                        "Admin",
+                        "User",
+                        "admin",
+                        "00000000X",
+                        puestoAdmin,
+                        "hashed_password",
+                        null,
+                        true);
+                empleadosRepo.save(admin);
+            }
+
+            // 5. Mesas (Disabled to avoid FK issues. User adds manually.)
             /*
              * if (mesasRepo.count() == 0) { ... }
              */
 
-            return "Database seeded successfully! (Please add Tables manually in the App)";
+            return "Database seeded successfully! (Categories, Products, Zones, Puestos, Empleados)";
         } catch (Exception e) {
             return "Error seeding database: " + e.getMessage();
         }
