@@ -6,10 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "MESAS")
 public class Mesas {
 
-    public enum Ubicacion {
-        terraza, interior, barra
-    }
-
     public enum Estado {
         libre, ocupada, reservada
     }
@@ -24,9 +20,8 @@ public class Mesas {
     @Column(nullable = false)
     private Integer capacidad;
 
-    @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "ENUM('terraza','interior','barra') DEFAULT 'interior'")
-    private Ubicacion ubicacion = Ubicacion.interior;
+    @Column(nullable = false)
+    private String ubicacion;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "ENUM('libre','ocupada','reservada') DEFAULT 'libre'")
@@ -35,7 +30,7 @@ public class Mesas {
     public Mesas() {
     }
 
-    public Mesas(Integer mesa_id, Integer numero_mesa, Integer capacidad, Ubicacion ubicacion, Estado estado) {
+    public Mesas(Integer mesa_id, Integer numero_mesa, Integer capacidad, String ubicacion, Estado estado) {
         this.mesa_id = mesa_id;
         this.numero_mesa = numero_mesa;
         this.capacidad = capacidad;
@@ -67,11 +62,11 @@ public class Mesas {
         this.capacidad = capacidad;
     }
 
-    public Ubicacion getUbicacion() {
+    public String getUbicacion() {
         return ubicacion;
     }
 
-    public void setUbicacion(Ubicacion ubicacion) {
+    public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }
 

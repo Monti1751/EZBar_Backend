@@ -30,20 +30,31 @@ CREATE TABLE EMPLEADOS (
 -- ======================================
 -- 3. Tabla MESAS
 -- ======================================
+-- ======================================
+-- 11. Tabla ZONAS (Nueva)
+-- ======================================
+CREATE TABLE ZONAS (
+    zona_id INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- ======================================
+-- 3. Tabla MESAS
+-- ======================================
 CREATE TABLE MESAS (
     mesa_id INT PRIMARY KEY AUTO_INCREMENT,
-    numero_mesa INT UNIQUE NOT NULL,
+    numero_mesa INT NOT NULL,
     capacidad INT NOT NULL,
-    ubicacion ENUM(
-        'terraza',
-        'interior',
-        'barra'
-    ) DEFAULT 'interior',
+    ubicacion VARCHAR(50) NOT NULL,
     estado ENUM(
         'libre',
         'ocupada',
         'reservada'
-    ) DEFAULT 'libre'
+    ) DEFAULT 'libre',
+    pos_x DOUBLE DEFAULT 0,
+    pos_y DOUBLE DEFAULT 0,
+    UNIQUE KEY unique_mesa_por_zona (numero_mesa, ubicacion),
+    FOREIGN KEY (ubicacion) REFERENCES ZONAS (nombre) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- ======================================
