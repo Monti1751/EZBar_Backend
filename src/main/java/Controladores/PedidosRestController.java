@@ -50,6 +50,9 @@ public class PedidosRestController {
     @Autowired
     private Repositorios.EmpleadosRepository empleadosRepository;
 
+    @Autowired
+    private Repositorios.PuestosRepository puestosRepository;
+
     @PostMapping("/mesa/{mesaId}/agregar-producto")
     public Pedidos agregarProductoAMesa(@PathVariable Integer mesaId,
             @RequestBody java.util.Map<String, Integer> payload) {
@@ -75,7 +78,38 @@ public class PedidosRestController {
             pedidoActual = new Pedidos();
             pedidoActual.setMesa(mesa);
             // Asignar Empleado por defecto (ID 1) o el primero que pille
-            ClasesBD.Empleados empleado = empleadosRepository.findById(1).orElse(empleadosRepository.findAll().get(0));
+            // Asignar Empleado: buscar ID 1, si no el primero de la lista, si no crear uno
+            // nuevo
+            ClasesBD.Empleados empleado = empleadosRepository.findById(1).orElse(null);
+            if (empleado == null) {
+                List<ClasesBD.Empleados> todos = empleadosRepository.findAll();
+                if (!todos.isEmpty()) {
+                    empleado = todos.get(0);
+                } else {
+                    // 1. Obtener o crear puesto
+                    ClasesBD.Puestos puesto;
+                    List<ClasesBD.Puestos> puestos = puestosRepository.findAll();
+                    if (puestos.isEmpty()) {
+                        puesto = new ClasesBD.Puestos();
+                        puesto.setNombre_puesto("Camarero");
+                        puesto = puestosRepository.save(puesto);
+                    } else {
+                        puesto = puestos.get(0);
+                    }
+
+                    // 2. Crear Empleado con todos los campos obligatorios
+                    empleado = new ClasesBD.Empleados();
+                    empleado.setNombre_empleado("Camarero");
+                    empleado.setApellido_empleado("Default");
+                    empleado.setNombre_usuario("camarero_def"); // unique
+                    empleado.setDni("00000000X"); // unique
+                    empleado.setPassword_hash("1234");
+                    empleado.setActivo(true);
+                    empleado.setPuesto(puesto);
+
+                    empleado = empleadosRepository.save(empleado);
+                }
+            }
             pedidoActual.setEmpleado(empleado);
             pedidoActual.setEstado(ClasesBD.Pedidos.Estado.pendiente);
             pedidoActual.setNumero_comensales(1);
@@ -121,5 +155,22 @@ public class PedidosRestController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id) {
         repository.deleteById(id);
+    }
+
+    @DeleteMapping("/detalles/{id}")
+    public void eliminarDetalle(@PathVariable Integer id) {
+        ClasesBD.DetallePedidos detalle = detallePedidosRepository.findById(id).orElse(null);
+        if (detalle != null) {
+            Pedidos pedido = detalle.getPedido();
+            // Update order total
+            if (pedido != null) {
+                java.math.BigDecimal total = pedido.getTotal_pedido();
+                if (total != null && detalle.getTotal_linea() != null) {
+                    pedido.setTotal_pedido(total.subtract(detalle.getTotal_linea()));
+                    repository.save(pedido);
+                }
+            }
+            detallePedidosRepository.delete(detalle);
+        }
     }
 }
