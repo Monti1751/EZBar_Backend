@@ -1,0 +1,78 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.ezbar:ezbar-backend >-----------------------
+[INFO] Building EZBar Backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ ezbar-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ezbar-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 4 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ ezbar-backend ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 38 source files with javac [debug release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ ezbar-backend ---
+[INFO] skip non existing resourceDirectory c:\Users\Mig\Desktop\tfg\EZBar_Backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ ezbar-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ ezbar-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ ezbar-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-15T18:36:39.521+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] com.ezbar.Main                           : Starting Main using Java 17.0.13 with PID 36204 (c:\Users\Mig\Desktop\tfg\EZBar_Backend\target\classes started by Mig in c:\Users\Mig\Desktop\tfg\EZBar_Backend)
+2025-12-15T18:36:39.524+01:00 DEBUG 36204 --- [EZBar Backend API] [  restartedMain] com.ezbar.Main                           : Running with Spring Boot v3.2.0, Spring v6.1.1
+2025-12-15T18:36:39.526+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] com.ezbar.Main                           : No active profile set, falling back to 1 default profile: "default"
+2025-12-15T18:36:39.639+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-12-15T18:36:39.639+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-12-15T18:36:40.443+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-15T18:36:40.541+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 11 JPA repository interfaces.
+2025-12-15T18:36:42.145+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-15T18:36:42.158+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-15T18:36:42.158+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2025-12-15T18:36:42.235+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2025-12-15T18:36:42.236+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2596 ms
+2025-12-15T18:36:42.668+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-15T18:36:42.748+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-12-15T18:36:42.795+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-15T18:36:43.123+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-15T18:36:43.158+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-15T18:36:43.287+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2c62f1c7
+2025-12-15T18:36:43.290+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-15T18:36:43.334+01:00  WARN 36204 --- [EZBar Backend API] [  restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-15T18:36:44.730+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-15T18:36:44.823+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-15T18:36:45.484+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-15T18:36:46.231+01:00  WARN 36204 --- [EZBar Backend API] [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-15T18:36:47.283+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-12-15T18:36:47.299+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2025-12-15T18:36:47.410+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/api'
+2025-12-15T18:36:47.427+01:00  INFO 36204 --- [EZBar Backend API] [  restartedMain] com.ezbar.Main                           : Started Main in 8.505 seconds (process running for 9.111)
+? API REST disponible en http://localhost:8080
+2025-12-15T18:43:26.247+01:00  INFO 36204 --- [EZBar Backend API] [0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-15T18:43:26.247+01:00  INFO 36204 --- [EZBar Backend API] [0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-15T18:43:26.249+01:00  INFO 36204 --- [EZBar Backend API] [0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-15T19:02:03.021+01:00  WARN 36204 --- [EZBar Backend API] [0.0-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `ClasesBD.Mesas$Estado` from String "reservado": not one of the values accepted for Enum class: [libre, reservada, ocupada]]
+2025-12-15T19:02:04.854+01:00  WARN 36204 --- [EZBar Backend API] [0.0-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `ClasesBD.Mesas$Estado` from String "ocupado": not one of the values accepted for Enum class: [libre, reservada, ocupada]]
+2025-12-15T19:02:56.705+01:00  WARN 36204 --- [EZBar Backend API] [0.0-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `ClasesBD.Mesas$Estado` from String "reservado": not one of the values accepted for Enum class: [libre, reservada, ocupada]]
+Hibernate: select count(*) from mesas m1_0 where m1_0.mesa_id=?
+Hibernate: select m1_0.mesa_id,m1_0.capacidad,m1_0.estado,m1_0.nombre,m1_0.numero_mesa,m1_0.ubicacion from mesas m1_0 where m1_0.mesa_id=?
+Hibernate: update mesas set capacidad=?,estado=?,nombre=?,numero_mesa=?,ubicacion=? where mesa_id=?
+Hibernate: select count(*) from mesas m1_0 where m1_0.mesa_id=?
+Hibernate: select m1_0.mesa_id,m1_0.capacidad,m1_0.estado,m1_0.nombre,m1_0.numero_mesa,m1_0.ubicacion from mesas m1_0 where m1_0.mesa_id=?
+Hibernate: update mesas set capacidad=?,estado=?,nombre=?,numero_mesa=?,ubicacion=? where mesa_id=?
