@@ -76,3 +76,4 @@ Hibernate: update mesas set capacidad=?,estado=?,nombre=?,numero_mesa=?,ubicacio
 Hibernate: select count(*) from mesas m1_0 where m1_0.mesa_id=?
 Hibernate: select m1_0.mesa_id,m1_0.capacidad,m1_0.estado,m1_0.nombre,m1_0.numero_mesa,m1_0.ubicacion from mesas m1_0 where m1_0.mesa_id=?
 Hibernate: update mesas set capacidad=?,estado=?,nombre=?,numero_mesa=?,ubicacion=? where mesa_id=?
+^C
