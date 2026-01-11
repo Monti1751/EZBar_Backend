@@ -35,11 +35,7 @@ CREATE TABLE MESAS (
     numero_mesa INT NOT NULL,
     capacidad INT NOT NULL,
     ubicacion VARCHAR(50) NOT NULL,
-    estado ENUM(
-        'libre',
-        'ocupada',
-        'reservada'
-    ) DEFAULT 'libre',
+    estado ENUM('libre', 'ocupada', 'reservada') DEFAULT 'libre',
     pos_x DOUBLE DEFAULT 0,
     pos_y DOUBLE DEFAULT 0,
     UNIQUE KEY unique_mesa_por_zona (numero_mesa, ubicacion),
@@ -132,11 +128,7 @@ CREATE TABLE PAGOS (
     pago_id INT PRIMARY KEY AUTO_INCREMENT,
     pedido_id INT NOT NULL,
     empleado_id INT NOT NULL,
-    metodo_pago ENUM(
-        'efectivo',
-        'tarjeta',
-        'transferencia'
-    ) NOT NULL,
+    metodo_pago ENUM('efectivo', 'tarjeta', 'transferencia') NOT NULL,
     monto DECIMAL(10, 2) NOT NULL,
     propina DECIMAL(10, 2) DEFAULT 0,
     fecha_hora_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -164,4 +156,18 @@ CREATE TABLE INVENTARIO (
 CREATE TABLE ZONAS (
     zona_id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- ======================================
+-- 12. Tabla USUARIOS (Nueva)
+-- ======================================
+CREATE TABLE usuarios (
+    usuario_id INT AUTO_INCREMENT PRIMARY KEY,
+    empleado_id INT NOT NULL,
+    nombre_usuario VARCHAR(50) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    rol VARCHAR(30) NOT NULL,
+    activo TINYINT(1) DEFAULT 1,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_usuario_empleado FOREIGN KEY (empleado_id) REFERENCES empleados (empleado_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
