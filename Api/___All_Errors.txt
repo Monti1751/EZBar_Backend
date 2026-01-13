@@ -1,0 +1,7 @@
+CorrelationId: c6eb3aca-7be8-441e-bd02-4b97c3694d5c
+UTC DateTime: 12/15/2025 15:21:14
+
+The following files/folders have not been downloaded
+0. api/node_modules/mime/.npmignore
+1. api/node_modules/seq-queue/lib/.npmignore
+2. api/server_err.log
