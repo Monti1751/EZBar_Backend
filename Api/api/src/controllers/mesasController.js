@@ -25,6 +25,11 @@ export const obtenerMesas = async (req, res, next) => {
       id: m.mesa_id
     }));
 
+    console.log('GET /mesas returning:', mesas.length, 'items');
+    if (mesas.length > 0) {
+      console.log('Sample ID:', mesas[0].id, 'Type:', typeof mesas[0].id);
+    }
+
     res.json(mesas);
   } catch (error) {
     next(error);
@@ -52,15 +57,69 @@ export const obtenerMesasPorZona = async (req, res, next) => {
 export const actualizarMesa = async (req, res, next) => {
   try {
     const { mesaId } = req.params;
-    const response = await fetchWithRetry(
-      `${CONFIG.BACKEND_URL}/mesas/${mesaId}`,
-      {
-        method: 'PUT',
-        data: req.body
-      }
-    );
-    res.json(response.data);
+    console.log(`PUT /mesas/${mesaId} received. Body:`, req.body);
+    const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y } = req.body;
+
+    // Fallbacks
+    const finalNumero = numero_mesa || numero;
+    const finalPosX = pos_x || posX;
+    const finalPosY = pos_y || posY;
+
+    // Construir query dinámica para actualizar solo lo que llega
+    let updates = [];
+    let params = [];
+
+    if (finalNumero !== undefined) {
+      updates.push('numero_mesa = ?');
+      params.push(finalNumero);
+    }
+    if (capacidad !== undefined) {
+      updates.push('capacidad = ?');
+      params.push(capacidad);
+    }
+    if (ubicacion !== undefined) {
+      updates.push('ubicacion = ?');
+      params.push(ubicacion);
+    }
+    if (estado !== undefined) {
+      updates.push('estado = ?');
+      params.push(estado);
+    }
+    if (finalPosX !== undefined) {
+      updates.push('pos_x = ?');
+      params.push(finalPosX);
+    }
+    if (finalPosY !== undefined) {
+      updates.push('pos_y = ?');
+      params.push(finalPosY);
+    }
+
+    if (updates.length === 0) {
+      return res.status(400).json({ message: 'No se enviaron datos para actualizar' });
+    }
+
+    params.push(mesaId);
+
+    const query = `UPDATE MESAS SET ${updates.join(', ')} WHERE mesa_id = ?`;
+
+    const [result] = await pool.query(query, params);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: 'Mesa no encontrada' });
+    }
+
+    // Devolver la mesa actualizada
+    const [rows] = await pool.query('SELECT * FROM MESAS WHERE mesa_id = ?', [mesaId]);
+    const mesaActualizada = rows[0];
+
+    res.json({
+      ...mesaActualizada,
+      name: `Mesa ${mesaActualizada.numero_mesa}`,
+      id: mesaActualizada.mesa_id
+    });
+
   } catch (error) {
+    console.error('Error al actualizar mesa:', error);
     next(error);
   }
 };
@@ -70,28 +129,45 @@ export const crearMesa = async (req, res, next) => {
     // Frontend envía: numero_mesa, capacidad, ubicacion, estado, etc.
     const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y } = req.body;
 
+    // Validación básica
+    if (!ubicacion) {
+      return res.status(400).json({ error: 'La ubicación es obligatoria' });
+    }
+
     // Fallbacks para compatibilidad
+    // Si no viene numero, intentamos buscar el maximo actual para esa zona + 1, o error?
+    // Por ahora asumimos que el frontend envia numero o numero_mesa
     const finalNumero = numero_mesa || numero;
+
+    if (finalNumero === undefined) {
+      return res.status(400).json({ error: 'El número de mesa es obligatorio' });
+    }
+
     const finalPosX = pos_x || posX || 0;
     const finalPosY = pos_y || posY || 0;
 
     const [result] = await pool.query(
       'INSERT INTO MESAS (numero_mesa, capacidad, ubicacion, estado, pos_x, pos_y) VALUES (?, ?, ?, ?, ?, ?)',
-      [finalNumero, capacidad, ubicacion, estado || 'libre', finalPosX, finalPosY]
+      [finalNumero, capacidad || 4, ubicacion, estado || 'libre', finalPosX, finalPosY]
     );
 
     res.status(201).json({
       id: result.insertId,
       numero_mesa: finalNumero,
-      capacidad,
+      capacidad: capacidad || 4,
       ubicacion,
       estado: estado || 'libre',
       pos_x: finalPosX,
-      pos_y: finalPosY
+      pos_y: finalPosY,
+      name: `Mesa ${finalNumero}`
     });
   } catch (error) {
     console.error('Error al crear mesa:', error);
-    res.status(500).json({ error: 'Error al crear mesa' });
+    // Manejo especifico de errores de BD si es necesario
+    if (error.code === 'ER_DUP_ENTRY') {
+      return res.status(409).json({ error: 'Ya existe una mesa con ese número en esa ubicación' });
+    }
+    res.status(500).json({ error: 'Error interno al crear mesa: ' + error.message });
   }
 };
 
