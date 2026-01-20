@@ -21,6 +21,8 @@ server:
     context-path: /api
 
 logging:
+  file:
+    name: logs/java_app.log
   level:
     root: INFO
     com.ezbar: DEBUG

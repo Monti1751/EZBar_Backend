@@ -4,6 +4,7 @@ import { verificarBackend } from './src/utils/retryHelper.js';
 import { CONFIG } from './src/config/constants.js';
 import dgram from 'dgram';
 import { networkInterfaces } from 'os';
+import logger from './src/logger.js';
 
 const PORT = process.env.PORT || 3000;
 const UDP_PORT = 3001;
@@ -12,13 +13,13 @@ const UDP_PORT = 3001;
 const udpServer = dgram.createSocket('udp4');
 
 udpServer.on('error', (err) => {
-  console.log(`UDP Server error:\n${err.stack}`);
+  logger.error(`UDP Server error:\n${err.stack}`);
   udpServer.close();
 });
 
 udpServer.on('message', (msg, rinfo) => {
   if (msg.toString().trim() === 'EZBAR_DISCOVER') {
-    console.log(`Discovery request from ${rinfo.address}:${rinfo.port}`);
+    logger.info(`Discovery request from ${rinfo.address}:${rinfo.port}`);
 
     // Obtener IP local real
     const nets = networkInterfaces();
@@ -43,21 +44,21 @@ udpServer.on('message', (msg, rinfo) => {
     });
 
     udpServer.send(message, rinfo.port, rinfo.address, (err) => {
-      if (err) console.error('Error sending discovery reply:', err);
-      else console.log(`Sent discovery reply to ${rinfo.address}: ${message}`);
+      if (err) logger.error('Error sending discovery reply:', err);
+      else logger.info(`Sent discovery reply to ${rinfo.address}: ${message}`);
     });
   }
 });
 
 udpServer.bind(UDP_PORT, () => {
-  console.log(`📡 UDP Discovery listening on port ${UDP_PORT}`);
+  logger.info(`📡 UDP Discovery listening on port ${UDP_PORT}`);
 });
 // -----------------------------
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 API Node.js corriendo en http://0.0.0.0:${PORT}`);
-  console.log(`🔗 Backend configurado: ${CONFIG.BACKEND_URL}`);
-  console.log(`📊 Base de datos: ${process.env.DB_NAME}`);
+  logger.info(`🚀 API Node.js corriendo en http://0.0.0.0:${PORT}`);
+  logger.info(`🔗 Backend configurado: ${CONFIG.BACKEND_URL}`);
+  logger.info(`📊 Base de datos: ${process.env.DB_NAME}`);
 
   // Verificación inicial del backend
   verificarBackend();
