@@ -8,6 +8,7 @@
 
 ### Corregido
 * Ya se conecta la apk con el server
+* Restructuración de las carpetas y clases .java
 
 ## -15-12-2025
 
