@@ -10,12 +10,23 @@ import {
 
 const router = express.Router();
 
-router.get('/', obtenerZonas);           // GET /api/zonas
-router.post('/', crearZona);             // POST /api/zonas
-router.get('/:ubicacion', obtenerZonaPorUbicacion); // GET /api/zonas/:ubicacion
-router.put('/:zonaId', actualizarZona);  // PUT /api/zonas/:zonaId
-router.delete('/:ubicacion', eliminarZona); // DELETE /api/zonas/:ubicacion
-router.post('/:ubicacion/mesas', guardarMesasDeZona); // POST /api/zonas/:zonaName/mesas
+// GET /api/zonas - Listar todas las zonas
+router.get('/', obtenerZonas);
+
+// POST /api/zonas - Crear nueva zona
+router.post('/', crearZona);
+
+// GET /api/zonas/:ubicacion - Buscar zona por su nombre
+router.get('/:ubicacion', obtenerZonaPorUbicacion);
+
+// PUT /api/zonas/:zonaId - Renombrar zona
+router.put('/:zonaId', actualizarZona);
+
+// DELETE /api/zonas/:ubicacion - Eliminar zona (por nombre)
+router.delete('/:ubicacion', eliminarZona);
+
+// POST /api/zonas/:ubicacion/mesas - Guardar/Reemplazar todas las mesas de una zona (Sincronización masiva)
+router.post('/:ubicacion/mesas', guardarMesasDeZona);
 
 export default router;
 

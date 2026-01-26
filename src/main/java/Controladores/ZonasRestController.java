@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+/**
+ * Controlador REST para gestionar Zonas y sus mesas asociadas
+ */
 @RestController
 @RequestMapping("/zonas")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -15,9 +18,12 @@ public class ZonasRestController {
     @Autowired
     private Repositorios.ZonasRepository repository;
 
+    @Autowired
+    private Repositorios.MesasRepository mesasRepository;
+
+    // Listar zonas simples (solo nombres para el frontend básico)
     @GetMapping
     public List<Map<String, String>> listarZonas() {
-        // Fetch directly from ZONAS table
         List<ClasesBD.Zonas> zonasBD = repository.findAll();
         List<Map<String, String>> zonas = new ArrayList<>();
 
@@ -30,6 +36,7 @@ public class ZonasRestController {
         return zonas;
     }
 
+    // Crear una nueva zona
     @PostMapping
     public ClasesBD.Zonas crearZona(@RequestBody Map<String, String> payload) {
         String nombre = payload.get("nombre");
@@ -39,14 +46,17 @@ public class ZonasRestController {
         return repository.save(new ClasesBD.Zonas(null, nombre));
     }
 
+    // Borrar zona por nombre
     @DeleteMapping("/{nombre}")
     public void borrarZona(@PathVariable String nombre) {
         repository.deleteByNombre(nombre);
     }
 
-    @Autowired
-    private Repositorios.MesasRepository mesasRepository;
-
+    /**
+     * Guardar/Actualizar todas las mesas de una zona específica.
+     * Recibe un JSON complejo con una lista de mesas.
+     * POST /zonas/{nombre}/mesas
+     */
     @PostMapping("/{nombre}/mesas")
     public List<ClasesBD.Mesas> guardarMesas(@PathVariable String nombre,
             @RequestBody Map<String, List<Map<String, Object>>> payload) {
@@ -57,31 +67,28 @@ public class ZonasRestController {
             for (Map<String, Object> mesaData : mesasData) {
                 ClasesBD.Mesas mesa = new ClasesBD.Mesas();
 
-                // Handle ID
+                // Manejo de ID:
+                // El Frontend puede enviar IDs temporales (strings largos/timestamps) para
+                // nuevas mesas.
+                // El Backend debe detectar si es un ID válido (int) o uno temporal para crear
+                // una nueva entrada.
                 Object idObj = mesaData.get("id");
                 if (idObj instanceof Integer) {
                     mesa.setMesa_id((Integer) idObj);
                 } else if (idObj instanceof String) {
-                    // If string ID (e.g. timestamp from frontend), we ignore it to let DB generate
-                    // new ID
-                    // EXCEPT if it parses to a small int (legacy), but safer to treat text IDs as
-                    // new if not matching DB type
                     try {
+                        // Intentar parsear a entero. Si es muy grande (timestamp), fallará y se creará
+                        // nueva (catch)
                         Integer parsedId = Integer.parseInt((String) idObj);
-                        // We could check if it exists, but for now assuming if it parses it might be
-                        // real.
-                        // However, timestamps are too big for Integer, so likely they throw or are new.
-                        // System timestamps (milliseconds) overflow Integer.MAX_VALUE usually.
-                        // So catching exception is good.
                         mesa.setMesa_id(parsedId);
                     } catch (NumberFormatException e) {
-                        // New mesa, auto-generate ID
+                        // ID inválido o temporal -> Se crea como nueva mesa (ID null)
                     }
                 }
 
-                // Handle other fields
+                // Asignar resto de datos
                 mesa.setNombre((String) mesaData.get("nombre"));
-                mesa.setUbicacion(nombre); // Force zone name
+                mesa.setUbicacion(nombre); // Forzar la zona actual
 
                 Object numeroObj = mesaData.get("numero_mesa");
                 if (numeroObj instanceof Integer)
@@ -91,12 +98,13 @@ public class ZonasRestController {
                 if (capacidadObj instanceof Integer)
                     mesa.setCapacidad((Integer) capacidadObj);
 
+                // Parsear estado (enum)
                 String estadoStr = (String) mesaData.get("estado");
                 if (estadoStr != null) {
                     try {
                         mesa.setEstado(ClasesBD.Mesas.Estado.valueOf(estadoStr.toLowerCase()));
                     } catch (IllegalArgumentException e) {
-                        mesa.setEstado(ClasesBD.Mesas.Estado.libre);
+                        mesa.setEstado(ClasesBD.Mesas.Estado.libre); // Default
                     }
                 }
 

@@ -2,8 +2,10 @@ import { fetchWithRetry } from '../utils/retryHelper.js';
 import { CONFIG } from '../config/constants.js';
 import pool from '../config/database.js';
 
+// --- Obtener todas las mesas ---
 export const obtenerMesas = async (req, res, next) => {
   try {
+    // Se puede filtrar por 'ubicacion' en la query string (ej: ?ubicacion=Terraza)
     const { ubicacion } = req.query;
 
     let query = 'SELECT * FROM MESAS';
@@ -16,29 +18,30 @@ export const obtenerMesas = async (req, res, next) => {
 
     query += ' ORDER BY numero_mesa ASC';
 
+    // Ejecutar consulta a la base de datos
     const [rows] = await pool.query(query, params);
 
-    // Mapear respuesta para compatibilidad con Frontend
+    // Mapear respuesta para compatibilidad con el Frontend (Flutter)
+    // El frontend espera 'name' y 'id'
     const mesas = rows.map(m => ({
-      ...m,
-      name: `Mesa ${m.numero_mesa}`, // Asegurar campo name
-      id: m.mesa_id
+      ...m, // Copiar todos los campos originales
+      name: `Mesa ${m.numero_mesa}`, // Campo 'name' para mostrar en lista
+      id: m.mesa_id // Campo 'id' estandarizado
     }));
 
-    console.log('GET /mesas returning:', mesas.length, 'items');
-    if (mesas.length > 0) {
-      console.log('Sample ID:', mesas[0].id, 'Type:', typeof mesas[0].id);
-    }
+    // Log para depuración
+    console.log('GET /mesas devolviendo:', mesas.length, 'mesas');
 
     res.json(mesas);
   } catch (error) {
-    next(error);
+    next(error); // Pasar error al middleware global
   }
 };
 
+// --- Obtener mesas filtradas por Zona ---
 export const obtenerMesasPorZona = async (req, res, next) => {
   try {
-    const { zonaId } = req.params; // zonaId en este contexto es el nombre de la zona (ubicacion)
+    const { zonaId } = req.params; // La zona viene como parametro en la URL
 
     const [rows] = await pool.query('SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC', [zonaId]);
 
@@ -54,18 +57,19 @@ export const obtenerMesasPorZona = async (req, res, next) => {
   }
 };
 
+// --- Actualizar una mesa existente ---
 export const actualizarMesa = async (req, res, next) => {
   try {
-    const { mesaId } = req.params;
-    console.log(`PUT /mesas/${mesaId} received. Body:`, req.body);
+    const { mesaId } = req.params; // ID de la mesa a editar
+    // Datos que vienen del frontend
     const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y } = req.body;
 
-    // Fallbacks
+    // Manejo de nombres de campos alternativos (compatibilidad)
     const finalNumero = numero_mesa || numero;
     const finalPosX = pos_x || posX;
     const finalPosY = pos_y || posY;
 
-    // Construir query dinámica para actualizar solo lo que llega
+    // Construir la consulta SQL dinámica para actualizar SOLO lo que se envíe
     let updates = [];
     let params = [];
 
@@ -98,7 +102,7 @@ export const actualizarMesa = async (req, res, next) => {
       return res.status(400).json({ message: 'No se enviaron datos para actualizar' });
     }
 
-    params.push(mesaId);
+    params.push(mesaId); // ID para el WHERE
 
     const query = `UPDATE MESAS SET ${updates.join(', ')} WHERE mesa_id = ?`;
 
@@ -108,7 +112,7 @@ export const actualizarMesa = async (req, res, next) => {
       return res.status(404).json({ message: 'Mesa no encontrada' });
     }
 
-    // Devolver la mesa actualizada
+    // Devolver la mesa actualizada completa
     const [rows] = await pool.query('SELECT * FROM MESAS WHERE mesa_id = ?', [mesaId]);
     const mesaActualizada = rows[0];
 
@@ -124,21 +128,19 @@ export const actualizarMesa = async (req, res, next) => {
   }
 };
 
+// --- Crear una nueva mesa ---
 export const crearMesa = async (req, res, next) => {
   try {
-    // Frontend envía: numero_mesa, capacidad, ubicacion, estado, etc.
+    // Datos recibidos
     const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y } = req.body;
 
-    // Validación básica
+    // Validación básica: Ubicación obligatoria
     if (!ubicacion) {
       return res.status(400).json({ error: 'La ubicación es obligatoria' });
     }
 
-    // Fallbacks para compatibilidad
-    // Si no viene numero, intentamos buscar el maximo actual para esa zona + 1, o error?
-    // Por ahora asumimos que el frontend envia numero o numero_mesa
+    // Normalizar datos
     const finalNumero = numero_mesa || numero;
-
     if (finalNumero === undefined) {
       return res.status(400).json({ error: 'El número de mesa es obligatorio' });
     }
@@ -146,11 +148,13 @@ export const crearMesa = async (req, res, next) => {
     const finalPosX = pos_x || posX || 0;
     const finalPosY = pos_y || posY || 0;
 
+    // Insertar en Base de Datos
     const [result] = await pool.query(
       'INSERT INTO MESAS (numero_mesa, capacidad, ubicacion, estado, pos_x, pos_y) VALUES (?, ?, ?, ?, ?, ?)',
       [finalNumero, capacidad || 4, ubicacion, estado || 'libre', finalPosX, finalPosY]
     );
 
+    // Responder con la mesa creada
     res.status(201).json({
       id: result.insertId,
       numero_mesa: finalNumero,
@@ -163,7 +167,7 @@ export const crearMesa = async (req, res, next) => {
     });
   } catch (error) {
     console.error('Error al crear mesa:', error);
-    // Manejo especifico de errores de BD si es necesario
+    // Manejo de error si ya existe el numero de mesa (si hay restriccion UNIQUE)
     if (error.code === 'ER_DUP_ENTRY') {
       return res.status(409).json({ error: 'Ya existe una mesa con ese número en esa ubicación' });
     }
@@ -171,6 +175,7 @@ export const crearMesa = async (req, res, next) => {
   }
 };
 
+// --- Eliminar mesa ---
 export const eliminarMesa = async (req, res, next) => {
   try {
     const { mesaId } = req.params;

@@ -2,8 +2,10 @@ import { fetchWithRetry } from '../utils/retryHelper.js';
 import { CONFIG } from '../config/constants.js';
 import pool from '../config/database.js';
 
+// --- Crear Pedido (Proxy al backend Java si aplica o local) ---
 export const crearPedido = async (req, res, next) => {
   try {
+    // Intenta enviar el pedido al backend principal (Java) si esta configurado
     const response = await fetchWithRetry(
       `${CONFIG.BACKEND_URL}/pedidos`,
       {
@@ -17,8 +19,10 @@ export const crearPedido = async (req, res, next) => {
   }
 };
 
+// --- Obtener todos los pedidos ---
 export const obtenerPedidos = async (req, res, next) => {
   try {
+    // Solicita la lista al backend principal
     const response = await fetchWithRetry(`${CONFIG.BACKEND_URL}/pedidos`);
     res.json(response.data);
   } catch (error) {
@@ -26,11 +30,14 @@ export const obtenerPedidos = async (req, res, next) => {
   }
 };
 
+// --- Obtener detalles (productos) de un pedido ---
 export const obtenerDetallesPedido = async (req, res, next) => {
   let connection;
   try {
     const { id } = req.params;
     connection = await pool.getConnection();
+
+    // Consulta SQL uniendo DETALLE_PEDIDOS con PRODUCTOS para tener nombres y precios
     const [detalles] = await connection.query(
       `SELECT dp.detalle_id, dp.pedido_id, dp.producto_id, 
               dp.cantidad, dp.precio_unitario, dp.total_linea,
@@ -41,7 +48,7 @@ export const obtenerDetallesPedido = async (req, res, next) => {
       [id]
     );
 
-    // Formatear respuesta para incluir el producto como objeto
+    // Formatear respuesta para incluir el producto como objeto anidado (más fácil para el frontend)
     const detallesFormateados = detalles.map(d => ({
       detalle_id: d.detalle_id,
       pedido_id: d.pedido_id,
@@ -60,21 +67,25 @@ export const obtenerDetallesPedido = async (req, res, next) => {
   } catch (error) {
     next(error);
   } finally {
-    if (connection) connection.release();
+    if (connection) connection.release(); // Liberar conexión al pool
   }
 };
 
+// --- Obtener el pedido ACTIVO de una mesa ---
+// Un pedido activo es aquel que no ha sido pagado ni cancelado. Cada mesa solo debería tener uno.
 export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
   let connection;
   try {
     const { mesaId } = req.params;
     connection = await pool.getConnection();
+
+    // Buscar el último pedido de esta mesa que no esté finalizado
     const [pedidos] = await connection.query(
       `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado') ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
     );
     if (pedidos.length === 0) {
-      return res.json(null);
+      return res.json(null); // No hay nadie comiendo en esa mesa
     }
     res.json(pedidos[0]);
   } catch (error) {
@@ -84,11 +95,13 @@ export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
   }
 };
 
+// --- Agregar Producto a una Mesa (Lógica Compleja) ---
+// Esta función maneja: crear pedido si no existe, o añadir a uno existente.
 export const agregarProductoAMesa = async (req, res, next) => {
   let connection;
   try {
     const { mesaId } = req.params;
-    const { productoId } = req.body;
+    const { productoId } = req.body; // Solo necesitamos saber qué producto agregar
 
     if (!mesaId || !productoId) {
       return res.status(400).json({ error: 'mesaId y productoId son requeridos' });
@@ -108,7 +121,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       return res.status(404).json({ error: `Mesa ${mesaId} no encontrada` });
     }
 
-    // 2. Verificar que el producto existe
+    // 2. Verificar que el producto existe y obtener su precio actual
     const [productos] = await connection.query(
       'SELECT producto_id, precio FROM PRODUCTOS WHERE producto_id = ? AND activo = TRUE',
       [productoId]
@@ -120,7 +133,8 @@ export const agregarProductoAMesa = async (req, res, next) => {
 
     const precioProducto = parseFloat(productos[0].precio);
 
-    // 3. Obtener un empleado válido
+    // 3. Obtener un empleado válido (usuario 'por defecto' para pedidos de app)
+    // En el futuro, esto podría venir del token de sesión
     const [empleados] = await connection.query(
       'SELECT empleado_id FROM EMPLEADOS WHERE activo = TRUE LIMIT 1'
     );
@@ -148,9 +162,11 @@ export const agregarProductoAMesa = async (req, res, next) => {
     let pedidoId;
 
     if (pedidosExistentes.length > 0) {
+      // Ya hay un pedido abierto, usaremos ese
       pedidoId = pedidosExistentes[0].pedido_id;
       console.log(`✅ Usando pedido existente: ${pedidoId}`);
     } else {
+      // No hay pedido abierto, CREAMOS uno nuevo
       const [resultado] = await connection.query(
         `INSERT INTO PEDIDOS (mesa_id, empleado_id, estado, numero_comensales, total_pedido)
          VALUES (?, ?, 'pendiente', 1, 0)`,
@@ -160,7 +176,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       console.log(`✨ Pedido creado: ${pedidoId}`);
     }
 
-    // 5. Verificar si el producto ya existe
+    // 5. Verificar si este producto ya estaba en el pedido (para sumar cantidad)
     const [detalleExistente] = await connection.query(
       `SELECT detalle_id, cantidad, total_linea FROM DETALLE_PEDIDOS 
        WHERE pedido_id = ? AND producto_id = ?`,
@@ -168,6 +184,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
     );
 
     if (detalleExistente.length > 0) {
+      // El producto ya está, incrementamos cantidad
       const detalleId = detalleExistente[0].detalle_id;
       const cantidadActual = parseFloat(detalleExistente[0].cantidad) || 1;
       const nuevaCantidad = cantidadActual + 1;
@@ -181,6 +198,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       );
       console.log(`📈 Cantidad actualizada para producto ${productoId}`);
     } else {
+      // Es la primera vez que se pide este producto en este pedido
       const totalLinea = 1 * precioProducto;
       await connection.query(
         `INSERT INTO DETALLE_PEDIDOS (pedido_id, producto_id, cantidad, precio_unitario, total_linea)
@@ -190,7 +208,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       console.log(`➕ Detalle creado para producto ${productoId}`);
     }
 
-    // 6. Actualizar total del pedido
+    // 6. Recalcular el TOTAL del pedido completo
     const [totales] = await connection.query(
       `SELECT SUM(total_linea) as total FROM DETALLE_PEDIDOS WHERE pedido_id = ?`,
       [pedidoId]
@@ -222,6 +240,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
   }
 };
 
+// --- Eliminar producto (detalle) de pedido ---
 export const eliminarDetallePedido = async (req, res, next) => {
   let connection;
   try {
@@ -235,7 +254,7 @@ export const eliminarDetallePedido = async (req, res, next) => {
 
     connection = await pool.getConnection();
 
-    // 1. Obtener el pedido_id antes de eliminar
+    // 1. Obtener el pedido_id antes de eliminar para poder recalcular el total luego
     const [detalles] = await connection.query(
       'SELECT pedido_id FROM DETALLE_PEDIDOS WHERE detalle_id = ?',
       [detalleId]
@@ -247,7 +266,7 @@ export const eliminarDetallePedido = async (req, res, next) => {
 
     const pedidoId = detalles[0].pedido_id;
 
-    // 2. Eliminar el detalle
+    // 2. Eliminar el detalle de la base de datos
     await connection.query(
       'DELETE FROM DETALLE_PEDIDOS WHERE detalle_id = ?',
       [detalleId]

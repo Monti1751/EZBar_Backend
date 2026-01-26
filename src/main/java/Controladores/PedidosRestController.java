@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * Controlador REST para gestionar Pedidos
+ * Maneja la creación de pedidos, agregar productos a mesas y listar pedidos.
+ */
 @RestController
 @RequestMapping("/pedidos")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -14,21 +18,25 @@ public class PedidosRestController {
     @Autowired
     private PedidosRepository repository;
 
+    // Listar todos los pedidos (GET /pedidos)
     @GetMapping
     public List<Pedidos> listarTodos() {
         return repository.findAll();
     }
 
+    // Obtener pedido por ID (GET /pedidos/{id})
     @GetMapping("/{id}")
     public Pedidos obtenerPorId(@PathVariable Integer id) {
         return repository.findById(id).orElse(null);
     }
 
+    // Crear un pedido manualmente (POST /pedidos)
     @PostMapping
     public Pedidos crear(@RequestBody Pedidos pedido) {
         return repository.save(pedido);
     }
 
+    // Actualizar un pedido (PUT /pedidos/{id})
     @PutMapping("/{id}")
     public Pedidos actualizar(@PathVariable Integer id, @RequestBody Pedidos pedido) {
         if (repository.existsById(id)) {
@@ -38,33 +46,37 @@ public class PedidosRestController {
         return null;
     }
 
+    // Inyección de repositorios necesarios para la lógica compleja de pedidos
     @Autowired
     private Repositorios.ProductosRepository productosRepository;
-
     @Autowired
     private Repositorios.MesasRepository mesasRepository;
-
     @Autowired
     private Repositorios.DetallePedidosRepository detallePedidosRepository;
-
     @Autowired
     private Repositorios.EmpleadosRepository empleadosRepository;
-
     @Autowired
     private Repositorios.PuestosRepository puestosRepository;
 
+    /**
+     * POST /pedidos/mesa/{mesaId}/agregar-producto
+     * Método principal para la operativa diaria: Agrega un producto a la mesa
+     * indicada.
+     * Si la mesa no tiene pedido abierto, crea uno nuevo automáticamente.
+     */
     @PostMapping("/mesa/{mesaId}/agregar-producto")
     public Pedidos agregarProductoAMesa(@PathVariable Integer mesaId,
             @RequestBody java.util.Map<String, Integer> payload) {
         Integer productoId = payload.get("productoId");
 
-        // 1. Validar Mesa y Producto
+        // 1. Validar que la Mesa y el Producto existan en la BD
         ClasesBD.Mesas mesa = mesasRepository.findById(mesaId)
                 .orElseThrow(() -> new RuntimeException("Mesa no encontrada"));
         ClasesBD.Productos producto = productosRepository.findById(productoId)
                 .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
 
-        // 2. Buscar pedido activo (no pagado ni cancelado)
+        // 2. Buscar si hay algún pedido ACTIVO en esa mesa (PENDIENTE DE PAGO)
+        // Filtramos en memoria (se podría optimizar con una query JPQL custom)
         List<Pedidos> pedidosMesa = repository.findAll().stream()
                 .filter(p -> p.getMesa().getMesa_id().equals(mesaId))
                 .filter(p -> p.getEstado() != ClasesBD.Pedidos.Estado.pagado
@@ -74,19 +86,20 @@ public class PedidosRestController {
         Pedidos pedidoActual;
 
         if (pedidosMesa.isEmpty()) {
-            // Crear nuevo pedido
+            // Caso: NO hay pedido abierto -> Crear uno nuevo
             pedidoActual = new Pedidos();
             pedidoActual.setMesa(mesa);
-            // Asignar Empleado por defecto (ID 1) o el primero que pille
-            // Asignar Empleado: buscar ID 1, si no el primero de la lista, si no crear uno
-            // nuevo
+
+            // Asignar Empleado: intentamos buscar uno por defecto (ID 1)
+            // Si no existe, buscamos cualquiera, y si no hay ninguno, creamos un empleado
+            // "dummy"
             ClasesBD.Empleados empleado = empleadosRepository.findById(1).orElse(null);
             if (empleado == null) {
                 List<ClasesBD.Empleados> todos = empleadosRepository.findAll();
                 if (!todos.isEmpty()) {
                     empleado = todos.get(0);
                 } else {
-                    // 1. Obtener o crear puesto
+                    // Lógica de fallback para entornos vacíos: crear puesto y empleado por defecto
                     ClasesBD.Puestos puesto;
                     List<ClasesBD.Puestos> puestos = puestosRepository.findAll();
                     if (puestos.isEmpty()) {
@@ -97,7 +110,6 @@ public class PedidosRestController {
                         puesto = puestos.get(0);
                     }
 
-                    // 2. Crear Empleado con todos los campos obligatorios
                     empleado = new ClasesBD.Empleados();
                     empleado.setNombre_empleado("Camarero");
                     empleado.setApellido_empleado("Default");
@@ -112,38 +124,40 @@ public class PedidosRestController {
             }
             pedidoActual.setEmpleado(empleado);
             pedidoActual.setEstado(ClasesBD.Pedidos.Estado.pendiente);
-            pedidoActual.setNumero_comensales(1);
+            pedidoActual.setNumero_comensales(1); // Valor por defecto
             pedidoActual.setTotal_pedido(java.math.BigDecimal.ZERO);
             pedidoActual = repository.save(pedidoActual);
 
-            // Marcar mesa como ocupada si estaba libre
+            // Marcar mesa como ocupada automáticamente
             if (mesa.getEstado() == ClasesBD.Mesas.Estado.libre) {
                 mesa.setEstado(ClasesBD.Mesas.Estado.ocupada);
                 mesasRepository.save(mesa);
             }
         } else {
+            // Caso: YA existe pedido abierto -> Usamos el primero encontrado
             pedidoActual = pedidosMesa.get(0);
         }
 
-        // 3. Crear Detalle
+        // 3. Crear el detalle del pedido (añadir el producto)
         ClasesBD.DetallePedidos detalle = new ClasesBD.DetallePedidos();
         detalle.setPedido(pedidoActual);
         detalle.setProducto(producto);
-        detalle.setCantidad(java.math.BigDecimal.ONE); // Por ahora 1 unidad
+        detalle.setCantidad(java.math.BigDecimal.ONE); // Añadimos 1 unidad
         detalle.setPrecio_unitario(producto.getPrecio());
-        detalle.setTotal_linea(producto.getPrecio()); // 1 * precio
+        detalle.setTotal_linea(producto.getPrecio()); // Total linea = 1 * precio
 
         detallePedidosRepository.save(detalle);
 
-        // 4. Actualizar Total Pedido
+        // 4. Actualizar el Total acumulado del Pedido
         java.math.BigDecimal nuevoTotal = pedidoActual.getTotal_pedido() == null
                 ? producto.getPrecio()
                 : pedidoActual.getTotal_pedido().add(producto.getPrecio());
         pedidoActual.setTotal_pedido(nuevoTotal);
 
-        return repository.save(pedidoActual);
+        return repository.save(pedidoActual); // Devolver el pedido actualizado
     }
 
+    // Obtener detalles (productos) de un pedido específico
     @GetMapping("/{id}/detalles")
     public List<ClasesBD.DetallePedidos> obtenerDetalles(@PathVariable Integer id) {
         Pedidos pedido = repository.findById(id).orElse(null);
@@ -152,17 +166,19 @@ public class PedidosRestController {
         return detallePedidosRepository.findByPedido(pedido);
     }
 
+    // Eliminar un pedido
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id) {
         repository.deleteById(id);
     }
 
+    // Eliminar una línea de detalle (producto de un pedido) y recalcular total
     @DeleteMapping("/detalles/{id}")
     public void eliminarDetalle(@PathVariable Integer id) {
         ClasesBD.DetallePedidos detalle = detallePedidosRepository.findById(id).orElse(null);
         if (detalle != null) {
             Pedidos pedido = detalle.getPedido();
-            // Update order total
+            // Restar el importe de la línea del total del pedido
             if (pedido != null) {
                 java.math.BigDecimal total = pedido.getTotal_pedido();
                 if (total != null && detalle.getTotal_linea() != null) {

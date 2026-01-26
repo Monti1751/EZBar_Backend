@@ -1,6 +1,6 @@
 import pool from '../config/database.js';
 
-// Obtener todas las zonas
+// --- Obtener todas las zonas ---
 export const obtenerZonas = async (req, res, next) => {
   try {
     // Obtener zonas de la tabla ZONAS
@@ -11,7 +11,7 @@ export const obtenerZonas = async (req, res, next) => {
     const zonas = rows.map(z => ({
       id: z.zona_id,
       nombre: z.nombre,
-      name: z.nombre // Compatibilidad
+      name: z.nombre // Compatibilidad con frontend que puede buscar 'name'
     }));
 
     res.json(zonas);
@@ -20,7 +20,7 @@ export const obtenerZonas = async (req, res, next) => {
   }
 };
 
-// Crear una nueva zona
+// --- Crear una nueva zona ---
 export const crearZona = async (req, res, next) => {
   try {
     const { nombre } = req.body;
@@ -35,6 +35,7 @@ export const crearZona = async (req, res, next) => {
       name: nombre
     });
   } catch (error) {
+    // Controlar error si el nombre de zona ya existe (UNIQUE)
     if (error.code === 'ER_DUP_ENTRY') {
       return res.status(400).json({ message: 'La zona ya existe' });
     }
@@ -42,7 +43,7 @@ export const crearZona = async (req, res, next) => {
   }
 };
 
-// Obtener zona por Ubicación (Nombre)
+// --- Obtener zona por Ubicación (Nombre) ---
 export const obtenerZonaPorUbicacion = async (req, res, next) => {
   try {
     const { ubicacion } = req.params;
@@ -64,13 +65,13 @@ export const obtenerZonaPorUbicacion = async (req, res, next) => {
   }
 };
 
-// Actualizar zona
+// --- Actualizar zona (Renombrar) ---
 export const actualizarZona = async (req, res, next) => {
   try {
     const { zonaId } = req.params;
     const { nombre } = req.body;
 
-    // Si zonaId es el nombre (string)
+    // Detectar si zonaId es el nombre (string) o el ID numérico
     const isIdNumeric = !isNaN(parseInt(zonaId));
 
     let query, params;
@@ -94,16 +95,17 @@ export const actualizarZona = async (req, res, next) => {
   }
 };
 
-// Eliminar zona
+// --- Eliminar zona ---
 export const eliminarZona = async (req, res, next) => {
   try {
-    const { ubicacion } = req.params; // La ruta es DELETE /api/zonas/:ubicacion
+    const { ubicacion } = req.params; // La ruta es DELETE /api/zonas/:ubicacion (puede ser ID o nombre)
 
-    // Borrar de ZONAS (Cascade borrará mesas)
+    // Primero intentamos borrar asumiendo que es el NOMBRE
+    // El 'ON DELETE CASCADE' de la base de datos se encargará de borrar las mesas asociadas si está configurado
     const [result] = await pool.query('DELETE FROM ZONAS WHERE nombre = ?', [ubicacion]);
 
     if (result.affectedRows === 0) {
-      // Intentar borrar por ID si fuese un número
+      // Si no borró nada, intentar borrar asumiendo que es un ID numérico
       const zonaId = parseInt(ubicacion);
       if (!isNaN(zonaId)) {
         const [resId] = await pool.query('DELETE FROM ZONAS WHERE zona_id = ?', [zonaId]);
@@ -118,29 +120,29 @@ export const eliminarZona = async (req, res, next) => {
   }
 };
 
-// Guardar mesas de una zona (Sync)
+// --- Guardar mesas de una zona (Sincronización completa) ---
+// Borra todas las mesas de la zona y las vuelve a crear con los datos recibidos
 export const guardarMesasDeZona = async (req, res, next) => {
-  const connection = await pool.getConnection();
+  const connection = await pool.getConnection(); // Usamos transacciones para seguridad
   try {
     await connection.beginTransaction();
 
     const { ubicacion } = req.params; // Nombre de la zona
     const { mesas } = req.body; // Array de mesas
 
-    // 1. Borrar mesas actuales de esa zona
-    // Nota: Si la zona no existe en ZONAS, esto no afecta pero el INSERT fallará por FK si 'ubicacion' no está en ZONAS.
-    // Aseguramos que la zona exista.
+    // 1. Aseguramos que la zona exista antes de insertar mesas
     const [zonaRows] = await connection.query('SELECT nombre FROM ZONAS WHERE nombre = ?', [ubicacion]);
     if (zonaRows.length === 0) {
-      // Si no existe la zona (raro si venimos del frontend), la creamos?
-      // Mejor rebotamos error, o la creamos implícitamente.
+      // Si no existe la zona se crea automáticamente (Estrategia 'upsert' básica)
       await connection.query('INSERT IGNORE INTO ZONAS (nombre) VALUES (?)', [ubicacion]);
     }
 
+    // 2. Borrar mesas actuales de esa zona
     await connection.query('DELETE FROM MESAS WHERE ubicacion = ?', [ubicacion]);
 
-    // 2. Insertar nuevas mesas
+    // 3. Insertar nuevas mesas recibidas
     if (mesas && mesas.length > 0) {
+      // Preparamos array de arrays para insert masivo
       const values = mesas.map(m => [
         m.numero_mesa,
         m.capacidad,
@@ -156,10 +158,10 @@ export const guardarMesasDeZona = async (req, res, next) => {
       );
     }
 
-    await connection.commit();
+    await connection.commit(); // Confirmar cambios
     res.json({ message: 'Mesas actualizadas' });
   } catch (error) {
-    await connection.rollback();
+    await connection.rollback(); // Deshacer cambios si algo falla
     next(error);
   } finally {
     connection.release();

@@ -1,6 +1,8 @@
 import { fetchWithRetry } from '../utils/retryHelper.js';
 import { CONFIG } from '../config/constants.js';
 
+// --- Obtener Categorías ---
+// Proxy al backend Java
 export const obtenerCategorias = async (req, res, next) => {
   try {
     const response = await fetchWithRetry(`${CONFIG.BACKEND_URL}/categorias`);
@@ -10,6 +12,7 @@ export const obtenerCategorias = async (req, res, next) => {
   }
 };
 
+// --- Crear Categoría ---
 export const crearCategoria = async (req, res, next) => {
   try {
     const response = await fetchWithRetry(`${CONFIG.BACKEND_URL}/categorias`, {
@@ -22,6 +25,7 @@ export const crearCategoria = async (req, res, next) => {
   }
 };
 
+// --- Eliminar Categoría ---
 export const eliminarCategoria = async (req, res, next) => {
   try {
     const { id } = req.params;

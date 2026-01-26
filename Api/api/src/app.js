@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors';
+import cors from 'cors'; // Permite peticiones desde otros dominios (Cross-Origin Resource Sharing)
 import { errorHandler } from './middleware/errorHandler.js';
 import mesasRoutes from './routes/mesasRoutes.js';
 import pedidosRoutes from './routes/pedidosRoutes.js';
@@ -11,27 +11,31 @@ import { verificarBackend } from './utils/retryHelper.js';
 import { CONFIG } from './config/constants.js';
 import pool from './config/database.js';
 
+// Crear la aplicación Express
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// --- Configuración Global (Middleware) ---
+app.use(cors()); // Habilitar CORS para permitir conexión desde el móvil
+app.use(express.json()); // Permitir que el servidor entienda JSON en el cuerpo de las peticiones
+app.use(express.urlencoded({ extended: true })); // Permitir datos codificados en URL
 
-// Rutas
-app.use('/api/mesas', mesasRoutes);
-app.use('/api/pedidos', pedidosRoutes);
-app.use('/api/productos', productosRoutes);
-app.use('/api/zonas', zonasRoutes);
-app.use('/api/categorias', categoriasRoutes);
-app.use('/api/auth', authRoutes);
+// --- Definición de Rutas API ---
+// Aquí asociamos cada prefijo de URL a su archivo de rutas correspondiente
+app.use('/api/mesas', mesasRoutes); // Rutas para gestión de mesas (ver, crear, actualizar)
+app.use('/api/pedidos', pedidosRoutes); // Rutas para gestión de pedidos
+app.use('/api/productos', productosRoutes); // Rutas para productos
+app.use('/api/zonas', zonasRoutes); // Rutas para zonas del bar
+app.use('/api/categorias', categoriasRoutes); // Rutas para categorías de productos
+app.use('/api/auth', authRoutes); // Rutas para autenticación (login)
 
 
-// Health check
+// --- Ruta Health Check (Comprobación de Estado) ---
+// Usada por el sistema para verificar que el API y la Base de Datos funcionan
 app.get('/api/health', async (req, res) => {
   const backendStatus = await verificarBackend();
 
   try {
+    // Intentar una consulta simple a la base de datos para verificar conexión
     await pool.query('SELECT 1');
     res.json({
       status: 'OK',
@@ -41,8 +45,9 @@ app.get('/api/health', async (req, res) => {
       database: 'ONLINE'
     });
   } catch (error) {
+    // Si falla la BD, respondemos con detalle del error
     res.json({
-      status: 'OK',
+      status: 'OK', // La API en sí funciona, aunque la BD falle
       message: 'API Node.js funcionando',
       backend: CONFIG.BACKEND_URL,
       backendStatus: backendStatus ? 'ONLINE' : 'OFFLINE',
@@ -52,7 +57,7 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
-// Ruta de prueba (tu endpoint original)
+// Ruta de prueba básica
 app.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT 'Hola desde MariaDB!' AS mensaje");
@@ -62,7 +67,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-// Manejo de errores (debe ir al final)
+// Middleware de manejo de errores global (siempre debe ir al final)
 app.use(errorHandler);
 
 export default app;
