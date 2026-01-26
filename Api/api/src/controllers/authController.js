@@ -23,7 +23,7 @@ export const login = async (req, res) => {
     try {
         // 1. Buscar usuario en la base de datos por su nombre de usuario
         const [rows] = await pool.query(
-            'SELECT usuario_id, empleado_id, nombre_usuario, password_hash, rol, activo FROM usuarios WHERE nombre_usuario = ?',
+            'SELECT id, nombre, password, rol, activo FROM usuarios WHERE nombre = ?',
             [username]
         );
 
@@ -37,6 +37,13 @@ export const login = async (req, res) => {
 
         const usuario = rows[0];
 
+        // DEBUG: Log de información
+        console.log('🔍 DEBUG Login:');
+        console.log('  - Username recibido:', username);
+        console.log('  - Password recibido:', password);
+        console.log('  - Usuario encontrado:', usuario.nombre);
+        console.log('  - Hash almacenado:', usuario.password);
+
         // 2. Verificar si el usuario está activo (puede haber sido deshabilitado por un admin)
         if (!usuario.activo) {
             return res.status(403).json({
@@ -46,7 +53,8 @@ export const login = async (req, res) => {
         }
 
         // 3. Comparar la contraseña ingresada con la encriptada en la base de datos
-        const validPassword = await bcrypt.compare(password, usuario.password_hash);
+        const validPassword = await bcrypt.compare(password, usuario.password);
+        console.log('  - Validación bcrypt:', validPassword);
 
         if (!validPassword) {
             return res.status(401).json({
@@ -59,8 +67,8 @@ export const login = async (req, res) => {
         // Este token servirá para identificar al usuario en futuras peticiones sin enviar la contraseña
         const token = jwt.sign(
             {
-                id: usuario.usuario_id,
-                username: usuario.nombre_usuario,
+                id: usuario.id,
+                username: usuario.nombre,
                 rol: usuario.rol
             },
             JWT_SECRET,
@@ -74,10 +82,9 @@ export const login = async (req, res) => {
             data: {
                 token,
                 usuario: {
-                    id: usuario.usuario_id,
-                    username: usuario.nombre_usuario,
-                    rol: usuario.rol,
-                    empleadoId: usuario.empleado_id
+                    id: usuario.id,
+                    username: usuario.nombre,
+                    rol: usuario.rol
                 }
             }
         });
