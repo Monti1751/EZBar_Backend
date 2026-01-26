@@ -20,17 +20,18 @@ public class DetallePedidosRestController {
     }
 
     @GetMapping("/{id}")
-    public DetallePedidos obtenerPorId(@PathVariable Integer id) {
+    public DetallePedidos obtenerPorId(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
     @PostMapping
+    @SuppressWarnings("null")
     public DetallePedidos crear(@RequestBody DetallePedidos detalle) {
         return repository.save(detalle);
     }
 
     @PutMapping("/{id}")
-    public DetallePedidos actualizar(@PathVariable Integer id, @RequestBody DetallePedidos detalle) {
+    public DetallePedidos actualizar(@PathVariable int id, @RequestBody DetallePedidos detalle) {
         if (repository.existsById(id)) {
             detalle.setDetalle_id(id);
             return repository.save(detalle);
@@ -39,7 +40,7 @@ public class DetallePedidosRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

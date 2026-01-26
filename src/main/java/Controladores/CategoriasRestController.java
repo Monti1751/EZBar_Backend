@@ -40,13 +40,15 @@ public class CategoriasRestController {
     // El objeto Categorias se construye automáticamente desde el JSON del cuerpo de
     // la petición
     @PostMapping
+    @SuppressWarnings("null")
     public Categorias crear(@RequestBody Categorias categoria) {
         return repository.save(categoria);
     }
 
     // Actualizar una categoría existente (PUT /categorias/{id})
     @PutMapping("/{id}")
-    public Categorias actualizar(@PathVariable Integer id, @RequestBody Categorias categoria) {
+    @SuppressWarnings("null")
+    public Categorias actualizar(@PathVariable int id, @RequestBody Categorias categoria) {
         if (repository.existsById(id)) {
             categoria.setCategoria_id(id); // Asegurar que el ID sea el correcto
             return repository.save(categoria);
@@ -56,7 +58,7 @@ public class CategoriasRestController {
 
     // Eliminar una categoría (DELETE /categorias/{id})
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

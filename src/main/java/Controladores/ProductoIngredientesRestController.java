@@ -2,8 +2,8 @@ package Controladores;
 
 import Repositorios.ProductoIngredientesRepository;
 import ClasesBD.ProductoIngredientes;
-import ClasesBD.ProductoIngredientesId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -25,7 +25,8 @@ public class ProductoIngredientesRestController {
     // For simplicity, just listing and creation
 
     @PostMapping
-    public ProductoIngredientes crear(@RequestBody ProductoIngredientes relacion) {
+    @NonNull
+    public ProductoIngredientes crear(@RequestBody @NonNull ProductoIngredientes relacion) {
         return repository.save(relacion);
     }
 

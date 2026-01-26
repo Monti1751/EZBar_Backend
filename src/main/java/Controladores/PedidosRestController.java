@@ -26,7 +26,7 @@ public class PedidosRestController {
 
     // Obtener pedido por ID (GET /pedidos/{id})
     @GetMapping("/{id}")
-    public Pedidos obtenerPorId(@PathVariable Integer id) {
+    public Pedidos obtenerPorId(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
@@ -38,7 +38,8 @@ public class PedidosRestController {
 
     // Actualizar un pedido (PUT /pedidos/{id})
     @PutMapping("/{id}")
-    public Pedidos actualizar(@PathVariable Integer id, @RequestBody Pedidos pedido) {
+    @SuppressWarnings("null")
+    public Pedidos actualizar(@PathVariable int id, @RequestBody Pedidos pedido) {
         if (repository.existsById(id)) {
             pedido.setPedido_id(id);
             return repository.save(pedido);
@@ -65,7 +66,8 @@ public class PedidosRestController {
      * Si la mesa no tiene pedido abierto, crea uno nuevo automáticamente.
      */
     @PostMapping("/mesa/{mesaId}/agregar-producto")
-    public Pedidos agregarProductoAMesa(@PathVariable Integer mesaId,
+    @SuppressWarnings("null")
+    public Pedidos agregarProductoAMesa(@PathVariable int mesaId,
             @RequestBody java.util.Map<String, Integer> payload) {
         Integer productoId = payload.get("productoId");
 
@@ -159,7 +161,7 @@ public class PedidosRestController {
 
     // Obtener detalles (productos) de un pedido específico
     @GetMapping("/{id}/detalles")
-    public List<ClasesBD.DetallePedidos> obtenerDetalles(@PathVariable Integer id) {
+    public List<ClasesBD.DetallePedidos> obtenerDetalles(@PathVariable int id) {
         Pedidos pedido = repository.findById(id).orElse(null);
         if (pedido == null)
             return java.util.Collections.emptyList();
@@ -168,13 +170,13 @@ public class PedidosRestController {
 
     // Eliminar un pedido
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 
     // Eliminar una línea de detalle (producto de un pedido) y recalcular total
     @DeleteMapping("/detalles/{id}")
-    public void eliminarDetalle(@PathVariable Integer id) {
+    public void eliminarDetalle(@PathVariable int id) {
         ClasesBD.DetallePedidos detalle = detallePedidosRepository.findById(id).orElse(null);
         if (detalle != null) {
             Pedidos pedido = detalle.getPedido();

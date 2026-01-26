@@ -20,17 +20,18 @@ public class InventarioRestController {
     }
 
     @GetMapping("/{id}")
-    public Inventario obtenerPorId(@PathVariable Integer id) {
+    public Inventario obtenerPorId(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
     @PostMapping
+    @SuppressWarnings("null")
     public Inventario crear(@RequestBody Inventario inventario) {
         return repository.save(inventario);
     }
 
     @PutMapping("/{id}")
-    public Inventario actualizar(@PathVariable Integer id, @RequestBody Inventario inventario) {
+    public Inventario actualizar(@PathVariable int id, @RequestBody Inventario inventario) {
         if (repository.existsById(id)) {
             inventario.setInventario_id(id);
             return repository.save(inventario);
@@ -39,7 +40,7 @@ public class InventarioRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

@@ -27,18 +27,21 @@ public class ProductosRestController {
 
     // Obtener producto por ID (GET /productos/{id})
     @GetMapping("/{id}")
+    @SuppressWarnings("null")
     public Productos obtenerPorId(@PathVariable Integer id) {
         return repository.findById(id).orElse(null);
     }
 
     // Crear producto (POST /productos)
     @PostMapping
+    @SuppressWarnings("null")
     public Productos crear(@RequestBody Productos producto) {
         return repository.save(producto);
     }
 
     // Actualizar producto (PUT /productos/{id})
     @PutMapping("/{id}")
+    @SuppressWarnings("null")
     public Productos actualizar(@PathVariable Integer id, @RequestBody Productos producto) {
         if (repository.existsById(id)) {
             producto.setProducto_id(id);
@@ -49,7 +52,7 @@ public class ProductosRestController {
 
     // Eliminar producto (DELETE /productos/{id})
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

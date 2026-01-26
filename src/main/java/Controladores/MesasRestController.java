@@ -25,18 +25,21 @@ public class MesasRestController {
 
     // Obtener mesa por ID (GET /mesas/{id})
     @GetMapping("/{id}")
+    @SuppressWarnings("null")
     public Mesas obtenerPorId(@PathVariable Integer id) {
         return repository.findById(id).orElse(null);
     }
 
     // Crear mesa (POST /mesas)
     @PostMapping
+    @SuppressWarnings("null")
     public Mesas crear(@RequestBody Mesas mesa) {
         return repository.save(mesa);
     }
 
     // Actualizar mesa (PUT /mesas/{id})
     @PutMapping("/{id}")
+    @SuppressWarnings("null")
     public Mesas actualizar(@PathVariable Integer id, @RequestBody Mesas mesa) {
         if (repository.existsById(id)) {
             mesa.setMesa_id(id);
@@ -47,7 +50,7 @@ public class MesasRestController {
 
     // Eliminar mesa (DELETE /mesas/{id})
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

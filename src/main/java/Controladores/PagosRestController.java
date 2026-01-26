@@ -20,17 +20,18 @@ public class PagosRestController {
     }
 
     @GetMapping("/{id}")
-    public Pagos obtenerPorId(@PathVariable Integer id) {
+    public Pagos obtenerPorId(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
     @PostMapping
+    @SuppressWarnings("null")
     public Pagos crear(@RequestBody Pagos pago) {
         return repository.save(pago);
     }
 
     @PutMapping("/{id}")
-    public Pagos actualizar(@PathVariable Integer id, @RequestBody Pagos pago) {
+    public Pagos actualizar(@PathVariable int id, @RequestBody Pagos pago) {
         if (repository.existsById(id)) {
             pago.setPago_id(id);
             return repository.save(pago);
@@ -39,7 +40,7 @@ public class PagosRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

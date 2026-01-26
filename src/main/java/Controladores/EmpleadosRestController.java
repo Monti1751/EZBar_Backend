@@ -20,17 +20,18 @@ public class EmpleadosRestController {
     }
 
     @GetMapping("/{id}")
-    public Empleados obtenerPorId(@PathVariable Integer id) {
+    public Empleados obtenerPorId(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
     @PostMapping
+    @SuppressWarnings("null")
     public Empleados crear(@RequestBody Empleados empleado) {
         return repository.save(empleado);
     }
 
     @PutMapping("/{id}")
-    public Empleados actualizar(@PathVariable Integer id, @RequestBody Empleados empleado) {
+    public Empleados actualizar(@PathVariable int id, @RequestBody Empleados empleado) {
         if (repository.existsById(id)) {
             empleado.setEmpleado_id(id);
             return repository.save(empleado);
@@ -39,7 +40,7 @@ public class EmpleadosRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }

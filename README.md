@@ -1,11 +1,25 @@
 # EZBar Backend
 
+## ⭐ NUEVO: Refactoring Clean Code (26 de enero de 2026)
+
+El backend ha sido refactorizado siguiendo **principios de Clean Code**. Esto mejora significativamente:
+- ✅ Legibilidad y mantenibilidad
+- ✅ Arquitectura en capas
+- ✅ Manejo centralizado de errores
+- ✅ Códigos HTTP consistentes
+- ✅ Principios SOLID aplicados
+
+**📚 Documentación completa en [INDEX.md](INDEX.md)** - Empieza con [QUICK_START.md](QUICK_START.md)
+
+---
+
 ## Índice
-1. [Arquitectura del Backend](#1-arquitectura-del-backend)  
-2. [Instalación y Configuración](#2-instalación-y-configuración)  
-3. [Funcionamiento](#3-funcionamiento)  
-4. [Estado del Proyecto](#4-estado-del-proyecto)  
-5. [Autores](#5-autores)  
+1. [Refactoring Clean Code](#-nuevo-refactoring-clean-code-26-de-enero-de-2026)
+2. [Arquitectura del Backend](#1-arquitectura-del-backend)  
+3. [Instalación y Configuración](#2-instalación-y-configuración)  
+4. [Funcionamiento](#3-funcionamiento)  
+5. [Estado del Proyecto](#4-estado-del-proyecto)  
+6. [Autores](#5-autores)  
 
 ---
 

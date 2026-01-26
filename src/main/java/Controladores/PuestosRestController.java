@@ -20,17 +20,18 @@ public class PuestosRestController {
     }
 
     @GetMapping("/{id}")
-    public Puestos obtenerPorId(@PathVariable Integer id) { // Changed to Integer
+    public Puestos obtenerPorId(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
     @PostMapping
+    @SuppressWarnings("null")
     public Puestos crear(@RequestBody Puestos puesto) {
         return repository.save(puesto);
     }
 
     @PutMapping("/{id}")
-    public Puestos actualizar(@PathVariable Integer id, @RequestBody Puestos puesto) {
+    public Puestos actualizar(@PathVariable int id, @RequestBody Puestos puesto) {
         if (repository.existsById(id)) {
             puesto.setPuesto_id(id);
             return repository.save(puesto);
@@ -39,7 +40,7 @@ public class PuestosRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id) {
+    public void eliminar(@PathVariable int id) {
         repository.deleteById(id);
     }
 }
