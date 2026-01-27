@@ -64,8 +64,8 @@ echo Iniciando Middleware Node.js (Puerto 3000)...
 cd /d "%API_DIR%"
 start "EZBar Node Middleware" npm start
 
-REM echo Iniciando Ngrok (Puerto 3000)...
-REM start "EZBar Ngrok" ngrok http 3000
+echo Iniciando Ngrok (Puerto 3000)...
+start "EZBar Ngrok" "D:\GitHub\ngrok-v3-stable-windows-amd64\ngrok.exe" http 3000
 
 echo.
 echo Servidores iniciados correctamente (revisa las otras ventanas para errores).
