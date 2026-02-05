@@ -1,73 +1,195 @@
 import express from 'express';
-import cors from 'cors'; // Permite peticiones desde otros dominios (Cross-Origin Resource Sharing)
-import { errorHandler } from './middleware/errorHandler.js';
+import cors from 'cors';
+import compression from 'compression';
+import { CONFIG } from './config/constants.js';
+import pool from './config/database.js';
+import logger from './logger.js';
+
+// Import middleware
+import {
+  errorHandler,
+  requestLogger,
+  errorLogger,
+  securityHeaders,
+  rateLimiter,
+  getCorsOptions,
+  cacheMiddleware,
+  cacheInvalidationMiddleware,
+  timeoutMiddleware,
+  memoryMiddleware
+} from './middleware/index.js';
+
+// Import routes
 import mesasRoutes from './routes/mesasRoutes.js';
 import pedidosRoutes from './routes/pedidosRoutes.js';
 import productosRoutes from './routes/productosRoutes.js';
 import zonasRoutes from './routes/zonasRoutes.js';
 import categoriasRoutes from './routes/categoriasRoutes.js';
 import authRoutes from './routes/authRoutes.js';
-import { verificarBackend } from './utils/retryHelper.js';
-import { CONFIG } from './config/constants.js';
-import pool from './config/database.js';
+
+// Import utilities
+import { verificarBackend, memoryMonitor } from './utils/index.js';
+import { cacheService } from './services/index.js';
 
 // Crear la aplicación Express
 const app = express();
 
-// --- Configuración Global (Middleware) ---
-app.use(cors()); // Habilitar CORS para permitir conexión desde el móvil
-app.use(express.json()); // Permitir que el servidor entienda JSON en el cuerpo de las peticiones
-app.use(express.urlencoded({ extended: true })); // Permitir datos codificados en URL
+// --- Global Middleware (Order matters!) ---
 
-// --- Definición de Rutas API ---
-// Aquí asociamos cada prefijo de URL a su archivo de rutas correspondiente
-app.use('/api/mesas', mesasRoutes); // Rutas para gestión de mesas (ver, crear, actualizar)
-app.use('/api/pedidos', pedidosRoutes); // Rutas para gestión de pedidos
-app.use('/api/productos', productosRoutes); // Rutas para productos
-app.use('/api/zonas', zonasRoutes); // Rutas para zonas del bar
-app.use('/api/categorias', categoriasRoutes); // Rutas para categorías de productos
-app.use('/api/auth', authRoutes); // Rutas para autenticación (login)
+// 1. Security headers (first for all requests)
+app.use(securityHeaders());
 
+// 2. Request timeout
+app.use(timeoutMiddleware());
 
-// --- Ruta Health Check (Comprobación de Estado) ---
-// Usada por el sistema para verificar que el API y la Base de Datos funcionan
-app.get('/api/health', async (req, res) => {
+// 3. Request logging
+app.use(requestLogger);
+
+// 4. CORS
+app.use(cors(getCorsOptions()));
+
+// 5. Compression (gzip)
+app.use(compression());
+
+// 6. Body parsing
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// 7. Rate limiting (only in production or if explicitly enabled)
+if (CONFIG.IS_PRODUCTION) {
+  app.use(rateLimiter);
+}
+
+// --- API Routes ---
+
+// Apply cache middleware to routes that benefit from caching
+app.use('/api/mesas', cacheInvalidationMiddleware(), mesasRoutes);
+app.use('/api/pedidos', cacheInvalidationMiddleware(), pedidosRoutes);
+app.use('/api/productos', cacheInvalidationMiddleware(), productosRoutes);
+app.use('/api/zonas', cacheInvalidationMiddleware(), zonasRoutes);
+app.use('/api/categorias', cacheInvalidationMiddleware(), categoriasRoutes);
+app.use('/api/auth', authRoutes); // No caching for auth
+
+// --- Health & Monitoring Endpoints ---
+
+/**
+ * Health check endpoint
+ * Returns API status, database status, backend status, and memory metrics
+ */
+app.get('/api/health', memoryMiddleware, async (req, res) => {
   const backendStatus = await verificarBackend();
 
   try {
-    // Intentar una consulta simple a la base de datos para verificar conexión
     await pool.query('SELECT 1');
     res.json({
       status: 'OK',
+      environment: CONFIG.NODE_ENV,
       message: 'API Node.js funcionando correctamente',
-      backend: CONFIG.BACKEND_URL,
-      backendStatus: backendStatus ? 'ONLINE' : 'OFFLINE',
-      database: 'ONLINE'
+      timestamp: new Date().toISOString(),
+      backend: {
+        url: CONFIG.BACKEND_URL,
+        status: backendStatus ? 'ONLINE' : 'OFFLINE'
+      },
+      database: {
+        status: 'ONLINE',
+        host: CONFIG.DB.HOST,
+        name: CONFIG.DB.NAME
+      },
+      memory: req.memoryStats,
+      cache: cacheService ? cacheService.getStats() : { enabled: false }
     });
   } catch (error) {
-    // Si falla la BD, respondemos con detalle del error
     res.json({
-      status: 'OK', // La API en sí funciona, aunque la BD falle
-      message: 'API Node.js funcionando',
-      backend: CONFIG.BACKEND_URL,
-      backendStatus: backendStatus ? 'ONLINE' : 'OFFLINE',
-      database: 'OFFLINE',
-      databaseError: error.message
+      status: 'DEGRADED',
+      environment: CONFIG.NODE_ENV,
+      message: 'API funcionando pero con problemas en base de datos',
+      timestamp: new Date().toISOString(),
+      backend: {
+        url: CONFIG.BACKEND_URL,
+        status: backendStatus ? 'ONLINE' : 'OFFLINE'
+      },
+      database: {
+        status: 'OFFLINE',
+        error: error.message
+      },
+      memory: req.memoryStats,
+      cache: cacheService ? cacheService.getStats() : { enabled: false }
     });
   }
 });
 
-// Ruta de prueba básica
+/**
+ * Cache statistics endpoint
+ */
+app.get('/api/cache/stats', (req, res) => {
+  if (!cacheService) {
+    return res.json({ enabled: false });
+  }
+
+  res.json(cacheService.getStats());
+});
+
+/**
+ * Cache management endpoint (flush cache)
+ */
+app.post('/api/cache/flush', (req, res) => {
+  if (!cacheService) {
+    return res.status(400).json({ error: 'Cache is not enabled' });
+  }
+
+  cacheService.flush();
+  logger.info('Cache flushed via API endpoint');
+
+  res.json({
+    success: true,
+    message: 'Cache flushed successfully'
+  });
+});
+
+/**
+ * Memory statistics endpoint
+ */
+app.get('/api/memory/stats', memoryMiddleware, (req, res) => {
+  res.json(req.memoryStats);
+});
+
+/**
+ * Force garbage collection endpoint (only if --expose-gc is enabled)
+ */
+app.post('/api/memory/gc', (req, res) => {
+  if (!global.gc) {
+    return res.status(400).json({
+      error: 'Garbage collection not exposed',
+      message: 'Start Node.js with --expose-gc flag to enable'
+    });
+  }
+
+  memoryMonitor.forceGC();
+
+  res.json({
+    success: true,
+    message: 'Garbage collection triggered'
+  });
+});
+
+/**
+ * Root endpoint - Basic test
+ */
 app.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT 'Hola desde MariaDB!' AS mensaje");
-    res.json(rows[0]);
+    res.json({
+      ...rows[0],
+      environment: CONFIG.NODE_ENV,
+      version: '2.0.0'
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-// Middleware de manejo de errores global (siempre debe ir al final)
+// --- Error Handling Middleware (Must be last!) ---
+app.use(errorLogger);
 app.use(errorHandler);
 
 export default app;

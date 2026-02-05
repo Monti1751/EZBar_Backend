@@ -23,7 +23,7 @@ export const login = async (req, res) => {
     try {
         // 1. Buscar usuario en la base de datos por su nombre de usuario
         const [rows] = await pool.query(
-            'SELECT usuario_id, empleado_id, nombre_usuario, password_hash, rol, activo FROM usuarios WHERE nombre_usuario = ?',
+            'SELECT id, nombre, password, rol, activo FROM usuarios WHERE nombre = ?',
             [username]
         );
 
@@ -37,7 +37,7 @@ export const login = async (req, res) => {
 
         const usuario = rows[0];
 
-        // 2. Verificar si el usuario está activo (puede haber sido deshabilitado por un admin)
+        // 2. Verificar si el usuario está activo
         if (!usuario.activo) {
             return res.status(403).json({
                 status: 'ERROR',
@@ -45,8 +45,15 @@ export const login = async (req, res) => {
             });
         }
 
-        // 3. Comparar la contraseña ingresada con la encriptada en la base de datos
-        const validPassword = await bcrypt.compare(password, usuario.password_hash);
+        // 3. Comparar la contraseña
+        // Intentar primero con bcrypt
+        let validPassword = await bcrypt.compare(password, usuario.password);
+
+        // Si falla bcrypt, probar si es texto plano (para usuarios migrados/test)
+        if (!validPassword && password === usuario.password) {
+            validPassword = true;
+            console.warn(`⚠️ ADVERTENCIA: El usuario '${username}' está usando contraseña en texto plano. Se recomienda actualizarla.`);
+        }
 
         if (!validPassword) {
             return res.status(401).json({
@@ -59,25 +66,24 @@ export const login = async (req, res) => {
         // Este token servirá para identificar al usuario en futuras peticiones sin enviar la contraseña
         const token = jwt.sign(
             {
-                id: usuario.usuario_id,
-                username: usuario.nombre_usuario,
+                id: usuario.id,
+                username: usuario.nombre,
                 rol: usuario.rol
             },
             JWT_SECRET,
             { expiresIn: '8h' } // El token caduca en 8 horas por seguridad
         );
 
-        // 5. Enviar respuesta exitosa con el token y datos del usuario
+        // 4. Enviar respuesta exitosa con el token y datos del usuario
         res.json({
             status: 'OK',
             message: 'Login exitoso',
             data: {
                 token,
                 usuario: {
-                    id: usuario.usuario_id,
-                    username: usuario.nombre_usuario,
-                    rol: usuario.rol,
-                    empleadoId: usuario.empleado_id
+                    id: usuario.id,
+                    username: usuario.nombre,
+                    rol: usuario.rol
                 }
             }
         });

@@ -1,0 +1,79 @@
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-05 13:22:51"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"debug","message":"Memory: 17.55MB / 35.05MB (50.08%)","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"database":"EZBarDB","error":"Access denied for user 'root'@'localhost' (using password: NO)","host":"localhost","level":"error","message":"❌ Error conectando a MariaDB:","service":"ezbar-api","timestamp":"2026-02-05 13:22:51"}
+{"level":"debug","message":"Memory: 16.76MB / 19.05MB (87.99%)","service":"ezbar-api","timestamp":"2026-02-05 13:23:51"}
+{"external":"3.60MB","heapTotal":"19.05MB","heapUsed":"16.76MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.99%","rss":"58.59MB","service":"ezbar-api","timestamp":"2026-02-05 13:23:51","warningCount":1}
+{"level":"debug","message":"Memory: 17.07MB / 19.05MB (89.62%)","service":"ezbar-api","timestamp":"2026-02-05 13:24:51"}
+{"external":"3.60MB","heapTotal":"19.05MB","heapUsed":"17.07MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.62%","rss":"58.85MB","service":"ezbar-api","timestamp":"2026-02-05 13:24:51","warningCount":2}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:41:49"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-05 13:41:49"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-05 13:41:49"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-05 13:41:49"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:41:49"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-05 13:41:49"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-05 13:41:50"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"debug","message":"Memory: 17.43MB / 34.55MB (50.45%)","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"connectionLimit":10,"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-05 13:41:50"}
+{"level":"debug","message":"Memory: 17.24MB / 20.05MB (85.99%)","service":"ezbar-api","timestamp":"2026-02-05 13:42:50"}
+{"external":"3.60MB","heapTotal":"20.05MB","heapUsed":"17.24MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.99%","rss":"59.73MB","service":"ezbar-api","timestamp":"2026-02-05 13:42:50","warningCount":1}
+{"level":"debug","message":"Memory: 17.55MB / 20.05MB (87.55%)","service":"ezbar-api","timestamp":"2026-02-05 13:43:50"}
+{"external":"3.60MB","heapTotal":"20.05MB","heapUsed":"17.55MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.55%","rss":"60.01MB","service":"ezbar-api","timestamp":"2026-02-05 13:43:50","warningCount":2}
+{"level":"debug","message":"Memory: 17.85MB / 20.05MB (89.05%)","service":"ezbar-api","timestamp":"2026-02-05 13:44:50"}
+{"external":"3.60MB","heapTotal":"20.05MB","heapUsed":"17.85MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.05%","rss":"60.30MB","service":"ezbar-api","timestamp":"2026-02-05 13:44:50","warningCount":3}
+{"level":"debug","message":"Memory: 17.46MB / 21.30MB (81.99%)","service":"ezbar-api","timestamp":"2026-02-05 13:45:50"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-05 13:46:41","userAgent":"Dart/3.10 (dart:io)"}
+{"error":"Unknown column 'usuario_id' in 'field list'","level":"error","message":"Database query error:","query":"SELECT usuario_id, empleado_id, nombre_usuario, password_hash, rol, activo FROM usuarios WHERE nombr","service":"ezbar-api","timestamp":"2026-02-05 13:46:42"}
+{"ip":"127.0.0.1","level":"warn","message":"POST /api/auth/login 500 - 185ms","responseTime":185,"service":"ezbar-api","statusCode":500,"timestamp":"2026-02-05 13:46:42"}
+{"level":"debug","message":"Memory: 18.34MB / 20.80MB (88.20%)","service":"ezbar-api","timestamp":"2026-02-05 13:46:50"}
+{"external":"3.60MB","heapTotal":"20.80MB","heapUsed":"18.34MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.20%","rss":"61.51MB","service":"ezbar-api","timestamp":"2026-02-05 13:46:50","warningCount":1}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-05 13:46:54","userAgent":"Dart/3.10 (dart:io)"}
+{"error":"Unknown column 'usuario_id' in 'field list'","level":"error","message":"Database query error:","query":"SELECT usuario_id, empleado_id, nombre_usuario, password_hash, rol, activo FROM usuarios WHERE nombr","service":"ezbar-api","timestamp":"2026-02-05 13:46:54"}
+{"ip":"127.0.0.1","level":"warn","message":"POST /api/auth/login 500 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":500,"timestamp":"2026-02-05 13:46:54"}
+{"level":"debug","message":"Memory: 18.30MB / 21.05MB (86.96%)","service":"ezbar-api","timestamp":"2026-02-05 13:47:50"}
+{"external":"3.60MB","heapTotal":"21.05MB","heapUsed":"18.30MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.96%","rss":"61.77MB","service":"ezbar-api","timestamp":"2026-02-05 13:47:50","warningCount":2}
+{"level":"debug","message":"Memory: 18.51MB / 21.05MB (87.95%)","service":"ezbar-api","timestamp":"2026-02-05 13:48:50"}
+{"external":"3.60MB","heapTotal":"21.05MB","heapUsed":"18.51MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.95%","rss":"61.48MB","service":"ezbar-api","timestamp":"2026-02-05 13:48:50","warningCount":3}
+{"level":"debug","message":"Memory: 18.72MB / 21.05MB (88.95%)","service":"ezbar-api","timestamp":"2026-02-05 13:49:50"}
+{"external":"3.60MB","heapTotal":"21.05MB","heapUsed":"18.72MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.95%","rss":"61.48MB","service":"ezbar-api","timestamp":"2026-02-05 13:49:50","warningCount":4}
+{"level":"debug","message":"Memory: 18.93MB / 21.05MB (89.96%)","service":"ezbar-api","timestamp":"2026-02-05 13:50:50"}
+{"external":"3.60MB","heapTotal":"21.05MB","heapUsed":"18.93MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.96%","rss":"61.48MB","service":"ezbar-api","timestamp":"2026-02-05 13:50:50","warningCount":5}
