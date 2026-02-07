@@ -1,4 +1,15 @@
 # Changelog
+## -26-01-2026
+
+### Añadido
+* Se ha añadido un sistema de logs
+* Se ha añadido un .gitignore con su respectivo .env
+* Se ha añadido un start_servers.bat oara iniciar conjuntamente la API y el backend
+
+### Corregido
+* Ya se conecta la apk con el server
+* Restructuración de las carpetas y clases .java
+
 ## -15-12-2025
 
 ### Añadido
