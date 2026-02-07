@@ -1,0 +1,6 @@
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-07 18:57:20"}
+{"level":"info","message":"Logger initialized - Environment: development","service":"ezbar-api","timestamp":"2026-02-07 18:57:20"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-07 18:57:20"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-07 18:57:20"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-07 18:57:20"}
+{"connectionLimit":10,"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-07 18:57:20"}
