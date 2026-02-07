@@ -23,7 +23,7 @@ export const login = async (req, res) => {
     try {
         // 1. Buscar usuario en la base de datos por su nombre de usuario
         const [rows] = await pool.query(
-            'SELECT id, nombre, password, rol, activo FROM usuarios WHERE nombre = ?',
+            'SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUARIOS WHERE nombre_usuario = ?',
             [username]
         );
 
