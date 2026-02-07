@@ -5,9 +5,9 @@
   "description": "API Node.js para EZBar - Production Ready",
   "main": "server.js",
   "scripts": {
-    "dev": "set NODE_ENV=development && npx nodemon server.js",
-    "start": "set NODE_ENV=production && node server.js",
-    "start:dev": "set NODE_ENV=development && node server.js",
+    "dev": "set NODE_ENV=development && npx nodemon --max-old-space-size=2048 server.js",
+    "start": "set NODE_ENV=production && node --max-old-space-size=2048 server.js",
+    "start:dev": "set NODE_ENV=development && node --max-old-space-size=2048 server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{js,json,md}\"",

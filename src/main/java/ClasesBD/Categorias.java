@@ -1,6 +1,7 @@
 package ClasesBD;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "CATEGORIAS")
@@ -8,9 +9,11 @@ public class Categorias {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("categoria_id")
     private Integer categoria_id;
 
     @Column(nullable = false, unique = true, length = 50)
+    @JsonProperty("nombre")
     private String nombre;
 
     @Column(columnDefinition = "TEXT")
