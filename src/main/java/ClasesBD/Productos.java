@@ -1,6 +1,7 @@
 package ClasesBD;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 
 @Entity
@@ -9,6 +10,7 @@ public class Productos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("producto_id")
     private Integer producto_id;
 
     @ManyToOne
@@ -16,12 +18,14 @@ public class Productos {
     private Categorias categoria;
 
     @Column(nullable = false, length = 100)
+    @JsonProperty("nombre")
     private String nombre;
 
-    @Column(columnDefinition = "TEXT")
+    @JsonProperty("descripcion")
     private String descripcion;
 
     @Column(nullable = false, precision = 10, scale = 2)
+    @JsonProperty("precio")
     private BigDecimal precio;
 
     @Column(precision = 10, scale = 2)
@@ -44,7 +48,13 @@ public class Productos {
 
     private boolean activo = true;
 
+    @JsonProperty("imagenUrl")
     private String url_imagen;
+
+    @Lob
+    @Column(name = "imagen", columnDefinition = "LONGBLOB")
+    @JsonProperty("imagenBlob")
+    private byte[] imagenBlob;
 
     public Productos() {
     }
@@ -170,5 +180,13 @@ public class Productos {
 
     public void setUrl_imagen(String url_imagen) {
         this.url_imagen = url_imagen;
+    }
+
+    public byte[] getImagenBlob() {
+        return imagenBlob;
+    }
+
+    public void setImagenBlob(byte[] imagenBlob) {
+        this.imagenBlob = imagenBlob;
     }
 }
