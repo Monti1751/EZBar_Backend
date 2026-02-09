@@ -25,7 +25,7 @@
 * Restructuración del backend segun un proyecto Maven
 * Modificación de todos los archivos .java según Hibernate
 
-###Versión 0.2.0 -(30-11-2025)
+## Versión 0.2.0 -(30-11-2025)
 
 ## Añadido  
 - Se han añadido clases para la BD
