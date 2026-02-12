@@ -39,7 +39,7 @@ export const obtenerDetallesPedido = async (req, res, next) => {
 
     // Consulta SQL uniendo DETALLE_PEDIDOS con PRODUCTOS para tener nombres y precios
     const [detalles] = await connection.query(
-      `SELECT dp.detalle_id, dp.pedido_id, dp.producto_id, 
+      `SELECT dp.detalle_id, dp.pedido_id, dp.producto_id,
               dp.cantidad, dp.precio_unitario, dp.total_linea,
               p.nombre, p.precio
        FROM DETALLE_PEDIDOS dp
@@ -107,7 +107,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       return res.status(400).json({ error: 'mesaId y productoId son requeridos' });
     }
 
-    console.log("📥 Agregando producto " + productoId + " a mesa " + mesaId);
+    console.log(`📥 Agregando producto ${productoId} a mesa ${mesaId}`);
 
     connection = await pool.getConnection();
 
@@ -118,7 +118,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
     );
 
     if (mesas.length === 0) {
-      return res.status(404).json({ error: "Mesa " + mesaId + " no encontrada" });
+      return res.status(404).json({ error: `Mesa ${mesaId} no encontrada` });
     }
 
     // 2. Verificar que el producto existe y obtener su precio actual
@@ -128,7 +128,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
     );
 
     if (productos.length === 0) {
-      return res.status(404).json({ error: "Producto " + productoId + " no encontrado" });
+      return res.status(404).json({ error: `Producto ${productoId} no encontrado` });
     }
 
     const precioProducto = parseFloat(productos[0].precio);
@@ -148,12 +148,12 @@ export const agregarProductoAMesa = async (req, res, next) => {
       });
     }
 
-    console.log("✅ Usando empleado: " + empleadoId);
+    console.log(`✅ Usando empleado: ${empleadoId}`);
 
     // 4. Buscar pedido activo para esta mesa
     const [pedidosExistentes] = await connection.query(
-      `SELECT pedido_id, total_pedido FROM PEDIDOS 
-       WHERE mesa_id = ? 
+      `SELECT pedido_id, total_pedido FROM PEDIDOS
+       WHERE mesa_id = ?
        AND estado NOT IN ('pagado', 'cancelado')
        ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
@@ -164,7 +164,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
     if (pedidosExistentes.length > 0) {
       // Ya hay un pedido abierto, usaremos ese
       pedidoId = pedidosExistentes[0].pedido_id;
-      console.log("✅ Usando pedido existente: " + pedidoId);
+      console.log(`✅ Usando pedido existente: ${pedidoId}`);
     } else {
       // No hay pedido abierto, CREAMOS uno nuevo
       const [resultado] = await connection.query(
@@ -173,12 +173,12 @@ export const agregarProductoAMesa = async (req, res, next) => {
         [mesaId, empleadoId]
       );
       pedidoId = resultado.insertId;
-      console.log("✨ Pedido creado: " + pedidoId);
+      console.log(`✨ Pedido creado: ${pedidoId}`);
     }
 
     // 5. Verificar si este producto ya estaba en el pedido (para sumar cantidad)
     const [detalleExistente] = await connection.query(
-      `SELECT detalle_id, cantidad, total_linea FROM DETALLE_PEDIDOS 
+      `SELECT detalle_id, cantidad, total_linea FROM DETALLE_PEDIDOS
        WHERE pedido_id = ? AND producto_id = ?`,
       [pedidoId, productoId]
     );
@@ -191,12 +191,12 @@ export const agregarProductoAMesa = async (req, res, next) => {
       const nuevoTotal = nuevaCantidad * precioProducto;
 
       await connection.query(
-        `UPDATE DETALLE_PEDIDOS 
+        `UPDATE DETALLE_PEDIDOS
          SET cantidad = ?, total_linea = ?
          WHERE detalle_id = ?`,
         [nuevaCantidad, nuevoTotal, detalleId]
       );
-      console.log("📈 Cantidad actualizada para producto " + productoId);
+      console.log(`📈 Cantidad actualizada para producto ${productoId}`);
     } else {
       // Es la primera vez que se pide este producto en este pedido
       const totalLinea = 1 * precioProducto;
@@ -205,7 +205,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
          VALUES (?, ?, 1, ?, ?)`,
         [pedidoId, productoId, precioProducto, totalLinea]
       );
-      console.log("➕ Detalle creado para producto " + productoId);
+      console.log(`➕ Detalle creado para producto ${productoId}`);
     }
 
     // 6. Recalcular el TOTAL del pedido completo
@@ -221,7 +221,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       [totalPedido, pedidoId]
     );
 
-    console.log("✅ Producto agregado exitosamente. Total pedido: $" + totalPedido);
+    console.log(`✅ Producto agregado exitosamente. Total pedido: $${totalPedido}`);
 
     res.status(201).json({
       success: true,
@@ -250,7 +250,7 @@ export const eliminarDetallePedido = async (req, res, next) => {
       return res.status(400).json({ error: 'detalleId es requerido' });
     }
 
-    console.log("🗑️ Eliminando detalle " + detalleId);
+    console.log(`🗑️ Eliminando detalle ${detalleId}`);
 
     connection = await pool.getConnection();
 
@@ -261,7 +261,7 @@ export const eliminarDetallePedido = async (req, res, next) => {
     );
 
     if (detalles.length === 0) {
-      return res.status(404).json({ error: "Detalle " + detalleId + " no encontrado" });
+      return res.status(404).json({ error: `Detalle ${detalleId} no encontrado` });
     }
 
     const pedidoId = detalles[0].pedido_id;
@@ -273,53 +273,53 @@ export const eliminarDetallePedido = async (req, res, next) => {
     );
 
     if (detalleActual.length === 0) {
-      console.log("⚠️ No se encontró el detalle " + detalleId + " al intentar decrementarlo");
+      console.log(`⚠️ No se encontró el detalle ${detalleId} al intentar decrementarlo`);
       return res.status(404).json({ error: 'Detalle no encontrado' });
     }
 
     const cantidadActual = Number(detalleActual[0].cantidad);
     const precioUnitario = Number(detalleActual[0].precio_unitario);
 
-    console.log("📊 Detalle " + detalleId + ": Cantidad actual = " + cantidadActual + ", Precio Unitario = " + precioUnitario);
+    console.log(`📊 Detalle ${detalleId}: Cantidad actual = ${cantidadActual}, Precio Unitario = ${precioUnitario}`);
 
     if (cantidadActual > 1) {
       // Si hay más de uno, decrementamos cantidad y actualizamos total_linea
       const nuevaCantidad = cantidadActual - 1;
       const nuevoTotalLinea = nuevaCantidad * precioUnitario;
 
-      console.log("📉 Decrementando: " + cantidadActual + " -> " + nuevaCantidad + ". Nuevo total linea: " + nuevoTotalLinea);
+      console.log(`📉 Decrementando: ${cantidadActual} -> ${nuevaCantidad}. Nuevo total linea: ${nuevoTotalLinea}`);
 
       await connection.query(
         'UPDATE DETALLE_PEDIDOS SET cantidad = ?, total_linea = ? WHERE detalle_id = ?',
         [nuevaCantidad, nuevoTotalLinea, detalleId]
       );
-      console.log("✅ Cantidad decrementada exitosamente en la DB");
+      console.log(`✅ Cantidad decrementada exitosamente en la DB`);
     } else {
       // Si solo queda uno, eliminamos el registro
-      console.log("🗑️ Cantidad es 1 o menor, procediendo a eliminar registro completo");
+      console.log(`🗑️ Cantidad es 1 o menor, procediendo a eliminar registro completo`);
       await connection.query(
         'DELETE FROM DETALLE_PEDIDOS WHERE detalle_id = ?',
         [detalleId]
       );
-      console.log("✅ Registro eliminado exitosamente de la DB");
+      console.log(`✅ Registro eliminado exitosamente de la DB`);
     }
 
-    console.log("🔄 Recalculando total del pedido " + pedidoId + "...");
+    console.log(`🔄 Recalculando total del pedido ${pedidoId}...`);
 
     // 3. Recalcular el total del pedido
     const [totales] = await connection.query(
-      'SELECT SUM(total_linea) as total FROM DETALLE_PEDIDOS WHERE pedido_id = ?',
+      `SELECT SUM(total_linea) as total FROM DETALLE_PEDIDOS WHERE pedido_id = ?`,
       [pedidoId]
     );
 
     const totalPedido = parseFloat(totales[0].total) || 0;
 
     await connection.query(
-      'UPDATE PEDIDOS SET total_pedido = ? WHERE pedido_id = ?',
+      `UPDATE PEDIDOS SET total_pedido = ? WHERE pedido_id = ?`,
       [totalPedido, pedidoId]
     );
 
-    console.log("✅ Total del pedido actualizado: $" + totalPedido);
+    console.log(`✅ Total del pedido actualizado: $${totalPedido}`);
 
     res.status(200).json({
       success: true,
@@ -334,5 +334,31 @@ export const eliminarDetallePedido = async (req, res, next) => {
     if (connection) {
       connection.release();
     }
+  }
+};
+
+// --- Finalizar Pedido (Marcar como pagado) ---
+export const finalizarPedido = async (req, res, next) => {
+  let connection;
+  try {
+    const { id } = req.params;
+    connection = await pool.getConnection();
+
+    console.log(`💰 Finalizando pedido ${id}`);
+
+    const [resultado] = await connection.query(
+      "UPDATE PEDIDOS SET estado = 'pagado' WHERE pedido_id = ?",
+      [id]
+    );
+
+    if (resultado.affectedRows === 0) {
+      return res.status(404).json({ error: 'Pedido no encontrado' });
+    }
+
+    res.json({ success: true, mensaje: 'Pedido finalizado correctamente' });
+  } catch (error) {
+    next(error);
+  } finally {
+    if (connection) connection.release();
   }
 };

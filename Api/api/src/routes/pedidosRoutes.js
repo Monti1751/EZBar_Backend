@@ -20,4 +20,7 @@ router.post('/mesa/:mesaId/agregar-producto', pedidosController.agregarProductoA
 // DELETE /api/pedidos/detalles/:detalleId - Elimina un producto (línea de detalle) de un pedido
 router.delete('/detalles/:detalleId', pedidosController.eliminarDetallePedido);
 
-export default router; 
+// PUT /api/pedidos/:id/finalizar - Marca un pedido como pagado
+router.put('/:id/finalizar', pedidosController.finalizarPedido);
+
+export default router;
