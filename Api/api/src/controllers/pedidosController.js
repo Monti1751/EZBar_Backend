@@ -39,7 +39,7 @@ export const obtenerDetallesPedido = async (req, res, next) => {
 
     // Consulta SQL uniendo DETALLE_PEDIDOS con PRODUCTOS para tener nombres y precios
     const [detalles] = await connection.query(
-      `SELECT dp.detalle_id, dp.pedido_id, dp.producto_id, 
+      `SELECT dp.detalle_id, dp.pedido_id, dp.producto_id,
               dp.cantidad, dp.precio_unitario, dp.total_linea,
               p.nombre, p.precio
        FROM DETALLE_PEDIDOS dp
@@ -152,8 +152,8 @@ export const agregarProductoAMesa = async (req, res, next) => {
 
     // 4. Buscar pedido activo para esta mesa
     const [pedidosExistentes] = await connection.query(
-      `SELECT pedido_id, total_pedido FROM PEDIDOS 
-       WHERE mesa_id = ? 
+      `SELECT pedido_id, total_pedido FROM PEDIDOS
+       WHERE mesa_id = ?
        AND estado NOT IN ('pagado', 'cancelado')
        ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
@@ -178,7 +178,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
 
     // 5. Verificar si este producto ya estaba en el pedido (para sumar cantidad)
     const [detalleExistente] = await connection.query(
-      `SELECT detalle_id, cantidad, total_linea FROM DETALLE_PEDIDOS 
+      `SELECT detalle_id, cantidad, total_linea FROM DETALLE_PEDIDOS
        WHERE pedido_id = ? AND producto_id = ?`,
       [pedidoId, productoId]
     );
@@ -191,7 +191,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
       const nuevoTotal = nuevaCantidad * precioProducto;
 
       await connection.query(
-        `UPDATE DETALLE_PEDIDOS 
+        `UPDATE DETALLE_PEDIDOS
          SET cantidad = ?, total_linea = ?
          WHERE detalle_id = ?`,
         [nuevaCantidad, nuevoTotal, detalleId]
@@ -266,13 +266,45 @@ export const eliminarDetallePedido = async (req, res, next) => {
 
     const pedidoId = detalles[0].pedido_id;
 
-    // 2. Eliminar el detalle de la base de datos
-    await connection.query(
-      'DELETE FROM DETALLE_PEDIDOS WHERE detalle_id = ?',
+    // 2. Verificar cantidad actual para decidir si borrar o decrementar
+    const [detalleActual] = await connection.query(
+      'SELECT cantidad, precio_unitario FROM DETALLE_PEDIDOS WHERE detalle_id = ?',
       [detalleId]
     );
 
-    console.log(`✅ Detalle eliminado`);
+    if (detalleActual.length === 0) {
+      console.log(`⚠️ No se encontró el detalle ${detalleId} al intentar decrementarlo`);
+      return res.status(404).json({ error: 'Detalle no encontrado' });
+    }
+
+    const cantidadActual = Number(detalleActual[0].cantidad);
+    const precioUnitario = Number(detalleActual[0].precio_unitario);
+
+    console.log(`📊 Detalle ${detalleId}: Cantidad actual = ${cantidadActual}, Precio Unitario = ${precioUnitario}`);
+
+    if (cantidadActual > 1) {
+      // Si hay más de uno, decrementamos cantidad y actualizamos total_linea
+      const nuevaCantidad = cantidadActual - 1;
+      const nuevoTotalLinea = nuevaCantidad * precioUnitario;
+
+      console.log(`📉 Decrementando: ${cantidadActual} -> ${nuevaCantidad}. Nuevo total linea: ${nuevoTotalLinea}`);
+
+      await connection.query(
+        'UPDATE DETALLE_PEDIDOS SET cantidad = ?, total_linea = ? WHERE detalle_id = ?',
+        [nuevaCantidad, nuevoTotalLinea, detalleId]
+      );
+      console.log(`✅ Cantidad decrementada exitosamente en la DB`);
+    } else {
+      // Si solo queda uno, eliminamos el registro
+      console.log(`🗑️ Cantidad es 1 o menor, procediendo a eliminar registro completo`);
+      await connection.query(
+        'DELETE FROM DETALLE_PEDIDOS WHERE detalle_id = ?',
+        [detalleId]
+      );
+      console.log(`✅ Registro eliminado exitosamente de la DB`);
+    }
+
+    console.log(`🔄 Recalculando total del pedido ${pedidoId}...`);
 
     // 3. Recalcular el total del pedido
     const [totales] = await connection.query(
@@ -302,5 +334,31 @@ export const eliminarDetallePedido = async (req, res, next) => {
     if (connection) {
       connection.release();
     }
+  }
+};
+
+// --- Finalizar Pedido (Marcar como pagado) ---
+export const finalizarPedido = async (req, res, next) => {
+  let connection;
+  try {
+    const { id } = req.params;
+    connection = await pool.getConnection();
+
+    console.log(`💰 Finalizando pedido ${id}`);
+
+    const [resultado] = await connection.query(
+      "UPDATE PEDIDOS SET estado = 'pagado' WHERE pedido_id = ?",
+      [id]
+    );
+
+    if (resultado.affectedRows === 0) {
+      return res.status(404).json({ error: 'Pedido no encontrado' });
+    }
+
+    res.json({ success: true, mensaje: 'Pedido finalizado correctamente' });
+  } catch (error) {
+    next(error);
+  } finally {
+    if (connection) connection.release();
   }
 };

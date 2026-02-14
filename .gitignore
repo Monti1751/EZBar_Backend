@@ -3,3 +3,7 @@ target/
 *.exe
 *.class
 *.jar
+
+# JaCoCo Test Coverage
+*.exec
+jacoco.xml

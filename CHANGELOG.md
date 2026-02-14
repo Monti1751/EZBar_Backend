@@ -1,16 +1,15 @@
 # Changelog
-## -26-01-2026
+## Versión 0.7.0 -(9-2-2026)
 
 ### Añadido
-* Se ha añadido un sistema de logs
-* Se ha añadido un .gitignore con su respectivo .env
-* Se ha añadido un start_servers.bat oara iniciar conjuntamente la API y el backend
+* Gestión de images para almacenar en la base de datos
+* Tests unitarios
 
 ### Corregido
-* Ya se conecta la apk con el server
-* Restructuración de las carpetas y clases .java
+* Restructuración de la base de datos para que pueda almacenar imagenes
+* Corrección de logs en diferentes niveles(información, debug y error)
 
-## -15-12-2025
+## Versión 0.5.0 -(15-12-2025)
 
 ### Añadido
 * Se ha pasado el backend a Maven
@@ -26,7 +25,7 @@
 * Restructuración del backend segun un proyecto Maven
 * Modificación de todos los archivos .java según Hibernate
 
-**30-11-2025**
+## Versión 0.2.0 -(30-11-2025)
 
 ## Añadido  
 - Se han añadido clases para la BD
