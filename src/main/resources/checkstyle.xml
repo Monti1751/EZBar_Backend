@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!-- Configuración de Checkstyle para EZBar Backend -->
+<module name="Checker">
+    <!-- Codificación UTF-8 -->
+    <property name="charset" value="UTF-8"/>
+
+    <!-- Permite soprimir avisos específicos con @SuppressWarnings -->
+    <module name="SuppressWarningsFilter" />
+
+    <!-- Propiedades del proyecto -->
+    <property name="fileExtensions" value="java,properties,xml"/>
+
+    <!-- Checker modules -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://"/>
+    </module>
+
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
+
+    <!-- TreeWalker modules (verifican el código Java) -->
+    <module name="TreeWalker">
+        <module name="SuppressWarningsHolder" />
+
+        <!-- Imports -->
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+
+        <!-- Convención de nombres -->
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
+
+        <module name="LocalFinalVariableName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+
+        <module name="MemberName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+
+        <module name="MethodName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+        </module>
+
+        <module name="ParameterName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+
+        <module name="StaticVariableName">
+            <property name="format" value="^[a-z]([a-zA-Z0-9]*)?$"/>
+        </module>
+
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
+        </module>
+
+        <!-- Whitespace -->
+        <module name="EmptyForInitializerPad"/>
+        <module name="EmptyForIteratorPad"/>
+        <module name="GenericWhitespace"/>
+        <module name="MethodParamPad"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap"/>
+        <module name="ParenPad"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter"/>
+        <module name="WhitespaceAround"/>
+
+        <!-- Modifiers -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+        <!-- Blocks -->
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyBlock">
+            <property name="option" value="TEXT"/>
+            <property name="tokens" value="LITERAL_CATCH"/>
+        </module>
+        <module name="LeftCurly">
+            <property name="option" value="eol"/>
+        </module>
+        <module name="NeedBraces"/>
+        <module name="RightCurly">
+            <property name="option" value="same"/>
+        </module>
+
+        <!-- Java Doc -->
+        <module name="JavadocMethod">
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowMissingReturnTag" value="true"/>
+        </module>
+        <module name="JavadocVariable">
+            <property name="scope" value="public"/>
+        </module>
+        <module name="JavadocStyle"/>
+
+        <!-- Complexity -->
+        <module name="CyclomaticComplexity">
+            <property name="max" value="10"/>
+        </module>
+        <module name="NPathComplexity">
+            <property name="max" value="200"/>
+        </module>
+
+        <!-- Design -->
+        <module name="DesignForExtension">
+            <property name="ignoredAnnotations" value="Override, Test, Bean, Entity, Service, Repository, Component, Autowired, Value, Configuration"/>
+        </module>
+        <module name="FinalClass"/>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="InterfaceIsType"/>
+        <module name="MutableException"/>
+        <module name="OneTopLevelClass"/>
+
+        <!-- Miscellaneous -->
+        <module name="ArrayTypeStyle"/>
+        <module name="FinalParameters">
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
+        <module name="TodoComment">
+            <property name="format" value="TODO|FIXME|XXX"/>
+        </module>
+        <module name="UpperEll"/>
+
+        <!-- Checks -->
+        <module name="DeclarationOrder"/>
+        <module name="DefaultComesLast"/>
+        <module name="EmptyStatement"/>
+        <module name="EqualsHashCode"/>
+        <module name="IllegalInstantiation"/>
+        <module name="InnerAssignment"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="OneStatementPerLine"/>
+        <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="StringLiteralEquality"/>
+        <module name="UnnecessaryParentheses"/>
+
+        <!-- Annotations -->
+        <module name="AnnotationLocation">
+            <property name="allowSamelineMultipleAnnotations" value="true"/>
+        </module>
+        <module name="AnnotationUseStyle"/>
+        <module name="MissingOverride"/>
+        <module name="MissingDeprecated"/>
+        <module name="SuppressWarnings">
+            <property name="format" value="^((?!.*@Mapper).)*$"/>
+        </module>
+    </module>
+</module>

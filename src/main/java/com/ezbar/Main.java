@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.ezbar", "Controladores", "Repositorios" })
+@ComponentScan(basePackages = { "com.ezbar", "Controladores" })
 @EntityScan(basePackages = "ClasesBD")
 @EnableJpaRepositories(basePackages = "Repositorios")
 public class Main {

@@ -1,0 +1,96 @@
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-16 14:11:39"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"debug","message":"Memory: 17.10MB / 35.30MB (48.45%)","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"connectionLimit":10,"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-16 14:11:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-16 14:20:25"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"debug","message":"Memory: 17.36MB / 34.55MB (50.26%)","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:20:25"}
+{"connectionLimit":10,"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-16 14:20:26"}
+{"level":"debug","message":"Memory: 17.34MB / 20.05MB (86.49%)","service":"ezbar-api","timestamp":"2026-02-16 14:21:25"}
+{"external":"3.61MB","heapTotal":"20.05MB","heapUsed":"17.34MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.49%","rss":"57.79MB","service":"ezbar-api","timestamp":"2026-02-16 14:21:25","warningCount":1}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-16 14:23:52"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"debug","message":"Memory: 17.51MB / 34.80MB (50.31%)","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"connectionLimit":10,"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-16 14:23:52"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-16 14:23:57","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 197ms","responseTime":197,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:57"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 9ms","responseTime":9,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=t","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=t 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 8ms","responseTime":8,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-16 14:23:58","userAgent":"Dart/3.10 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-16 14:23:58"}
