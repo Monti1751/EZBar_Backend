@@ -1,12 +1,17 @@
-import { fetchWithRetry } from '../utils/retryHelper.js';
-import { CONFIG } from '../config/constants.js';
+import pool from '../config/database.js';
 
 // --- Obtener Categorías ---
-// Proxy al backend Java
 export const obtenerCategorias = async (req, res, next) => {
   try {
-    const response = await fetchWithRetry(`${CONFIG.BACKEND_URL}/categorias`);
-    res.json(response.data);
+    const [rows] = await pool.query('SELECT * FROM categorias');
+
+    const categorias = rows.map(c => ({
+      categoria_id: c.categoria_id,
+      nombre: c.nombre,
+      descripcion: c.descripcion
+    }));
+
+    res.json(categorias);
   } catch (error) {
     next(error);
   }
