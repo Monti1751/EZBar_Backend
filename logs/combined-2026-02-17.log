@@ -1,0 +1,331 @@
+{"level":"debug","message":"Memory: 18.98MB / 22.30MB (85.11%)","service":"ezbar-api","timestamp":"2026-02-17 00:00:48"}
+{"external":"4.41MB","heapTotal":"22.30MB","heapUsed":"18.98MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.11%","rss":"64.80MB","service":"ezbar-api","timestamp":"2026-02-17 00:00:48","warningCount":19}
+{"level":"debug","message":"Memory: 19.30MB / 22.30MB (86.54%)","service":"ezbar-api","timestamp":"2026-02-17 00:01:48"}
+{"external":"4.44MB","heapTotal":"22.30MB","heapUsed":"19.30MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.54%","rss":"64.82MB","service":"ezbar-api","timestamp":"2026-02-17 00:01:48","warningCount":20}
+{"level":"debug","message":"Memory: 19.57MB / 22.30MB (87.76%)","service":"ezbar-api","timestamp":"2026-02-17 00:02:48"}
+{"external":"4.47MB","heapTotal":"22.30MB","heapUsed":"19.57MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.76%","rss":"64.81MB","service":"ezbar-api","timestamp":"2026-02-17 00:02:48","warningCount":21}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-17 00:04:22"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"debug","message":"Memory: 17.31MB / 34.55MB (50.10%)","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"connectionLimit":10,"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-17 00:04:22"}
+{"level":"debug","message":"Memory: 17.32MB / 19.80MB (87.49%)","service":"ezbar-api","timestamp":"2026-02-17 00:05:22"}
+{"external":"3.61MB","heapTotal":"19.80MB","heapUsed":"17.32MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.49%","rss":"60.02MB","service":"ezbar-api","timestamp":"2026-02-17 00:05:22","warningCount":1}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:05:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:33"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:05:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 126ms","responseTime":126,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:05:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:05:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:37"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:05:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:37"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:05:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:37"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:05:37","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 12ms","responseTime":12,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:37"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:05:50","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:50"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:05:50","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:05:50"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:05:50","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:05:50"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:05:50","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 304 - 12ms","responseTime":12,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:05:50"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/6","service":"ezbar-api","timestamp":"2026-02-17 00:06:00","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/6 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:06:00"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/6","service":"ezbar-api","timestamp":"2026-02-17 00:06:00","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/6 200 - 24ms","responseTime":24,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:06:00"}
+{"level":"debug","message":"Memory: 20.48MB / 23.18MB (88.36%)","service":"ezbar-api","timestamp":"2026-02-17 00:06:22"}
+{"external":"4.41MB","heapTotal":"23.18MB","heapUsed":"20.48MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.36%","rss":"65.91MB","service":"ezbar-api","timestamp":"2026-02-17 00:06:22","warningCount":2}
+{"level":"debug","message":"Memory: 20.84MB / 23.18MB (89.90%)","service":"ezbar-api","timestamp":"2026-02-17 00:07:22"}
+{"external":"4.44MB","heapTotal":"23.18MB","heapUsed":"20.84MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.90%","rss":"66.03MB","service":"ezbar-api","timestamp":"2026-02-17 00:07:22","warningCount":3}
+{"level":"debug","message":"Memory: 21.17MB / 23.18MB (91.35%)","service":"ezbar-api","timestamp":"2026-02-17 00:08:22"}
+{"external":"4.48MB","heapTotal":"23.18MB","heapUsed":"21.17MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.35%","rss":"66.19MB","service":"ezbar-api","timestamp":"2026-02-17 00:08:22","warningCount":4}
+{"level":"debug","message":"Memory: 20.57MB / 23.03MB (89.30%)","service":"ezbar-api","timestamp":"2026-02-17 00:09:22"}
+{"external":"3.80MB","heapTotal":"23.03MB","heapUsed":"20.57MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.30%","rss":"65.70MB","service":"ezbar-api","timestamp":"2026-02-17 00:09:22","warningCount":5}
+{"level":"debug","message":"Memory: 20.85MB / 23.03MB (90.52%)","service":"ezbar-api","timestamp":"2026-02-17 00:10:22"}
+{"external":"3.83MB","heapTotal":"23.03MB","heapUsed":"20.85MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.52%","rss":"65.71MB","service":"ezbar-api","timestamp":"2026-02-17 00:10:22","warningCount":6}
+{"level":"debug","message":"Memory: 21.11MB / 23.03MB (91.68%)","service":"ezbar-api","timestamp":"2026-02-17 00:11:22"}
+{"external":"3.87MB","heapTotal":"23.03MB","heapUsed":"21.11MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.68%","rss":"65.68MB","service":"ezbar-api","timestamp":"2026-02-17 00:11:22","warningCount":7}
+{"level":"debug","message":"Memory: 20.80MB / 23.03MB (90.30%)","service":"ezbar-api","timestamp":"2026-02-17 00:12:22"}
+{"external":"3.89MB","heapTotal":"23.03MB","heapUsed":"20.80MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.30%","rss":"65.75MB","service":"ezbar-api","timestamp":"2026-02-17 00:12:22","warningCount":8}
+{"level":"debug","message":"Memory: 21.07MB / 23.03MB (91.50%)","service":"ezbar-api","timestamp":"2026-02-17 00:13:22"}
+{"external":"3.93MB","heapTotal":"23.03MB","heapUsed":"21.07MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.50%","rss":"65.80MB","service":"ezbar-api","timestamp":"2026-02-17 00:13:22","warningCount":9}
+{"level":"debug","message":"Memory: 20.76MB / 23.28MB (89.17%)","service":"ezbar-api","timestamp":"2026-02-17 00:14:22"}
+{"external":"3.96MB","heapTotal":"23.28MB","heapUsed":"20.76MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.17%","rss":"65.91MB","service":"ezbar-api","timestamp":"2026-02-17 00:14:22","warningCount":10}
+{"level":"debug","message":"Memory: 21.03MB / 23.28MB (90.32%)","service":"ezbar-api","timestamp":"2026-02-17 00:15:22"}
+{"external":"4.00MB","heapTotal":"23.28MB","heapUsed":"21.03MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.32%","rss":"66.17MB","service":"ezbar-api","timestamp":"2026-02-17 00:15:22","warningCount":11}
+{"level":"debug","message":"Memory: 21.30MB / 23.28MB (91.47%)","service":"ezbar-api","timestamp":"2026-02-17 00:16:22"}
+{"external":"4.03MB","heapTotal":"23.28MB","heapUsed":"21.30MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.47%","rss":"66.16MB","service":"ezbar-api","timestamp":"2026-02-17 00:16:22","warningCount":12}
+{"level":"debug","message":"Memory: 20.97MB / 24.28MB (86.37%)","service":"ezbar-api","timestamp":"2026-02-17 00:17:22"}
+{"external":"4.06MB","heapTotal":"24.28MB","heapUsed":"20.97MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.37%","rss":"66.23MB","service":"ezbar-api","timestamp":"2026-02-17 00:17:22","warningCount":13}
+{"level":"debug","message":"Memory: 21.24MB / 24.28MB (87.46%)","service":"ezbar-api","timestamp":"2026-02-17 00:18:22"}
+{"external":"4.09MB","heapTotal":"24.28MB","heapUsed":"21.24MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.46%","rss":"66.23MB","service":"ezbar-api","timestamp":"2026-02-17 00:18:22","warningCount":14}
+{"level":"debug","message":"Memory: 20.93MB / 23.28MB (89.91%)","service":"ezbar-api","timestamp":"2026-02-17 00:19:22"}
+{"external":"4.12MB","heapTotal":"23.28MB","heapUsed":"20.93MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.91%","rss":"66.37MB","service":"ezbar-api","timestamp":"2026-02-17 00:19:22","warningCount":15}
+{"level":"debug","message":"Memory: 21.20MB / 23.28MB (91.05%)","service":"ezbar-api","timestamp":"2026-02-17 00:20:22"}
+{"external":"4.15MB","heapTotal":"23.28MB","heapUsed":"21.20MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.05%","rss":"66.38MB","service":"ezbar-api","timestamp":"2026-02-17 00:20:22","warningCount":16}
+{"level":"debug","message":"Memory: 21.46MB / 23.28MB (92.19%)","service":"ezbar-api","timestamp":"2026-02-17 00:21:22"}
+{"external":"4.19MB","heapTotal":"23.28MB","heapUsed":"21.46MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.19%","rss":"66.38MB","service":"ezbar-api","timestamp":"2026-02-17 00:21:22","warningCount":17}
+{"level":"debug","message":"Memory: 21.15MB / 23.28MB (90.86%)","service":"ezbar-api","timestamp":"2026-02-17 00:22:22"}
+{"external":"4.21MB","heapTotal":"23.28MB","heapUsed":"21.15MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.86%","rss":"66.21MB","service":"ezbar-api","timestamp":"2026-02-17 00:22:22","warningCount":18}
+{"level":"debug","message":"Memory: 21.42MB / 23.28MB (92.02%)","service":"ezbar-api","timestamp":"2026-02-17 00:23:22"}
+{"external":"4.25MB","heapTotal":"23.28MB","heapUsed":"21.42MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.02%","rss":"66.38MB","service":"ezbar-api","timestamp":"2026-02-17 00:23:22","warningCount":19}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:23:40","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:40"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:23:40","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 81ms","responseTime":81,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:40"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:23:41","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:41"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:23:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:46"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:23:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:46"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:23:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:46"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:23:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 16ms","responseTime":16,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:23:46"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:24:01","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:01"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:24:01","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2 200 - 35ms","responseTime":35,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:01"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:24:09","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:09"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:24:09","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2 200 - 24ms","responseTime":24,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:09"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:24:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:17"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:24:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 304 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:24:17"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:24:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:17"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:24:17","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 47ms","responseTime":47,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:24:17"}
+{"level":"debug","message":"Memory: 18.79MB / 21.80MB (86.21%)","service":"ezbar-api","timestamp":"2026-02-17 00:24:22"}
+{"external":"5.77MB","heapTotal":"21.80MB","heapUsed":"18.79MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.21%","rss":"65.91MB","service":"ezbar-api","timestamp":"2026-02-17 00:24:22","warningCount":20}
+{"level":"debug","message":"Memory: 19.19MB / 21.80MB (88.06%)","service":"ezbar-api","timestamp":"2026-02-17 00:25:22"}
+{"external":"3.64MB","heapTotal":"21.80MB","heapUsed":"19.19MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.06%","rss":"65.91MB","service":"ezbar-api","timestamp":"2026-02-17 00:25:22","warningCount":21}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:25:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:34"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:25:34","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2 200 - 14ms","responseTime":14,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:34"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:25:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/2 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:46"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2","service":"ezbar-api","timestamp":"2026-02-17 00:25:46","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/2 200 - 13ms","responseTime":13,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:46"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 77ms","responseTime":77,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 304 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206 304 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:25:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:25:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:26:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:26:02"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:26:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:26:02"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:26:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:26:02"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:26:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 30ms","responseTime":30,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:26:02"}
+{"level":"debug","message":"Memory: 17.33MB / 23.55MB (73.60%)","service":"ezbar-api","timestamp":"2026-02-17 00:26:22"}
+{"level":"debug","message":"Memory: 17.67MB / 23.55MB (75.04%)","service":"ezbar-api","timestamp":"2026-02-17 00:27:22"}
+{"level":"debug","message":"Memory: 17.89MB / 23.55MB (75.99%)","service":"ezbar-api","timestamp":"2026-02-17 00:28:22"}
+{"level":"debug","message":"Memory: 18.11MB / 23.55MB (76.92%)","service":"ezbar-api","timestamp":"2026-02-17 00:29:22"}
+{"level":"debug","message":"Memory: 17.68MB / 22.55MB (78.40%)","service":"ezbar-api","timestamp":"2026-02-17 00:30:22"}
+{"level":"debug","message":"Memory: 17.91MB / 22.55MB (79.44%)","service":"ezbar-api","timestamp":"2026-02-17 00:31:22"}
+{"level":"debug","message":"Memory: 18.13MB / 22.55MB (80.41%)","service":"ezbar-api","timestamp":"2026-02-17 00:32:22"}
+{"level":"debug","message":"Memory: 17.81MB / 22.55MB (78.98%)","service":"ezbar-api","timestamp":"2026-02-17 00:33:22"}
+{"level":"debug","message":"Memory: 18.03MB / 22.55MB (79.95%)","service":"ezbar-api","timestamp":"2026-02-17 00:34:22"}
+{"level":"debug","message":"Memory: 18.26MB / 22.55MB (81.00%)","service":"ezbar-api","timestamp":"2026-02-17 00:35:22"}
+{"level":"debug","message":"Memory: 17.95MB / 22.55MB (79.60%)","service":"ezbar-api","timestamp":"2026-02-17 00:36:22"}
+{"level":"debug","message":"Memory: 18.17MB / 22.55MB (80.58%)","service":"ezbar-api","timestamp":"2026-02-17 00:37:22"}
+{"level":"debug","message":"Memory: 18.39MB / 22.55MB (81.55%)","service":"ezbar-api","timestamp":"2026-02-17 00:38:22"}
+{"level":"debug","message":"Memory: 18.07MB / 22.55MB (80.17%)","service":"ezbar-api","timestamp":"2026-02-17 00:39:22"}
+{"level":"debug","message":"Memory: 18.30MB / 22.55MB (81.16%)","service":"ezbar-api","timestamp":"2026-02-17 00:40:22"}
+{"level":"debug","message":"Memory: 18.52MB / 22.55MB (82.13%)","service":"ezbar-api","timestamp":"2026-02-17 00:41:22"}
+{"level":"debug","message":"Memory: 18.17MB / 22.55MB (80.61%)","service":"ezbar-api","timestamp":"2026-02-17 00:42:22"}
+{"level":"debug","message":"Memory: 18.39MB / 22.55MB (81.58%)","service":"ezbar-api","timestamp":"2026-02-17 00:43:22"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:43:32","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/auth/login 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:32"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-17 00:43:32","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 80ms","responseTime":80,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:32"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:43:33","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:33"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:43:35","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:35"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:43:35","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:35"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:43:35","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:35"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:43:35","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 25ms","responseTime":25,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:43:35"}
+{"level":"debug","message":"Memory: 20.02MB / 23.62MB (84.77%)","service":"ezbar-api","timestamp":"2026-02-17 00:44:22"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/9","service":"ezbar-api","timestamp":"2026-02-17 00:44:43","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos/9 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:43"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/9","service":"ezbar-api","timestamp":"2026-02-17 00:44:43","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/9 200 - 24ms","responseTime":24,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:43"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Barra 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 304 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Interior 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sala%206 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sala%206 304 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Sal%C3%B3n 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 304 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/mesas?ubicacion=Terraza 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-17 00:44:59","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:44:59"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:45:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/categorias 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:45:02"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-17 00:45:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 304 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":304,"timestamp":"2026-02-17 00:45:02"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:45:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"OPTIONS /api/productos 200 - 0ms","responseTime":0,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:45:02"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-17 00:45:02","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 17ms","responseTime":17,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-17 00:45:02"}
+{"level":"debug","message":"Memory: 16.94MB / 22.61MB (74.92%)","service":"ezbar-api","timestamp":"2026-02-17 00:45:22"}
+{"level":"debug","message":"Memory: 17.26MB / 22.61MB (76.35%)","service":"ezbar-api","timestamp":"2026-02-17 00:46:22"}
+{"level":"debug","message":"Memory: 17.48MB / 22.61MB (77.33%)","service":"ezbar-api","timestamp":"2026-02-17 00:47:22"}
+{"level":"debug","message":"Memory: 17.70MB / 22.61MB (78.30%)","service":"ezbar-api","timestamp":"2026-02-17 00:48:22"}
+{"level":"debug","message":"Memory: 17.25MB / 21.61MB (79.82%)","service":"ezbar-api","timestamp":"2026-02-17 00:49:22"}
+{"level":"debug","message":"Memory: 17.47MB / 21.61MB (80.84%)","service":"ezbar-api","timestamp":"2026-02-17 00:50:22"}
+{"level":"debug","message":"Memory: 17.69MB / 21.61MB (81.87%)","service":"ezbar-api","timestamp":"2026-02-17 00:51:22"}
+{"level":"debug","message":"Memory: 17.39MB / 21.61MB (80.49%)","service":"ezbar-api","timestamp":"2026-02-17 00:52:22"}
+{"level":"debug","message":"Memory: 17.62MB / 21.61MB (81.55%)","service":"ezbar-api","timestamp":"2026-02-17 00:53:22"}
+{"level":"debug","message":"Memory: 17.84MB / 21.61MB (82.57%)","service":"ezbar-api","timestamp":"2026-02-17 00:54:22"}
+{"level":"debug","message":"Memory: 17.53MB / 21.61MB (81.12%)","service":"ezbar-api","timestamp":"2026-02-17 00:55:23"}
+{"level":"debug","message":"Memory: 17.75MB / 21.61MB (82.14%)","service":"ezbar-api","timestamp":"2026-02-17 00:56:23"}
+{"level":"debug","message":"Memory: 17.97MB / 21.61MB (83.16%)","service":"ezbar-api","timestamp":"2026-02-17 00:57:23"}
+{"level":"debug","message":"Memory: 17.64MB / 21.61MB (81.64%)","service":"ezbar-api","timestamp":"2026-02-17 00:58:23"}
+{"level":"debug","message":"Memory: 17.86MB / 21.61MB (82.67%)","service":"ezbar-api","timestamp":"2026-02-17 00:59:23"}
+{"level":"debug","message":"Memory: 18.08MB / 21.61MB (83.69%)","service":"ezbar-api","timestamp":"2026-02-17 01:00:23"}
+{"level":"debug","message":"Memory: 17.75MB / 21.61MB (82.15%)","service":"ezbar-api","timestamp":"2026-02-17 01:01:23"}
+{"level":"debug","message":"Memory: 17.97MB / 21.61MB (83.17%)","service":"ezbar-api","timestamp":"2026-02-17 01:02:23"}
+{"level":"debug","message":"Memory: 18.19MB / 21.61MB (84.20%)","service":"ezbar-api","timestamp":"2026-02-17 01:03:23"}
+{"level":"debug","message":"Memory: 17.89MB / 22.61MB (79.12%)","service":"ezbar-api","timestamp":"2026-02-17 01:04:23"}
+{"level":"debug","message":"Memory: 18.11MB / 22.61MB (80.09%)","service":"ezbar-api","timestamp":"2026-02-17 01:05:23"}
+{"level":"debug","message":"Memory: 18.33MB / 22.61MB (81.07%)","service":"ezbar-api","timestamp":"2026-02-17 01:06:23"}
