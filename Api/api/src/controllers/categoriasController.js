@@ -20,11 +20,21 @@ export const obtenerCategorias = async (req, res, next) => {
 // --- Crear Categoría ---
 export const crearCategoria = async (req, res, next) => {
   try {
-    const response = await fetchWithRetry(`${CONFIG.BACKEND_URL}/categorias`, {
-      method: 'POST',
-      data: req.body
+    const { nombre } = req.body;
+    if (!nombre) {
+      return res.status(400).json({ error: 'Falta el nombre de la categoría' });
+    }
+
+    const [result] = await pool.query(
+      'INSERT INTO categorias (nombre) VALUES (?)',
+      [nombre]
+    );
+
+    res.status(201).json({
+      categoria_id: result.insertId,
+      nombre,
+      descripcion: ''
     });
-    res.status(201).json(response.data);
   } catch (error) {
     next(error);
   }
@@ -34,9 +44,20 @@ export const crearCategoria = async (req, res, next) => {
 export const eliminarCategoria = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await fetchWithRetry(`${CONFIG.BACKEND_URL}/categorias/${id}`, {
-      method: 'DELETE'
-    });
+
+    if (!id || isNaN(id)) {
+      return res.status(400).json({ error: 'ID de categoría inválido' });
+    }
+
+    // Con ON DELETE CASCADE en la BD, no necesitamos comprobar manualmente los productos.
+    // El borrado de una categoría borrará automáticamente sus platos asociados.
+
+    const [result] = await pool.query('DELETE FROM categorias WHERE categoria_id = ?', [parseInt(id)]);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'Categoría no encontrada' });
+    }
+
     res.status(204).send();
   } catch (error) {
     next(error);
