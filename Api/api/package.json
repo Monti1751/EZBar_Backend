@@ -5,13 +5,15 @@
   "description": "API Node.js para EZBar - Production Ready",
   "main": "server.js",
   "scripts": {
-    "dev": "set NODE_ENV=development && npx nodemon --max-old-space-size=2048 server.js",
-    "start": "set NODE_ENV=production && node --max-old-space-size=2048 server.js",
-    "start:dev": "set NODE_ENV=development && node --max-old-space-size=2048 server.js",
+    "dev": "set NODE_ENV=development && npx nodemon --max-old-space-size=4096 server.js",
+    "start": "set NODE_ENV=production && node --max-old-space-size=4096 server.js",
+    "start:dev": "set NODE_ENV=development && node --max-old-space-size=4096 server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"**/*.{js,json,md}\"",
-    "format:check": "prettier --check \"**/*.{js,json,md}\""
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
+    "fix-schema": "node final_fix_schema.cjs",
+    "force-fix": "node force_fix_schema.js"
   },
   "dependencies": {
     "axios": "^1.13.2",

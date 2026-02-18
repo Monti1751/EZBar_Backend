@@ -5,6 +5,50 @@ import { CONFIG } from './config/constants.js';
 import pool from './config/database.js';
 import logger from './logger.js';
 
+// --- One-time Database Fix (CASCADE) ---
+// Se ejecuta automáticamente al iniciar/reiniciar el servidor para asegurar integridad referencial
+(async () => {
+  try {
+    logger.info('--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---');
+    await pool.query('SET FOREIGN_KEY_CHECKS = 0');
+
+    const targets = [
+      { table: 'detalle_pedidos', column: 'producto_id', refTable: 'productos', refCol: 'producto_id', name: 'detalle_pedidos_ibfk_2' },
+      { table: 'productos', column: 'categoria_id', refTable: 'categorias', refCol: 'categoria_id', name: 'productos_ibfk_1' }
+    ];
+
+    for (const target of targets) {
+      try {
+        const [fks] = await pool.query(`
+          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE 
+          WHERE TABLE_NAME = ? AND COLUMN_NAME = ? AND REFERENCED_TABLE_NAME IS NOT NULL AND TABLE_SCHEMA = ?`,
+          [target.table, target.column, CONFIG.DB.NAME]);
+
+        for (const fk of fks) {
+          await pool.query(`ALTER TABLE ${target.table} DROP FOREIGN KEY ${fk.CONSTRAINT_NAME}`);
+          logger.info(`[AUTO-FIX] OK: FK ${fk.CONSTRAINT_NAME} borrada en ${target.table}`);
+        }
+      } catch (e) {
+        logger.warn(`[AUTO-FIX] Aviso en ${target.table}: ${e.message}`);
+      }
+
+      await pool.query(`
+        ALTER TABLE ${target.table} 
+        ADD CONSTRAINT ${target.name} 
+        FOREIGN KEY (${target.column}) 
+        REFERENCES ${target.refTable}(${target.refCol}) 
+        ON DELETE CASCADE
+      `);
+      logger.info(`[AUTO-FIX] ÉXITO: FK ${target.name} creada con CASCADE en ${target.table}`);
+    }
+
+    await pool.query('SET FOREIGN_KEY_CHECKS = 1');
+    logger.info('--- [AUTO-FIX] Esquema actualizado correctamente ---');
+  } catch (error) {
+    logger.error('[AUTO-FIX] Error crítico:', error);
+  }
+})();
+
 // Import middleware
 import {
   errorHandler,
@@ -115,6 +159,60 @@ app.get('/api/health', memoryMiddleware, async (req, res) => {
       memory: req.memoryStats,
       cache: cacheService ? cacheService.getStats() : { enabled: false }
     });
+  }
+});
+
+/**
+ * Temporary endpoint to fix database schema (CASCADE)
+ */
+app.get('/api/fix-db', async (req, res) => {
+  try {
+    const results = [];
+    results.push('--- Inyectando corrección CASCADE desde servidor vivo ---');
+
+    await pool.query('SET FOREIGN_KEY_CHECKS = 0');
+
+    const [fks] = await pool.query(`
+      SELECT TABLE_NAME, CONSTRAINT_NAME 
+      FROM information_schema.KEY_COLUMN_USAGE 
+      WHERE REFERENCED_TABLE_NAME IS NOT NULL AND TABLE_SCHEMA = ? `, [CONFIG.DB.NAME]);
+
+    results.push(`FKs detectadas en ${CONFIG.DB.NAME}: ${fks.length}`);
+
+    const targets = [
+      { table: 'detalle_pedidos', column: 'producto_id', refTable: 'productos', refCol: 'producto_id', name: 'detalle_pedidos_ibfk_2' },
+      { table: 'productos', column: 'categoria_id', refTable: 'categorias', refCol: 'categoria_id', name: 'productos_ibfk_1' }
+    ];
+
+    for (const target of targets) {
+      // Filtrar FKs por tabla y columna (más preciso)
+      const existing = fks.filter(f => f.TABLE_NAME === target.table);
+      for (const ex of existing) {
+        try {
+          await pool.query(`ALTER TABLE ${target.table} DROP FOREIGN KEY ${ex.CONSTRAINT_NAME}`);
+          results.push(`OK: FK ${ex.CONSTRAINT_NAME} borrada en ${target.table}`);
+        } catch (e) {
+          results.push(`AVISO: No se pudo borrar ${ex.CONSTRAINT_NAME} en ${target.table}: ${e.message}`);
+        }
+      }
+
+      await pool.query(`
+        ALTER TABLE ${target.table} 
+        ADD CONSTRAINT ${target.name} 
+        FOREIGN KEY(${target.column}) 
+        REFERENCES ${target.refTable}(${target.refCol}) 
+        ON DELETE CASCADE
+            `);
+      results.push(`ÉXITO: FK ${target.name} creada con CASCADE en ${target.table}`);
+    }
+
+    await pool.query('SET FOREIGN_KEY_CHECKS = 1');
+    results.push('--- Proceso finalizado ---');
+
+    res.json({ success: true, results });
+  } catch (error) {
+    logger.error('Error en fix-db:', { error: error.stack });
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 

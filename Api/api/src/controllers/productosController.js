@@ -13,10 +13,17 @@ export const obtenerProductos = async (req, res, next) => {
         p.categoria_id,
         p.imagen,
         p.url_imagen,
+        p.ingredientes,
+        p.extras,
+        p.alergenos,
         c.nombre as categoria_nombre
       FROM productos p
       LEFT JOIN categorias c ON p.categoria_id = c.categoria_id
     `);
+    logger.info(`🔍 Consulta productos: ${rows.length} filas obtenidas.`);
+    if (rows.length === 0) {
+      logger.warn('⚠️ La consulta de productos devolvió 0 resultados. Comprobar base de datos.');
+    }
 
     const productos = rows.map(p => ({
       producto_id: p.producto_id,
@@ -26,6 +33,9 @@ export const obtenerProductos = async (req, res, next) => {
       categoria_id: p.categoria_id,
       imagen_blob: p.imagen ? (Buffer.isBuffer(p.imagen) ? p.imagen.toString('base64') : p.imagen) : '',
       imagen_url: p.url_imagen || '',
+      ingredientes: p.ingredientes || '',
+      extras: p.extras || '',
+      alergenos: p.alergenos || '',
       categoria: {
         categoria_id: p.categoria_id,
         nombre: p.categoria_nombre || ''
@@ -41,7 +51,7 @@ export const obtenerProductos = async (req, res, next) => {
 // --- Crear Producto ---
 export const crearProducto = async (req, res, next) => {
   try {
-    const { nombre, descripcion, precio, categoria_id, imagenBlob } = req.body;
+    const { nombre, descripcion, precio, categoria_id, imagenBlob, ingredientes, extras, alergenos } = req.body;
 
     // Validar campos requeridos
     if (!nombre || precio === undefined) {
@@ -52,8 +62,8 @@ export const crearProducto = async (req, res, next) => {
     const imagenBuffer = imagenBlob ? Buffer.from(imagenBlob, 'base64') : null;
 
     const [result] = await pool.query(
-      'INSERT INTO productos (nombre, descripcion, precio, categoria_id, imagen) VALUES (?, ?, ?, ?, ?)',
-      [nombre, descripcion || '', precio, categoria_id || null, imagenBuffer]
+      'INSERT INTO productos (nombre, descripcion, precio, categoria_id, imagen, ingredientes, extras, alergenos) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      [nombre, descripcion || '', precio, categoria_id || null, imagenBuffer, ingredientes || '', extras || '', alergenos || '']
     );
 
     res.status(201).json({
@@ -79,7 +89,7 @@ export const crearProducto = async (req, res, next) => {
 export const actualizarProducto = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { nombre, descripcion, precio, categoria_id, imagenBlob } = req.body;
+    const { nombre, descripcion, precio, categoria_id, imagenBlob, ingredientes, extras, alergenos } = req.body;
 
     // Validar que ID sea válido
     if (!id || isNaN(id)) {
@@ -91,10 +101,10 @@ export const actualizarProducto = async (req, res, next) => {
       return res.status(400).json({ error: 'Faltan campos requeridos: nombre y precio' });
     }
 
-    let query = 'UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, categoria_id = ?';
-    let params = [nombre, descripcion || '', precio, categoria_id || null];
+    let query = 'UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, categoria_id = ?, ingredientes = ?, extras = ?, alergenos = ?';
+    let params = [nombre, descripcion || '', precio, categoria_id || null, ingredientes || '', extras || '', alergenos || ''];
 
-    if (imagenBlob !== undefined) { // Check for undefined to allow partial updates if needed, though frontend sends all currently
+    if (imagenBlob !== undefined) {
       query += ', imagen = ?';
       const imagenBuffer = imagenBlob ? Buffer.from(imagenBlob, 'base64') : null;
       params.push(imagenBuffer);
@@ -114,7 +124,7 @@ export const actualizarProducto = async (req, res, next) => {
       `SELECT p.*, c.nombre as categoria_nombre 
        FROM productos p 
        LEFT JOIN categorias c ON p.categoria_id = c.categoria_id 
-       WHERE p.producto_id = ?`,
+       WHERE p.producto_id = ? `,
       [parseInt(id)]
     );
 
@@ -131,6 +141,9 @@ export const actualizarProducto = async (req, res, next) => {
       categoria_id: producto.categoria_id,
       imagen_blob: producto.imagen ? (Buffer.isBuffer(producto.imagen) ? producto.imagen.toString('base64') : producto.imagen) : '',
       imagen_url: producto.url_imagen || '',
+      ingredientes: producto.ingredientes || '',
+      extras: producto.extras || '',
+      alergenos: producto.alergenos || '',
       categoria: {
         categoria_id: producto.categoria_id,
         nombre: producto.categoria_nombre || ''

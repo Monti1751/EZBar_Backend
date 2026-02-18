@@ -19,12 +19,24 @@ const pool = mysql.createPool({
 
 // Verificar conexión al iniciar
 pool.getConnection()
-  .then(conn => {
+  .then(async conn => {
     logger.info("✅ Conexión exitosa a MariaDB", {
       host: CONFIG.DB.HOST,
-      database: CONFIG.DB.NAME,
-      connectionLimit: CONFIG.DB.CONNECTION_LIMIT
+      database: CONFIG.DB.NAME
     });
+
+    // Verificación de datos iniciales
+    try {
+      const [[{ count: pCount }]] = await conn.query('SELECT COUNT(*) as count FROM productos');
+      const [[{ count: cCount }]] = await conn.query('SELECT COUNT(*) as count FROM categorias');
+      logger.info(`📊 DATOS INICIALES: Encontrados ${pCount} productos y ${cCount} categorías.`);
+      if (pCount === 0) {
+        logger.warn('⚠️ ALERTA: La tabla de productos está VACÍA en esta base de datos.');
+      }
+    } catch (countErr) {
+      logger.error('Error verificando conteos iniciales:', { error: countErr.message });
+    }
+
     conn.release();
   })
   .catch(err => {
