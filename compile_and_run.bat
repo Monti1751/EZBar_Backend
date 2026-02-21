@@ -20,11 +20,11 @@ set "MAVEN_OPTS=-Xms512m -Xmx1024m -XX:+UseG1GC -XX:MaxGCPauseMillis=200"
 
 REM Solicitar modo de ejecución
 echo.
-echo ¿Qué modo deseas ejecutar?
+echo ¿Que modo deseas ejecutar?
 echo [1] Desarrollo (DEBUG - con logs detallados)
-echo [2] Producción (PROD - optimizado)
+echo [2] Produccion (PROD - optimizado)
 echo.
-set /p MODE="Selecciona opción [1-2] (default: 1): "
+set /p MODE="Selecciona opcion [1-2] (default: 1): "
 if "%MODE%"=="" set MODE=1
 
 if "%MODE%"=="1" (
@@ -87,7 +87,11 @@ echo   Se abrira una nueva ventana para la API
 echo.
 
 REM Iniciar API en nueva ventana
-start "EZBar API - Node.js" cmd /k "cd /d "%PROJECT_DIR%Api\api" && npm start"
+if "%MODE%"=="1" (
+    start "EZBar API - Node.js (DEV)" cmd /k "cd /d "%PROJECT_DIR%Api\api" && npm run start:dev"
+) else (
+    start "EZBar API - Node.js (PROD)" cmd /k "cd /d "%PROJECT_DIR%Api\api" && npm start"
+)
 
 echo.
 echo Iniciando Ngrok...

@@ -13,7 +13,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
-        System.out.println("✓ API REST disponible en http://localhost:8080");
+        org.springframework.context.ApplicationContext ctx = SpringApplication.run(Main.class, args);
+        String port = ctx.getEnvironment().getProperty("server.port", "8080");
+        String protocol = "true".equals(ctx.getEnvironment().getProperty("server.ssl.enabled")) ? "https" : "http";
+        System.out.println("✓ API REST disponible en " + protocol + "://localhost:" + port);
     }
 }

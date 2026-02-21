@@ -23,7 +23,7 @@ class SSLManager {
      * Get SSL credentials (key and cert)
      * Auto-generates self-signed certificate if needed in development
      */
-    getCredentials() {
+    async getCredentials() {
         // Ensure certs directory exists
         if (!fs.existsSync(this.certDir)) {
             fs.mkdirSync(this.certDir, { recursive: true });
@@ -36,7 +36,7 @@ class SSLManager {
         if (!keyExists || !certExists) {
             if (CONFIG.SSL.AUTO_GENERATE && CONFIG.IS_DEVELOPMENT) {
                 logger.info('SSL certificates not found. Generating self-signed certificate for development...');
-                this.generateSelfSignedCertificate();
+                await this.generateSelfSignedCertificate();
             } else {
                 throw new Error(
                     `SSL certificates not found at:\n` +
@@ -67,7 +67,7 @@ class SSLManager {
      * Generate self-signed certificate for development
      * Uses OpenSSL if available, otherwise creates a basic certificate
      */
-    generateSelfSignedCertificate() {
+    async generateSelfSignedCertificate() {
         try {
             // Try to use OpenSSL (most common)
             const command = `openssl req -x509 -newkey rsa:2048 -nodes ` +
@@ -79,7 +79,7 @@ class SSLManager {
         } catch (error) {
             // If OpenSSL is not available, use Node.js crypto (fallback)
             logger.warn('OpenSSL not available. Using Node.js crypto for certificate generation...');
-            this.generateCertificateWithNodeCrypto();
+            await this.generateCertificateWithNodeCrypto();
         }
     }
 
@@ -160,6 +160,6 @@ export const sslManager = new SSLManager();
 /**
  * Get SSL credentials for HTTPS server
  */
-export function getSSLCredentials() {
+export async function getSSLCredentials() {
     return sslManager.getCredentials();
 }

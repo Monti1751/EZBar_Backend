@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.443805970b3ca00829477a40174d2e7e722e9b40-audit.json",
+    "files": [
+        {
+            "date": 1771702837323,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-21.log",
+            "hash": "3d1ddf179fd5055f36deed9b8cefc42e127ee0bd8acd9bf5aa8577d057334acc"
+        }
+    ],
+    "hashType": "sha256"
+}

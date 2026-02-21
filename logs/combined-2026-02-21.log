@@ -1127,3 +1127,644 @@
 {"ip":"127.0.0.1","level":"info","message":"DELETE /api/zonas/H 200 - 9ms","responseTime":9,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 19:01:43"}
 {"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 19:01:44","userAgent":"Dart/3.11 (dart:io)"}
 {"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 19:01:44"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 19:06:46"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"debug","message":"Memory: 17.85MB / 34.65MB (51.50%)","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 19:06:46"}
+{"level":"debug","message":"Memory: 17.90MB / 20.55MB (87.13%)","service":"ezbar-api","timestamp":"2026-02-21 19:07:46"}
+{"external":"3.60MB","heapTotal":"20.55MB","heapUsed":"17.90MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.13%","rss":"60.91MB","service":"ezbar-api","timestamp":"2026-02-21 19:07:46","warningCount":1}
+{"level":"debug","message":"Memory: 18.20MB / 20.55MB (88.58%)","service":"ezbar-api","timestamp":"2026-02-21 19:08:46"}
+{"external":"3.60MB","heapTotal":"20.55MB","heapUsed":"18.20MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.58%","rss":"61.20MB","service":"ezbar-api","timestamp":"2026-02-21 19:08:46","warningCount":2}
+{"level":"debug","message":"Memory: 18.48MB / 20.80MB (88.88%)","service":"ezbar-api","timestamp":"2026-02-21 19:09:46"}
+{"external":"3.60MB","heapTotal":"20.80MB","heapUsed":"18.48MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.88%","rss":"61.45MB","service":"ezbar-api","timestamp":"2026-02-21 19:09:46","warningCount":3}
+{"level":"debug","message":"Memory: 18.75MB / 20.80MB (90.16%)","service":"ezbar-api","timestamp":"2026-02-21 19:10:46"}
+{"external":"3.60MB","heapTotal":"20.80MB","heapUsed":"18.75MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.16%","rss":"61.68MB","service":"ezbar-api","timestamp":"2026-02-21 19:10:46","warningCount":4}
+{"level":"debug","message":"Memory: 18.45MB / 21.80MB (84.64%)","service":"ezbar-api","timestamp":"2026-02-21 19:11:46"}
+{"level":"debug","message":"Memory: 18.63MB / 21.80MB (85.45%)","service":"ezbar-api","timestamp":"2026-02-21 19:12:46"}
+{"external":"3.60MB","heapTotal":"21.80MB","heapUsed":"18.63MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.45%","rss":"62.50MB","service":"ezbar-api","timestamp":"2026-02-21 19:12:46","warningCount":1}
+{"level":"debug","message":"Memory: 18.83MB / 21.80MB (86.41%)","service":"ezbar-api","timestamp":"2026-02-21 19:13:46"}
+{"external":"3.60MB","heapTotal":"21.80MB","heapUsed":"18.83MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.41%","rss":"62.72MB","service":"ezbar-api","timestamp":"2026-02-21 19:13:46","warningCount":2}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:09:19"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"debug","message":"Memory: 17.62MB / 34.65MB (50.85%)","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:09:19"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:14:36"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"debug","message":"Memory: 17.81MB / 34.40MB (51.77%)","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:14:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:15:55"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"debug","message":"Memory: 17.40MB / 34.90MB (49.86%)","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:15:55"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:16:39"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"debug","message":"Memory: 17.38MB / 34.40MB (50.53%)","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:16:39"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:23:42"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"debug","message":"Memory: 17.62MB / 34.65MB (50.85%)","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:23:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:27:15"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"debug","message":"Memory: 17.85MB / 34.65MB (51.51%)","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:27:15"}
+{"level":"debug","message":"Memory: 17.93MB / 20.30MB (88.36%)","service":"ezbar-api","timestamp":"2026-02-21 20:28:15"}
+{"external":"3.60MB","heapTotal":"20.30MB","heapUsed":"17.93MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.36%","rss":"60.98MB","service":"ezbar-api","timestamp":"2026-02-21 20:28:15","warningCount":1}
+{"level":"debug","message":"Memory: 18.23MB / 20.30MB (89.82%)","service":"ezbar-api","timestamp":"2026-02-21 20:29:15"}
+{"external":"3.60MB","heapTotal":"20.30MB","heapUsed":"18.23MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.82%","rss":"61.29MB","service":"ezbar-api","timestamp":"2026-02-21 20:29:15","warningCount":2}
+{"level":"debug","message":"Memory: 18.52MB / 20.55MB (90.12%)","service":"ezbar-api","timestamp":"2026-02-21 20:30:15"}
+{"external":"3.60MB","heapTotal":"20.55MB","heapUsed":"18.52MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.12%","rss":"61.55MB","service":"ezbar-api","timestamp":"2026-02-21 20:30:15","warningCount":3}
+{"level":"debug","message":"Memory: 18.78MB / 20.55MB (91.41%)","service":"ezbar-api","timestamp":"2026-02-21 20:31:15"}
+{"external":"3.60MB","heapTotal":"20.55MB","heapUsed":"18.78MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.41%","rss":"61.79MB","service":"ezbar-api","timestamp":"2026-02-21 20:31:15","warningCount":4}
+{"level":"debug","message":"Memory: 18.46MB / 21.55MB (85.68%)","service":"ezbar-api","timestamp":"2026-02-21 20:32:15"}
+{"external":"3.60MB","heapTotal":"21.55MB","heapUsed":"18.46MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.68%","rss":"62.43MB","service":"ezbar-api","timestamp":"2026-02-21 20:32:15","warningCount":5}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:32:53"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"debug","message":"Memory: 17.38MB / 34.40MB (50.54%)","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"error":"Error: bind EADDRINUSE 0.0.0.0:3001\n    at node:dgram:397:20\n    at process.processTicksAndRejections (node:internal/process/task_queues:91:21)","level":"error","message":"UDP Server error:","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"address":"0.0.0.0","code":"EADDRINUSE","errno":-4091,"level":"error","message":"Uncaught Exception: listen EADDRINUSE: address already in use 0.0.0.0:3000","port":3000,"service":"ezbar-api","stack":"Error: listen EADDRINUSE: address already in use 0.0.0.0:3000\n    at Server.setupListenHandle [as _listen2] (node:net:1937:16)\n    at listenInCluster (node:net:1994:12)\n    at node:net:2203:7\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)","syscall":"listen","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"🛑 Graceful shutdown initiated (signal: uncaughtException)","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Closing HTTP/HTTPS servers...","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"✅ HTTP Server closed","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Running cleanup handlers...","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Stopping memory monitor...","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Memory monitor stopped","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"✅ Memory Monitor completed","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Closing UDP server...","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"code":"ERR_SOCKET_DGRAM_NOT_RUNNING","level":"error","message":"❌ UDP Server failed: Not running","service":"ezbar-api","stack":"Error [ERR_SOCKET_DGRAM_NOT_RUNNING]: Not running\n    at healthCheck (node:dgram:962:11)\n    at Socket.close (node:dgram:787:3)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:123:13\n    at GracefulShutdown.shutdown (file:///D:/GitHub/EZBar_Backend/Api/api/src/utils/gracefulShutdown.js:82:27)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-02-21 20:32:53"}
+{"level":"info","message":"Closing database connections...","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"database":"ezbardb","error":"Pool is closed.","host":"127.0.0.1","level":"error","message":"❌ Error conectando a MariaDB:","service":"ezbar-api","timestamp":"2026-02-21 20:32:53"}
+{"level":"debug","message":"Memory: 18.67MB / 21.55MB (86.63%)","service":"ezbar-api","timestamp":"2026-02-21 20:33:15"}
+{"external":"3.60MB","heapTotal":"21.55MB","heapUsed":"18.67MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.63%","rss":"62.63MB","service":"ezbar-api","timestamp":"2026-02-21 20:33:15","warningCount":6}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"Logger initialized - Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"error","message":"Failed to start HTTPS server: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.","service":"ezbar-api","stack":"Error: SSL certificates not found at:\n  Key: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem\n  Cert: D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-cert.pem\nPlease provide valid SSL certificates or enable AUTO_GENERATE in development.\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:41:23)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","timestamp":"2026-02-21 20:34:06"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"debug","message":"Memory: 17.81MB / 34.65MB (51.40%)","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"🌍 Environment: production ","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"📊 Database: ezbardb@127.0.0.1","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"database":"ezbardb","host":"127.0.0.1","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:34:06"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"Logger initialized - Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 600s, Check period: 120s)","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"Starting memory monitor (interval: 300000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"⏱️  Request Timeout: 60000ms","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"🔒 HTTPS: DISABLED","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"🌍 Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"🔗 Backend URL: https://localhost:8443/api","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:40:37"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","service":"ezbar-api","timestamp":"2026-02-21 20:41:03","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 132ms","responseTime":132,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:04"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:04","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:04"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:04","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:04"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:04","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:04"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 11ms","responseTime":11,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 13ms","responseTime":13,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","service":"ezbar-api","timestamp":"2026-02-21 20:41:05","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:05"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:12","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-21 20:41:13","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:13"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-21 20:41:13","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"info","message":"🔍 Consulta productos: 5 filas obtenidas.","service":"ezbar-api","timestamp":"2026-02-21 20:41:13"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 66ms","responseTime":66,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:13"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:34","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:41:40","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:40"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/6","service":"ezbar-api","timestamp":"2026-02-21 20:41:41","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"PUT /api/productos/6 200 - 247ms","responseTime":247,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:41:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:42:23","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:23"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas","service":"ezbar-api","timestamp":"2026-02-21 20:42:24","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:24"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/1/activo","service":"ezbar-api","timestamp":"2026-02-21 20:42:24","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/1/activo 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:24"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:42:27","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:27"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas","service":"ezbar-api","timestamp":"2026-02-21 20:42:27","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:27"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:42:28","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo","service":"ezbar-api","timestamp":"2026-02-21 20:42:28","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","service":"ezbar-api","timestamp":"2026-02-21 20:42:28","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles","service":"ezbar-api","timestamp":"2026-02-21 20:42:28","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 9ms","responseTime":9,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles 200 - 14ms","responseTime":14,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","service":"ezbar-api","timestamp":"2026-02-21 20:42:28","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"info","message":"🔍 Consulta productos: 5 filas obtenidas.","service":"ezbar-api","timestamp":"2026-02-21 20:42:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 96ms","responseTime":96,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:42:34","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:34"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:42:40","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:40"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/pedidos/mesa/3/agregar-producto","service":"ezbar-api","timestamp":"2026-02-21 20:42:40","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/pedidos/mesa/3/agregar-producto 201 - 27ms","responseTime":27,"service":"ezbar-api","statusCode":201,"timestamp":"2026-02-21 20:42:40"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo","service":"ezbar-api","timestamp":"2026-02-21 20:42:40","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:40"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles","service":"ezbar-api","timestamp":"2026-02-21 20:42:41","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles 200 - 8ms","responseTime":8,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo","service":"ezbar-api","timestamp":"2026-02-21 20:42:41","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles","service":"ezbar-api","timestamp":"2026-02-21 20:42:41","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","service":"ezbar-api","timestamp":"2026-02-21 20:42:46","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:46"}
+{"ip":"127.0.0.1","level":"info","message":"DELETE /api/pedidos/detalles/18","service":"ezbar-api","timestamp":"2026-02-21 20:42:46","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"DELETE /api/pedidos/detalles/18 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:46"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo","service":"ezbar-api","timestamp":"2026-02-21 20:42:47","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:47"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles","service":"ezbar-api","timestamp":"2026-02-21 20:42:47","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-21 20:42:47"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"Logger initialized - Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 600s, Check period: 120s)","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"Starting memory monitor (interval: 300000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"⏱️  Request Timeout: 60000ms","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"🔒 HTTPS: DISABLED","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"🌍 Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"🔗 Backend URL: https://localhost:8443/api","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:43:42"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"Logger initialized - Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 600s, Check period: 120s)","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"Starting memory monitor (interval: 300000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"⏱️  Request Timeout: 60000ms","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"🔒 HTTPS: DISABLED","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"🌍 Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"🔗 Backend URL: https://localhost:8443/api","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:47:52"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"Logger initialized - Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 600s, Check period: 120s)","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"Starting memory monitor (interval: 300000ms)","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"⏱️  Request Timeout: 60000ms","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"🔒 HTTPS: DISABLED","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"🌍 Environment: production","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"🔗 Backend URL: https://localhost:8443/api","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 20:53:02"}
+{"external":"3.59MB","heapTotal":"21.30MB","heapUsed":"18.16MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.26%","rss":"64.28MB","service":"ezbar-api","timestamp":"2026-02-21 20:58:02","warningCount":1}
+{"criticalCount":1,"external":"3.60MB","heapTotal":"20.30MB","heapUsed":"18.66MB","level":"error","message":"🔴 CRITICAL: Memory usage at 91.94%","rss":"63.84MB","service":"ezbar-api","timestamp":"2026-02-21 21:03:02"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Logger initialized - Environment: development","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"SSL certificates not found. Generating self-signed certificate for development...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"warn","message":"OpenSSL not available. Using Node.js crypto for certificate generation...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"code":"ENOENT","errno":-4058,"level":"error","message":"Failed to read SSL certificates: ENOENT: no such file or directory, open 'D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem'","path":"D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem","service":"ezbar-api","stack":"Error: ENOENT: no such file or directory, open 'D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem'\n    at Object.readFileSync (node:fs:442:20)\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:52:28)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","syscall":"open","timestamp":"2026-02-21 21:32:11"}
+{"code":"ENOENT","errno":-4058,"level":"error","message":"Failed to start HTTPS server: ENOENT: no such file or directory, open 'D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem'","path":"D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem","service":"ezbar-api","stack":"Error: ENOENT: no such file or directory, open 'D:\\GitHub\\EZBar_Backend\\Api\\api\\certs\\dev-key.pem'\n    at Object.readFileSync (node:fs:442:20)\n    at SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:52:28)\n    at getSSLCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:164:23)\n    at file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25\n    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)","syscall":"open","timestamp":"2026-02-21 21:32:11"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"debug","message":"Memory: 18.27MB / 34.80MB (52.49%)","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"📝 Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"🌍 Environment: development","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"0":"r","1":"e","2":"a","3":"s","4":"o","5":"n","6":":","level":"error","message":"Unhandled Rejection at:","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"🛑 Graceful shutdown initiated (signal: unhandledRejection)","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Closing HTTP/HTTPS servers...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"✅ HTTP Server closed","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Running cleanup handlers...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Stopping memory monitor...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Memory monitor stopped","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"✅ Memory Monitor completed","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Closing UDP server...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"✅ UDP Server completed","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"Closing database connections...","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"database":"EZBarDB","error":"Pool is closed.","host":"localhost","level":"error","message":"❌ Error conectando a MariaDB:","service":"ezbar-api","timestamp":"2026-02-21 21:32:11"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"Logger initialized - Environment: development","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"SSL certificates not found. Generating self-signed certificate for development...","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"warn","message":"OpenSSL not available. Using Node.js crypto for certificate generation...","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"error","message":"Failed to start HTTPS server: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge","service":"ezbar-api","stack":"Error: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge\n    at SSLManager.generateCertificateWithNodeCrypto (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:94:19)\n    at async SSLManager.generateSelfSignedCertificate (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:82:13)\n    at async SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:39:17)\n    at async file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25","timestamp":"2026-02-21 21:40:36"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"Memory: 18.18MB / 34.80MB (52.24%)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"📝 Log Level: debug","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"🌍 Environment: development","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 0... (77ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (1ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: ALTER TABLE detalle_pedidos DROP FOREIGN KEY detalle_pedidos_ibfk_2... (9ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE detalle_pedidos \n        ADD CONSTRAINT detalle_pedidos_ibfk_2 \n        FOREIGN... (6ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (1ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: ALTER TABLE productos DROP FOREIGN KEY productos_ibfk_1... (10ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE productos \n        ADD CONSTRAINT productos_ibfk_1 \n        FOREIGN KEY (catego... (9ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 1... (0ms)","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 21:40:36"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"Logger initialized - Environment: production","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 600s, Check period: 120s)","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"Starting memory monitor (interval: 300000ms)","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"📝 Log Level: info","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"⏱️  Request Timeout: 60000ms","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"🔒 HTTPS: DISABLED","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"🌍 Environment: production","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"🔗 Backend URL: https://localhost:8443/api","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-21 21:41:33"}

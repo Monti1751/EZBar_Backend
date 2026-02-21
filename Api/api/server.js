@@ -80,7 +80,7 @@ httpServer.listen(PORT, '0.0.0.0', () => {
 // Start HTTPS server if enabled
 if (CONFIG.HTTPS_ENABLED) {
   try {
-    const credentials = getSSLCredentials();
+    const credentials = await getSSLCredentials();
     httpsServer = https.createServer(credentials, app);
 
     httpsServer.listen(HTTPS_PORT, '0.0.0.0', () => {

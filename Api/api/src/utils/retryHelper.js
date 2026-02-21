@@ -21,8 +21,10 @@ export const fetchWithRetry = async (url, options = {}, attempts = CONFIG.RETRY_
 
 export const verificarBackend = async () => {
   try {
+    const https = await import('https');
     await axios.get(`${CONFIG.BACKEND_URL}/actuator/health`, {
-      timeout: 3000
+      timeout: 3000,
+      httpsAgent: new https.Agent({ rejectUnauthorized: false })
     });
     console.log('✅ Backend Java disponible');
     return true;

@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mariadb://${MARIADB_HOST:localhost}:${MARIADB_PORT:3306}/${MARIADB_DB:EZBarDB}
     username: ${MARIADB_USER:root}
-    password: ${MARIADB_PASSWORD}
+    password: ${MARIADB_PASSWORD:m3f1}
     driver-class-name: org.mariadb.jdbc.Driver
     hikari:
       maximum-pool-size: 20
@@ -23,8 +23,8 @@ server:
   address: 0.0.0.0
   ssl:
     enabled: true
-    key-store: ${SSL_KEYSTORE_PATH:/etc/ssl/keystore.p12}
-    key-store-password: ${SSL_KEYSTORE_PASSWORD}
+    key-store: ${SSL_KEYSTORE_PATH:classpath:ssl/ezbar-keystore.p12}
+    key-store-password: ${SSL_KEYSTORE_PASSWORD:ezbar-dev-security-2024}
     key-store-type: PKCS12
     key-alias: tomcat
   error:
@@ -40,7 +40,7 @@ logging:
     root: WARN
     com.ezbar: INFO
   file:
-    name: /var/log/ezbar/java_app.log
+    name: ${LOG_PATH:logs/prod/java_app.log}
     max-size: 100MB
     max-history: 30
     total-size-cap: 1GB
