@@ -38,6 +38,7 @@ export const obtenerDetallesPedido = async (req, res, next) => {
     connection = await pool.getConnection();
 
     // Consulta SQL uniendo DETALLE_PEDIDOS con PRODUCTOS para tener nombres y precios
+    console.log(`🔍 [DIAGNOSTICO] Buscando detalles para pedido ID: ${id}`);
     const [detalles] = await connection.query(
       `SELECT dp.detalle_id, dp.pedido_id, dp.producto_id,
               dp.cantidad, dp.precio_unitario, dp.total_linea,
@@ -47,6 +48,11 @@ export const obtenerDetallesPedido = async (req, res, next) => {
        WHERE dp.pedido_id = ?`,
       [id]
     );
+
+    console.log(`✅ [DIAGNOSTICO] Query DETALLES devolvió ${detalles.length} filas`);
+    detalles.forEach((d, idx) => {
+      console.log(`📄 [DIAGNOSTICO] Fila ${idx + 1}: Producto ${d.nombre}, Cantidad ${d.cantidad}, Total Linea ${d.total_linea}`);
+    });
 
     // Formatear respuesta para incluir el producto como objeto anidado (más fácil para el frontend)
     const detallesFormateados = detalles.map(d => ({
@@ -63,6 +69,7 @@ export const obtenerDetallesPedido = async (req, res, next) => {
       }
     }));
 
+    console.log(`📤 [DIAGNOSTICO] Enviando ${detallesFormateados.length} detalles formateados`);
     res.json(detallesFormateados);
   } catch (error) {
     next(error);
@@ -77,6 +84,7 @@ export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
   let connection;
   try {
     const { mesaId } = req.params;
+    console.log(`🔍 [DIAGNOSTICO] Buscando pedido activo para mesa: ${mesaId}`);
     connection = await pool.getConnection();
 
     // Buscar el último pedido de esta mesa que no esté finalizado
@@ -84,9 +92,13 @@ export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
       `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado') ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
     );
+
     if (pedidos.length === 0) {
+      console.log(`⚠️ [DIAGNOSTICO] No se encontró pedido activo para mesa: ${mesaId}`);
       return res.json(null); // No hay nadie comiendo en esa mesa
     }
+
+    console.log(`✅ [DIAGNOSTICO] Pedido activo encontrado: ID ${pedidos[0].pedido_id}, Estado: ${pedidos[0].estado}`);
     res.json(pedidos[0]);
   } catch (error) {
     next(error);
