@@ -97,26 +97,56 @@ export const actualizarZona = async (req, res, next) => {
 
 // --- Eliminar zona ---
 export const eliminarZona = async (req, res, next) => {
+  const connection = await pool.getConnection();
   try {
-    const { ubicacion } = req.params; // La ruta es DELETE /api/zonas/:ubicacion (puede ser ID o nombre)
+    const { ubicacion } = req.params; // Puede ser un ID o el nombre de la zona
+    await connection.beginTransaction();
 
-    // Primero intentamos borrar asumiendo que es el NOMBRE
-    // El 'ON DELETE CASCADE' de la base de datos se encargará de borrar las mesas asociadas si está configurado
-    const [result] = await pool.query('DELETE FROM ZONAS WHERE nombre = ?', [ubicacion]);
+    let nombreZona = ubicacion;
+    let zonaId = null;
 
-    if (result.affectedRows === 0) {
-      // Si no borró nada, intentar borrar asumiendo que es un ID numérico
-      const zonaId = parseInt(ubicacion);
-      if (!isNaN(zonaId)) {
-        const [resId] = await pool.query('DELETE FROM ZONAS WHERE zona_id = ?', [zonaId]);
-        if (resId.affectedRows > 0) return res.status(200).send();
+    // 1. Determinar si es ID o NOMBRE y obtener ambos
+    const isNumeric = !isNaN(parseInt(ubicacion));
+    if (isNumeric) {
+      const [rows] = await connection.query('SELECT zona_id, nombre FROM ZONAS WHERE zona_id = ?', [ubicacion]);
+      if (rows.length > 0) {
+        zonaId = rows[0].zona_id;
+        nombreZona = rows[0].nombre;
       }
+    } else {
+      const [rows] = await connection.query('SELECT zona_id, nombre FROM ZONAS WHERE nombre = ?', [ubicacion]);
+      if (rows.length > 0) {
+        zonaId = rows[0].zona_id;
+        nombreZona = rows[0].nombre;
+      }
+    }
+
+    if (!zonaId) {
+      await connection.rollback();
       return res.status(404).json({ message: 'Zona no encontrada' });
     }
 
-    res.status(200).send();
+    console.log(`🗑️ Eliminando zona: ${nombreZona} (ID: ${zonaId}) y sus mesas asociadas.`);
+
+    // 2. Borrar todas las mesas asociadas a esa zona (por nombre en 'ubicacion')
+    const [resultMesas] = await connection.query('DELETE FROM MESAS WHERE ubicacion = ?', [nombreZona]);
+    console.log(`✅ Mesas eliminadas: ${resultMesas.affectedRows}`);
+
+    // 3. Borrar la zona
+    const [resultZona] = await connection.query('DELETE FROM ZONAS WHERE zona_id = ?', [zonaId]);
+
+    await connection.commit();
+    res.status(200).json({
+      message: 'Zona y mesas eliminadas correctamente',
+      mesasEliminadas: resultMesas.affectedRows
+    });
+
   } catch (error) {
+    if (connection) await connection.rollback();
+    console.error('Error al eliminar zona:', error);
     next(error);
+  } finally {
+    if (connection) connection.release();
   }
 };
 
