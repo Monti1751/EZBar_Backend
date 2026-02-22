@@ -98,3 +98,49 @@ export const login = async (req, res) => {
         });
     }
 };
+
+// Función para verificar el token actual y devolver el rol
+export const verifyToken = async (req, res) => {
+    try {
+        // El token viene en el header Authorization: Bearer <token>
+        const authHeader = req.headers.authorization;
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(401).json({
+                status: 'ERROR',
+                message: 'No se proporcionó token de autorización'
+            });
+        }
+
+        const token = authHeader.split(' ')[1];
+
+        // Verificar el token
+        jwt.verify(token, JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(401).json({
+                    status: 'ERROR',
+                    message: 'Token inválido o expirado'
+                });
+            }
+
+            // Si es válido, devolver los datos del usuario que están en el token
+            res.json({
+                status: 'OK',
+                message: 'Token válido',
+                data: {
+                    usuario: {
+                        id: decoded.id,
+                        username: decoded.username,
+                        rol: decoded.rol
+                    }
+                }
+            });
+        });
+
+    } catch (error) {
+        console.error('Error en verifyToken:', error);
+        res.status(500).json({
+            status: 'ERROR',
+            message: 'Error interno del servidor'
+        });
+    }
+};

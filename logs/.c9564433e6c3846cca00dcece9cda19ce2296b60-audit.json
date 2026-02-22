@@ -39,6 +39,11 @@
             "date": 1771689626685,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-21.log",
             "hash": "3adf58d29fe44e15f23752f085c58db9b7857d5c7c129a6592d52438be0a854a"
+        },
+        {
+            "date": 1771785415901,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-22.log",
+            "hash": "c9bdf2d4c11dd002a7e5f6393e57ba009375937f0c8a09a27b0dc2a4f7c5e4ed"
         }
     ],
     "hashType": "sha256"
