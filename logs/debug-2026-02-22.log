@@ -1753,3 +1753,28 @@
 {"level":"debug","message":"DB Query: \n      SELECT \n        p.producto_id,\n        p.nombre,\n        p.descripcion,\n        p.precio,\n   ... (1ms)","service":"ezbar-api","timestamp":"2026-02-22 20:34:56"}
 {"level":"info","message":"🔍 Consulta productos: 5 filas obtenidas.","service":"ezbar-api","timestamp":"2026-02-22 20:34:56"}
 {"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 19ms","responseTime":19,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:34:56"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:12","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:13","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:13"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:14","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (0ms)","service":"ezbar-api","timestamp":"2026-02-22 20:35:14"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:14"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:15","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM categorias... (1ms)","service":"ezbar-api","timestamp":"2026-02-22 20:35:15"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:15"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:15","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: \n      SELECT \n        p.producto_id,\n        p.nombre,\n        p.descripcion,\n        p.precio,\n   ... (1ms)","service":"ezbar-api","timestamp":"2026-02-22 20:35:15"}
+{"level":"info","message":"🔍 Consulta productos: 5 filas obtenidas.","service":"ezbar-api","timestamp":"2026-02-22 20:35:15"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 15ms","responseTime":15,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:15"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:21","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/mesa/3/activo 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:21"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:22","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/pedidos/4/detalles 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:22"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-22 20:35:23","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-22 20:35:23"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-22 20:35:23"}
+{"level":"debug","message":"Memory: 23.18MB / 25.50MB (90.93%)","service":"ezbar-api","timestamp":"2026-02-22 20:35:27"}
+{"external":"3.97MB","heapTotal":"25.50MB","heapUsed":"23.18MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.93%","rss":"69.40MB","service":"ezbar-api","timestamp":"2026-02-22 20:35:27","warningCount":2}
+{"level":"debug","message":"Memory: 23.49MB / 25.50MB (92.12%)","service":"ezbar-api","timestamp":"2026-02-22 20:36:27"}
+{"external":"4.00MB","heapTotal":"25.50MB","heapUsed":"23.49MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.12%","rss":"69.64MB","service":"ezbar-api","timestamp":"2026-02-22 20:36:27","warningCount":3}
