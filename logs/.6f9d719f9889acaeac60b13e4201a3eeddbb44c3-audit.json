@@ -6,16 +6,6 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.6f9d719f9889acaeac60b13e4201a3eeddbb44c3-audit.json",
     "files": [
         {
-            "date": 1770487040025,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-07.log",
-            "hash": "ca663a22177c58b2c625f7f8757c3e6de4ead270991e5a324011c52c44c34a20"
-        },
-        {
-            "date": 1770505204138,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-08.log",
-            "hash": "e4de3cb827284af01839f464a091e0648c729a8362352fb82d947bfe160c4bac"
-        },
-        {
             "date": 1771247499107,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-16.log",
             "hash": "7a711420031b5382e7c6657b1ec242b5dd9cfebbf6df2a0564516af9e4ba08f3"
@@ -34,6 +24,11 @@
             "date": 1771689626582,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-21.log",
             "hash": "fe669ad809f386a3518a61cfe00cc2cd2fc2caaafea8dc48cdfec620cdbfcfc6"
+        },
+        {
+            "date": 1771785415827,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-22.log",
+            "hash": "82a6c8d703556cc5319048a99fdae75be8ec588246d57e39055955b4a3ff1f02"
         }
     ],
     "hashType": "sha256"

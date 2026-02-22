@@ -1,0 +1,82 @@
+2026-02-21 17:00:16 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 25788 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 17:00:16 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 17:00:21 [main] INFO  com.ezbar.Main - Started Main in 5.853 seconds (process running for 6.201)
+2026-02-21 17:17:38 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 18808 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 17:17:38 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 17:17:43 [main] INFO  com.ezbar.Main - Started Main in 5.512 seconds (process running for 5.81)
+2026-02-21 17:25:51 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 4868 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 17:25:51 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 17:25:57 [main] INFO  com.ezbar.Main - Started Main in 5.636 seconds (process running for 5.964)
+2026-02-21 17:40:14 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 14804 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 17:40:14 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 17:40:19 [main] INFO  com.ezbar.Main - Started Main in 5.718 seconds (process running for 6.027)
+2026-02-21 17:50:13 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 25120 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 17:50:13 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 17:50:18 [main] INFO  com.ezbar.Main - Started Main in 5.742 seconds (process running for 6.05)
+2026-02-21 17:59:46 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 30264 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 17:59:46 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 17:59:52 [main] INFO  com.ezbar.Main - Started Main in 5.805 seconds (process running for 6.115)
+2026-02-21 18:11:32 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 19448 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 18:11:32 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 18:11:37 [main] INFO  com.ezbar.Main - Started Main in 5.661 seconds (process running for 5.993)
+2026-02-21 18:59:48 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 32452 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 18:59:48 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 18:59:53 [main] INFO  com.ezbar.Main - Started Main in 5.265 seconds (process running for 5.553)
+2026-02-21 19:06:26 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 22044 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 19:06:26 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 19:40:43 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 4484 (D:\GitHub\EZBar_Backend\target\classes started by Monti in d:\GitHub\EZBar_Backend)
+2026-02-21 19:40:43 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 19:43:13 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 6472 (D:\GitHub\EZBar_Backend\target\classes started by Monti in d:\GitHub\EZBar_Backend)
+2026-02-21 19:43:13 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 19:43:19 [main] INFO  com.ezbar.Main - Started Main in 5.906 seconds (process running for 6.232)
+2026-02-21 20:09:00 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 29824 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:09:00 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:14:16 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 9840 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:14:16 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:14:21 [main] INFO  com.ezbar.Main - Started Main in 5.256 seconds (process running for 5.536)
+2026-02-21 20:15:36 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 28992 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:15:36 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 20:15:40 [main] INFO  com.ezbar.Main - Started Main in 5.105 seconds (process running for 5.38)
+2026-02-21 20:16:19 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 29940 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:16:19 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:16:24 [main] INFO  com.ezbar.Main - Started Main in 5.104 seconds (process running for 5.378)
+2026-02-21 20:23:22 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 15116 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:23:22 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:23:27 [main] INFO  com.ezbar.Main - Started Main in 5.159 seconds (process running for 5.443)
+2026-02-21 20:26:55 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 16024 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:26:55 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:27:00 [main] INFO  com.ezbar.Main - Started Main in 5.072 seconds (process running for 5.355)
+2026-02-21 20:32:34 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 25828 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:32:34 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:33:47 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 30680 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:33:47 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:33:52 [main] INFO  com.ezbar.Main - Started Main in 5.421 seconds (process running for 5.708)
+2026-02-21 20:40:18 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 22912 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:40:18 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 20:40:22 [main] INFO  com.ezbar.Main - Started Main in 5.14 seconds (process running for 5.43)
+2026-02-21 20:43:23 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 8736 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:43:23 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 20:43:27 [main] INFO  com.ezbar.Main - Started Main in 5.13 seconds (process running for 5.404)
+2026-02-21 20:47:34 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 28724 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:47:34 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 20:47:39 [main] INFO  com.ezbar.Main - Started Main in 5.551 seconds (process running for 5.887)
+2026-02-21 20:52:05 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 27124 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:52:05 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 20:52:44 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 24968 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 20:52:44 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 20:52:49 [main] INFO  com.ezbar.Main - Started Main in 5.458 seconds (process running for 5.759)
+2026-02-21 21:05:22 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 28376 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 21:05:22 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 21:05:27 [main] INFO  com.ezbar.Main - Started Main in 5.436 seconds (process running for 5.753)
+2026-02-21 21:06:17 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 28088 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 21:06:17 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 21:06:23 [main] INFO  com.ezbar.Main - Started Main in 5.541 seconds (process running for 5.854)
+2026-02-21 21:31:53 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 26356 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 21:31:53 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 21:31:59 [main] INFO  com.ezbar.Main - Started Main in 5.81 seconds (process running for 6.163)
+2026-02-21 21:40:19 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 9504 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 21:40:19 [main] INFO  com.ezbar.Main - The following 1 profile is active: "dev"
+2026-02-21 21:40:24 [main] INFO  com.ezbar.Main - Started Main in 5.779 seconds (process running for 6.096)
+2026-02-21 21:41:15 [main] INFO  com.ezbar.Main - Starting Main using Java 21.0.4 with PID 22592 (D:\GitHub\EZBar_Backend\target\classes started by Monti in D:\GitHub\EZBar_Backend)
+2026-02-21 21:41:15 [main] INFO  com.ezbar.Main - The following 1 profile is active: "prod"
+2026-02-21 21:41:20 [main] INFO  com.ezbar.Main - Started Main in 5.776 seconds (process running for 6.084)
