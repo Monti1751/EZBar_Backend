@@ -1,4 +1,12 @@
 # Changelog
+## Versión 0.8.0 -(23-2-2026)
+
+### Añadido
+* Conexión con la pantalla de usuarios de frontend
+
+### Corregido
+* Eliminación en cascada de las mesas de las zonas borradas y de los platos de las secciones borradas
+
 ## Versión 0.7.0 -(9-2-2026)
 
 ### Añadido
