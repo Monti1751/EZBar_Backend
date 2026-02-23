@@ -89,7 +89,7 @@ export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
 
     // Buscar el último pedido de esta mesa que no esté finalizado
     const [pedidos] = await connection.query(
-      `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado') ORDER BY pedido_id DESC LIMIT 1`,
+      `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado', 'listo') ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
     );
 
@@ -166,7 +166,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
     const [pedidosExistentes] = await connection.query(
       `SELECT pedido_id, total_pedido FROM PEDIDOS
        WHERE mesa_id = ?
-       AND estado NOT IN ('pagado', 'cancelado')
+       AND estado NOT IN ('pagado', 'cancelado', 'listo')
        ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
     );
@@ -349,7 +349,7 @@ export const eliminarDetallePedido = async (req, res, next) => {
   }
 };
 
-// --- Finalizar Pedido (Marcar como pagado) ---
+// --- Finalizar Pedido (Marcar como listo y liberar mesa) ---
 export const finalizarPedido = async (req, res, next) => {
   let connection;
   try {
@@ -358,17 +358,40 @@ export const finalizarPedido = async (req, res, next) => {
 
     console.log(`💰 Finalizando pedido ${id}`);
 
-    const [resultado] = await connection.query(
-      "UPDATE PEDIDOS SET estado = 'pagado' WHERE pedido_id = ?",
+    // Usar transacción para asegurar que tanto el pedido como la mesa se actualicen
+    await connection.beginTransaction();
+
+    // 1. Obtener el mesa_id de este pedido
+    const [pedidos] = await connection.query(
+      "SELECT mesa_id FROM PEDIDOS WHERE pedido_id = ?",
       [id]
     );
 
-    if (resultado.affectedRows === 0) {
+    if (pedidos.length === 0) {
+      await connection.rollback();
       return res.status(404).json({ error: 'Pedido no encontrado' });
     }
 
-    res.json({ success: true, mensaje: 'Pedido finalizado correctamente' });
+    const mesaId = pedidos[0].mesa_id;
+
+    // 2. Marcar pedido como 'listo'
+    await connection.query(
+      "UPDATE PEDIDOS SET estado = 'listo' WHERE pedido_id = ?",
+      [id]
+    );
+
+    // 3. Liberar la mesa
+    await connection.query(
+      "UPDATE MESAS SET estado = 'libre' WHERE mesa_id = ?",
+      [mesaId]
+    );
+
+    await connection.commit();
+
+    console.log(`✅ Pedido ${id} finalizado y mesa ${mesaId} liberada`);
+    res.json({ success: true, mensaje: 'Pedido finalizado y mesa liberada correctamente' });
   } catch (error) {
+    if (connection) await connection.rollback();
     next(error);
   } finally {
     if (connection) connection.release();
