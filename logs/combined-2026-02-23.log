@@ -1420,3 +1420,259 @@
 {"level":"debug","message":"Memory: 21.92MB / 28.61MB (76.62%)","service":"ezbar-api","timestamp":"2026-02-23 01:01:04"}
 {"level":"debug","message":"Memory: 21.60MB / 28.61MB (75.49%)","service":"ezbar-api","timestamp":"2026-02-23 01:02:04"}
 {"level":"debug","message":"Memory: 21.82MB / 28.61MB (76.27%)","service":"ezbar-api","timestamp":"2026-02-23 01:03:04"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"Logger initialized - Environment: development","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"SSL certificates not found. Generating self-signed certificate for development...","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"warn","message":"OpenSSL not available. Using Node.js crypto for certificate generation...","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"error","message":"Failed to start HTTPS server: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge","service":"ezbar-api","stack":"Error: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge\n    at SSLManager.generateCertificateWithNodeCrypto (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:94:19)\n    at async SSLManager.generateSelfSignedCertificate (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:82:13)\n    at async SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:39:17)\n    at async file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25","timestamp":"2026-02-23 01:08:50"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"Memory: 17.94MB / 34.80MB (51.55%)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"📝 Log Level: debug","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"🌍 Environment: development","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 0... (112ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (4ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: ALTER TABLE detalle_pedidos DROP FOREIGN KEY detalle_pedidos_ibfk_2... (44ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE detalle_pedidos \n        ADD CONSTRAINT detalle_pedidos_ibfk_2 \n        FOREIGN... (8ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: ALTER TABLE productos DROP FOREIGN KEY productos_ibfk_1... (18ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE productos \n        ADD CONSTRAINT productos_ibfk_1 \n        FOREIGN KEY (catego... (22ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:50"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-23 01:08:51"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 1... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:08:51"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-23 01:08:51"}
+{"level":"debug","message":"Memory: 18.11MB / 20.30MB (89.25%)","service":"ezbar-api","timestamp":"2026-02-23 01:09:50"}
+{"external":"3.61MB","heapTotal":"20.30MB","heapUsed":"18.11MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.25%","rss":"59.58MB","service":"ezbar-api","timestamp":"2026-02-23 01:09:50","warningCount":1}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:00","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUAR... (4ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:00"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 131ms","responseTime":131,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:00"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:00","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:00"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:00"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (13ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 14ms","responseTime":14,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (13ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 14ms","responseTime":14,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (16ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 18ms","responseTime":18,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (16ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 18ms","responseTime":18,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","params":{},"query":{"ubicacion":"Salón"},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (4ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","params":{},"query":{"ubicacion":"Barra"},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","params":{},"query":{"ubicacion":"Terraza"},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","params":{},"query":{"ubicacion":"Interior"},"service":"ezbar-api","timestamp":"2026-02-23 01:10:01","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:01"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:25","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:25"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:25"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:25","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM categorias... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:25"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:25"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:26","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: \n      SELECT \n        p.producto_id,\n        p.nombre,\n        p.descripcion,\n        p.precio,\n   ... (13ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:26"}
+{"level":"info","message":"🔍 Consulta productos: 5 filas obtenidas.","service":"ezbar-api","timestamp":"2026-02-23 01:10:26"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 64ms","responseTime":64,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:26"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:10:30","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:10:30"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:10:30"}
+{"level":"debug","message":"Memory: 20.90MB / 22.80MB (91.66%)","service":"ezbar-api","timestamp":"2026-02-23 01:10:50"}
+{"external":"4.39MB","heapTotal":"22.80MB","heapUsed":"20.90MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.66%","rss":"64.98MB","service":"ezbar-api","timestamp":"2026-02-23 01:10:50","warningCount":2}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"Logger initialized - Environment: development","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"SSL certificates not found. Generating self-signed certificate for development...","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"warn","message":"OpenSSL not available. Using Node.js crypto for certificate generation...","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"error","message":"Failed to start HTTPS server: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge","service":"ezbar-api","stack":"Error: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge\n    at SSLManager.generateCertificateWithNodeCrypto (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:94:19)\n    at async SSLManager.generateSelfSignedCertificate (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:82:13)\n    at async SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:39:17)\n    at async file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25","timestamp":"2026-02-23 01:18:33"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"Memory: 19.04MB / 34.55MB (55.10%)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"📝 Log Level: debug","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"🌍 Environment: development","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 0... (105ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 5 productos y 3 categorías.","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: ALTER TABLE detalle_pedidos DROP FOREIGN KEY detalle_pedidos_ibfk_2... (10ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE detalle_pedidos \n        ADD CONSTRAINT detalle_pedidos_ibfk_2 \n        FOREIGN... (8ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: ALTER TABLE productos DROP FOREIGN KEY productos_ibfk_1... (10ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE productos \n        ADD CONSTRAINT productos_ibfk_1 \n        FOREIGN KEY (catego... (17ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 1... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-02-23 01:18:33"}
+{"level":"debug","message":"Memory: 18.12MB / 21.05MB (86.10%)","service":"ezbar-api","timestamp":"2026-02-23 01:19:33"}
+{"external":"3.61MB","heapTotal":"21.05MB","heapUsed":"18.12MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.10%","rss":"61.86MB","service":"ezbar-api","timestamp":"2026-02-23 01:19:33","warningCount":1}
+{"level":"debug","message":"Memory: 18.52MB / 21.30MB (86.94%)","service":"ezbar-api","timestamp":"2026-02-23 01:20:33"}
+{"external":"3.65MB","heapTotal":"21.30MB","heapUsed":"18.52MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.94%","rss":"62.29MB","service":"ezbar-api","timestamp":"2026-02-23 01:20:33","warningCount":2}
+{"level":"debug","message":"Memory: 18.25MB / 22.30MB (81.84%)","service":"ezbar-api","timestamp":"2026-02-23 01:21:33"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:17","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUAR... (4ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:17"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 181ms","responseTime":181,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:17"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:18","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:18","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 1ms","responseTime":1,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (7ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 8ms","responseTime":8,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (6ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (22ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 24ms","responseTime":24,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (22ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 22ms","responseTime":22,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","params":{},"query":{"ubicacion":"Salón"},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","params":{},"query":{"ubicacion":"Interior"},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","params":{},"query":{"ubicacion":"Terraza"},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","params":{},"query":{"ubicacion":"Barra"},"service":"ezbar-api","timestamp":"2026-02-23 01:22:19","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (9ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 14ms","responseTime":14,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:19"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (11ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:19"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (15ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:20"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 18ms","responseTime":18,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:20"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 28ms","responseTime":28,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:20"}
+{"level":"debug","message":"Memory: 21.30MB / 24.30MB (87.67%)","service":"ezbar-api","timestamp":"2026-02-23 01:22:33"}
+{"external":"3.75MB","heapTotal":"24.30MB","heapUsed":"21.30MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.67%","rss":"66.56MB","service":"ezbar-api","timestamp":"2026-02-23 01:22:33","warningCount":1}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:22:48","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:22:48"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:22:48"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:23:18","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:23:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:23:18"}
+{"level":"debug","message":"Memory: 21.43MB / 23.55MB (91.03%)","service":"ezbar-api","timestamp":"2026-02-23 01:23:33"}
+{"external":"3.77MB","heapTotal":"23.55MB","heapUsed":"21.43MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.03%","rss":"65.10MB","service":"ezbar-api","timestamp":"2026-02-23 01:23:33","warningCount":2}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:23:37","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUAR... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:23:37"}
+{"ip":"127.0.0.1","level":"warn","message":"POST /api/auth/login 401 - 80ms","responseTime":80,"service":"ezbar-api","statusCode":401,"timestamp":"2026-02-23 01:23:37"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:23:47","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUAR... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:23:47"}
+{"ip":"127.0.0.1","level":"warn","message":"POST /api/auth/login 401 - 132ms","responseTime":132,"service":"ezbar-api","statusCode":401,"timestamp":"2026-02-23 01:23:47"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:23:48","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:23:48"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 2ms","responseTime":2,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:23:48"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:23:53","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUAR... (0ms)","service":"ezbar-api","timestamp":"2026-02-23 01:23:53"}
+{"ip":"127.0.0.1","level":"warn","message":"POST /api/auth/login 401 - 70ms","responseTime":70,"service":"ezbar-api","statusCode":401,"timestamp":"2026-02-23 01:23:53"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:10","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT usuario_id AS id, nombre_usuario AS nombre, password_hash AS password, rol, activo FROM USUAR... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:10"}
+{"ip":"127.0.0.1","level":"info","message":"POST /api/auth/login 200 - 86ms","responseTime":86,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:10"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:11","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:11"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza","params":{},"query":{"ubicacion":"Terraza"},"service":"ezbar-api","timestamp":"2026-02-23 01:24:12","userAgent":"Dart/3.11 (dart:io)"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n","params":{},"query":{"ubicacion":"Salón"},"service":"ezbar-api","timestamp":"2026-02-23 01:24:12","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:12"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (4ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Sal%C3%B3n 200 - 6ms","responseTime":6,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Terraza 200 - 9ms","responseTime":9,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior","params":{},"query":{"ubicacion":"Interior"},"service":"ezbar-api","timestamp":"2026-02-23 01:24:12","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Interior 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra","params":{},"query":{"ubicacion":"Barra"},"service":"ezbar-api","timestamp":"2026-02-23 01:24:12","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM MESAS WHERE ubicacion = ? ORDER BY numero_mesa ASC... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/mesas?ubicacion=Barra 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:12"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:18","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 4ms","responseTime":4,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:18"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:27","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:27"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 5ms","responseTime":5,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:27"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:27","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM categorias... (2ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:27"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/categorias 200 - 7ms","responseTime":7,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:27"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:28","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: \n      SELECT \n        p.producto_id,\n        p.nombre,\n        p.descripcion,\n        p.precio,\n   ... (10ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:28"}
+{"level":"info","message":"🔍 Consulta productos: 5 filas obtenidas.","service":"ezbar-api","timestamp":"2026-02-23 01:24:28"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/productos 200 - 177ms","responseTime":177,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:28"}
+{"level":"debug","message":"Memory: 21.77MB / 24.30MB (89.62%)","service":"ezbar-api","timestamp":"2026-02-23 01:24:33"}
+{"external":"4.39MB","heapTotal":"24.30MB","heapUsed":"21.77MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.62%","rss":"66.93MB","service":"ezbar-api","timestamp":"2026-02-23 01:24:33","warningCount":3}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas","params":{},"query":{},"service":"ezbar-api","timestamp":"2026-02-23 01:24:41","userAgent":"Dart/3.11 (dart:io)"}
+{"level":"debug","message":"DB Query: SELECT * FROM ZONAS... (1ms)","service":"ezbar-api","timestamp":"2026-02-23 01:24:41"}
+{"ip":"127.0.0.1","level":"info","message":"GET /api/zonas 200 - 3ms","responseTime":3,"service":"ezbar-api","statusCode":200,"timestamp":"2026-02-23 01:24:41"}
