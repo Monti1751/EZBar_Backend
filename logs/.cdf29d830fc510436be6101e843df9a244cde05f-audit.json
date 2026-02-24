@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "C:\\Users\\Mig\\Desktop\\tfg\\EZBar_Backend\\logs\\.cdf29d830fc510436be6101e843df9a244cde05f-audit.json",
+    "files": [
+        {
+            "date": 1771800962127,
+            "name": "C:\\Users\\Mig\\Desktop\\tfg\\EZBar_Backend\\logs\\debug-2026-02-22.log",
+            "hash": "050e9179c09ba53064c3de4063712b598c0e2c8cb2c53b647247400f8cc3a80c"
+        },
+        {
+            "date": 1771801613679,
+            "name": "C:\\Users\\Mig\\Desktop\\tfg\\EZBar_Backend\\logs\\debug-2026-02-23.log",
+            "hash": "f9f112a9d8e7c00728ed82e9cc57c152ef5c1fa8093daf2ebf4e04d985688df5"
+        }
+    ],
+    "hashType": "sha256"
+}

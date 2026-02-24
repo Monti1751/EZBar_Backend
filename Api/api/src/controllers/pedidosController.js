@@ -89,7 +89,7 @@ export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
 
     // Buscar el último pedido de esta mesa que no esté finalizado
     const [pedidos] = await connection.query(
-      `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado') ORDER BY pedido_id DESC LIMIT 1`,
+      `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado','listo') ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
     );
 
@@ -166,7 +166,7 @@ export const agregarProductoAMesa = async (req, res, next) => {
     const [pedidosExistentes] = await connection.query(
       `SELECT pedido_id, total_pedido FROM PEDIDOS
        WHERE mesa_id = ?
-       AND estado NOT IN ('pagado', 'cancelado')
+       AND estado NOT IN ('pagado', 'cancelado', 'listo')
        ORDER BY pedido_id DESC LIMIT 1`,
       [mesaId]
     );
@@ -359,7 +359,7 @@ export const finalizarPedido = async (req, res, next) => {
     console.log(`💰 Finalizando pedido ${id}`);
 
     const [resultado] = await connection.query(
-      "UPDATE PEDIDOS SET estado = 'pagado' WHERE pedido_id = ?",
+      "UPDATE PEDIDOS SET estado = 'listo' WHERE pedido_id = ?",
       [id]
     );
 
