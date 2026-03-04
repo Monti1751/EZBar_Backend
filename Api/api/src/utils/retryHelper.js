@@ -3,10 +3,17 @@ import { CONFIG } from '../config/constants.js';
 
 export const fetchWithRetry = async (url, options = {}, attempts = CONFIG.RETRY_ATTEMPTS) => {
   try {
+    const headers = {
+      ...options.headers,
+      'Authorization': 'Basic ' + Buffer.from('admin:admin123').toString('base64'),
+      'Accept': 'application/json'
+    };
+
     const response = await axios({
       url,
       timeout: CONFIG.REQUEST_TIMEOUT,
-      ...options
+      ...options,
+      headers
     });
     return response;
   } catch (error) {

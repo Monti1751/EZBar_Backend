@@ -6,21 +6,6 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.6f9d719f9889acaeac60b13e4201a3eeddbb44c3-audit.json",
     "files": [
         {
-            "date": 1771247499107,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-16.log",
-            "hash": "7a711420031b5382e7c6657b1ec242b5dd9cfebbf6df2a0564516af9e4ba08f3"
-        },
-        {
-            "date": 1771282848563,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-17.log",
-            "hash": "8fbf76e583a8c455813aee9f7335fd88e0dd36976c8a1ac0e08ae70f95836946"
-        },
-        {
-            "date": 1771370852965,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-18.log",
-            "hash": "5a35c7b767323b0a22d08f84985a511e31f296ee3d4ba519e093185282c2c3f4"
-        },
-        {
             "date": 1771689626582,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-21.log",
             "hash": "fe669ad809f386a3518a61cfe00cc2cd2fc2caaafea8dc48cdfec620cdbfcfc6"
@@ -34,6 +19,26 @@
             "date": 1771801203832,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-23.log",
             "hash": "b3c1a7ce4968fb4708bc6cac3e11b0c20a02a7197860bf0499840724df778bfb"
+        },
+        {
+            "date": 1772213205138,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-27.log",
+            "hash": "f11ef753d935daf3a0d4d138924d0c03ae00dc77e71f2ff8ec947b9dd66cb5b1"
+        },
+        {
+            "date": 1772233248380,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-28.log",
+            "hash": "6ef6ae776af6d670371f946dbdde6e07ad40c4033766113b811d745dfa4ebf18"
+        },
+        {
+            "date": 1772661833766,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-04.log",
+            "hash": "4bd36470d75b4b9f9d892efa364a2fb2faea4414ec308f39f1ad61c3115f76ad"
+        },
+        {
+            "date": 1772665210901,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-05.log",
+            "hash": "f5499949fa931c2429f80522d92c2b539146863eb596049536e84c15ac61b315"
         }
     ],
     "hashType": "sha256"
