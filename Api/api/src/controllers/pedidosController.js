@@ -89,7 +89,11 @@ export const obtenerPedidoActivoPorMesa = async (req, res, next) => {
 
     // Buscar el último pedido de esta mesa que no esté finalizado
     const [pedidos] = await connection.query(
+<<<<<<< HEAD
       `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado','listo') ORDER BY pedido_id DESC LIMIT 1`,
+=======
+      `SELECT * FROM PEDIDOS WHERE mesa_id = ? AND estado NOT IN ('pagado','cancelado', 'listo') ORDER BY pedido_id DESC LIMIT 1`,
+>>>>>>> 76b5d12779123d23b1d49f67a4389a6bbdd93a15
       [mesaId]
     );
 
@@ -349,7 +353,7 @@ export const eliminarDetallePedido = async (req, res, next) => {
   }
 };
 
-// --- Finalizar Pedido (Marcar como pagado) ---
+// --- Finalizar Pedido (Marcar como listo y liberar mesa) ---
 export const finalizarPedido = async (req, res, next) => {
   let connection;
   try {
@@ -358,17 +362,45 @@ export const finalizarPedido = async (req, res, next) => {
 
     console.log(`💰 Finalizando pedido ${id}`);
 
+<<<<<<< HEAD
     const [resultado] = await connection.query(
+      "UPDATE PEDIDOS SET estado = 'listo' WHERE pedido_id = ?",
+=======
+    // Usar transacción para asegurar que tanto el pedido como la mesa se actualicen
+    await connection.beginTransaction();
+
+    // 1. Obtener el mesa_id de este pedido
+    const [pedidos] = await connection.query(
+      "SELECT mesa_id FROM PEDIDOS WHERE pedido_id = ?",
+>>>>>>> 76b5d12779123d23b1d49f67a4389a6bbdd93a15
+      [id]
+    );
+
+    if (pedidos.length === 0) {
+      await connection.rollback();
+      return res.status(404).json({ error: 'Pedido no encontrado' });
+    }
+
+    const mesaId = pedidos[0].mesa_id;
+
+    // 2. Marcar pedido como 'listo'
+    await connection.query(
       "UPDATE PEDIDOS SET estado = 'listo' WHERE pedido_id = ?",
       [id]
     );
 
-    if (resultado.affectedRows === 0) {
-      return res.status(404).json({ error: 'Pedido no encontrado' });
-    }
+    // 3. Liberar la mesa
+    await connection.query(
+      "UPDATE MESAS SET estado = 'libre' WHERE mesa_id = ?",
+      [mesaId]
+    );
 
-    res.json({ success: true, mensaje: 'Pedido finalizado correctamente' });
+    await connection.commit();
+
+    console.log(`✅ Pedido ${id} finalizado y mesa ${mesaId} liberada`);
+    res.json({ success: true, mensaje: 'Pedido finalizado y mesa liberada correctamente' });
   } catch (error) {
+    if (connection) await connection.rollback();
     next(error);
   } finally {
     if (connection) connection.release();
