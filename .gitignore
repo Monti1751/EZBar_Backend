@@ -7,3 +7,6 @@ target/
 # JaCoCo Test Coverage
 *.exec
 jacoco.xml
+*.log
+*audit.json
+logs/
