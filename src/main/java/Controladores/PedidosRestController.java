@@ -179,6 +179,20 @@ public class PedidosRestController {
         return repository.save(pedidoActual); // Devolver el pedido actualizado
     }
 
+    /**
+     * GET /pedidos/mesa/{mesaId}/activo
+     * Obtiene el pedido actualmente abierto de una mesa.
+     */
+    @GetMapping("/mesa/{mesaId}/activo")
+    public Pedidos obtenerPedidoActivoPorMesa(@PathVariable int mesaId) {
+        return repository.findAll().stream()
+                .filter(p -> p.getMesa().getMesa_id().equals(mesaId))
+                .filter(p -> p.getEstado() != ClasesBD.Pedidos.Estado.pagado
+                        && p.getEstado() != ClasesBD.Pedidos.Estado.cancelado)
+                .findFirst()
+                .orElse(null);
+    }
+
     // Obtener detalles (productos) de un pedido específico
     @GetMapping("/{id}/detalles")
     public List<ClasesBD.DetallePedidos> obtenerDetalles(@PathVariable int id) {

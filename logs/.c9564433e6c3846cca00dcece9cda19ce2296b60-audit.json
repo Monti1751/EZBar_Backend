@@ -6,21 +6,6 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.c9564433e6c3846cca00dcece9cda19ce2296b60-audit.json",
     "files": [
         {
-            "date": 1770294171620,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-05.log",
-            "hash": "0b099bd4ea943dcb5efd195d8c8348dc1c3bfe90b3937d5fd82dd56e99602094"
-        },
-        {
-            "date": 1770487040029,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-07.log",
-            "hash": "b684ebbc45a6d3cf6c917026e38573ec0081cc1724f4685614416157e26d7a5e"
-        },
-        {
-            "date": 1770505666015,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-08.log",
-            "hash": "93c653097cbd445bc86b14ec8f5c06667ff62f7a674e64a40262edd63e3618c9"
-        },
-        {
             "date": 1771247499111,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-16.log",
             "hash": "88cd3a3c3499ee8110888a07477ae304f073c4fe648d1a49dd59d914fa7c176a"
@@ -64,6 +49,26 @@
             "date": 1772665289386,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-03-05.log",
             "hash": "eadc7d437ed6a36e058c3da707c08e285448d7b93d5fc3214536816f24bbf2b9"
+        },
+        {
+            "date": 1773065664951,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-03-09.log",
+            "hash": "eaf4143adc4b55eb02897a259fca0cb43b6517e003c481b9d21af67ebf89bed4"
+        },
+        {
+            "date": 1773125927119,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-03-10.log",
+            "hash": "0c839fa17f5d7317f2e6bf119f1efa18d36f9ede420be8a9ad496000c25fd7ad"
+        },
+        {
+            "date": 1773350581041,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-03-12.log",
+            "hash": "f4f819bf114bf37d24df435eabc2d9c54ef9ffa486b4ecab20fbff4744593f4f"
+        },
+        {
+            "date": 1773356603846,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-03-13.log",
+            "hash": "140b1f21037af12154cb9c8446be88936cf86f2e21dcb0e73052f2adcb35a881"
         }
     ],
     "hashType": "sha256"

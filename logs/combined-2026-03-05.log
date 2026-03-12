@@ -503,3 +503,179 @@
 {"ip":"127.0.0.1","level":"info","message":"PUT /api/pedidos/14 200 - 343ms","responseTime":343,"service":"ezbar-api","statusCode":200,"timestamp":"2026-03-05 00:43:45"}
 {"level":"debug","message":"Memory: 19.63MB / 23.05MB (85.18%)","service":"ezbar-api","timestamp":"2026-03-05 00:43:55"}
 {"external":"3.82MB","heapTotal":"23.05MB","heapUsed":"19.63MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.18%","rss":"62.25MB","service":"ezbar-api","timestamp":"2026-03-05 00:43:55","warningCount":1}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-03-05 19:40:12"}
+{"level":"info","message":"Logger initialized - Environment: development","service":"ezbar-api","timestamp":"2026-03-05 19:40:12"}
+{"level":"info","message":"Log Level: debug","service":"ezbar-api","timestamp":"2026-03-05 19:40:12"}
+{"level":"info","message":"Log Directory: D:\\GitHub\\EZBar_Backend\\logs","service":"ezbar-api","timestamp":"2026-03-05 19:40:12"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-03-05 19:40:12"}
+{"level":"info","message":"✅ Cache service initialized (TTL: 300s, Check period: 60s)","service":"ezbar-api","timestamp":"2026-03-05 19:40:12"}
+{"level":"info","message":"--- [AUTO-FIX] Iniciando corrección de esquema (CASCADE) ---","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"SSL certificates not found. Generating self-signed certificate for development...","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"warn","message":"OpenSSL not available. Using Node.js crypto for certificate generation...","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"error","message":"Failed to start HTTPS server: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge","service":"ezbar-api","stack":"Error: Cannot generate SSL certificate. Please install OpenSSL or the \"node-forge\" package:\nnpm install node-forge\n    at SSLManager.generateCertificateWithNodeCrypto (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:94:19)\n    at async SSLManager.generateSelfSignedCertificate (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:82:13)\n    at async SSLManager.getCredentials (file:///D:/GitHub/EZBar_Backend/Api/api/src/config/ssl.js:39:17)\n    at async file:///D:/GitHub/EZBar_Backend/Api/api/server.js:83:25","timestamp":"2026-03-05 19:40:13"}
+{"level":"warn","message":"Continuing with HTTP only...","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"Starting memory monitor (interval: 60000ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"Memory: 18.38MB / 34.55MB (53.20%)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"✅ Graceful shutdown handlers initialized","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"✅ EZBar API started successfully","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"📝 Log Level: debug","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"💾 Cache: ENABLED","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"⏱️  Request Timeout: 30000ms","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"🔒 HTTPS: ENABLED","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"📡 UDP Discovery escuchando en el puerto 3001","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"🚀 HTTP Server running on http://0.0.0.0:3000","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"🌍 Environment: development","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"📊 Database: EZBarDB@localhost","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"🔗 Backend URL: http://localhost:8080/api","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"============================================================","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"database":"EZBarDB","host":"localhost","level":"info","message":"✅ Conexión exitosa a MariaDB","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 0... (200ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (3ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"📊 DATOS INICIALES: Encontrados 6 productos y 4 categorías.","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: ALTER TABLE detalle_pedidos DROP FOREIGN KEY detalle_pedidos_ibfk_2... (12ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"[AUTO-FIX] OK: FK detalle_pedidos_ibfk_2 borrada en detalle_pedidos","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE detalle_pedidos \n        ADD CONSTRAINT detalle_pedidos_ibfk_2 \n        FOREIGN... (6ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK detalle_pedidos_ibfk_2 creada con CASCADE en detalle_pedidos","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: \n          SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE \n          WHERE TABLE_NA... (0ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: ALTER TABLE productos DROP FOREIGN KEY productos_ibfk_1... (14ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"[AUTO-FIX] OK: FK productos_ibfk_1 borrada en productos","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: \n        ALTER TABLE productos \n        ADD CONSTRAINT productos_ibfk_1 \n        FOREIGN KEY (catego... (10ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"[AUTO-FIX] ÉXITO: FK productos_ibfk_1 creada con CASCADE en productos","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"DB Query: SET FOREIGN_KEY_CHECKS = 1... (0ms)","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"info","message":"--- [AUTO-FIX] Esquema actualizado correctamente ---","service":"ezbar-api","timestamp":"2026-03-05 19:40:13"}
+{"level":"debug","message":"Memory: 18.12MB / 20.55MB (88.18%)","service":"ezbar-api","timestamp":"2026-03-05 19:41:13"}
+{"external":"3.61MB","heapTotal":"20.55MB","heapUsed":"18.12MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.18%","rss":"59.55MB","service":"ezbar-api","timestamp":"2026-03-05 19:41:13","warningCount":1}
+{"level":"debug","message":"Memory: 18.51MB / 20.80MB (89.01%)","service":"ezbar-api","timestamp":"2026-03-05 19:42:13"}
+{"external":"3.64MB","heapTotal":"20.80MB","heapUsed":"18.51MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.01%","rss":"59.91MB","service":"ezbar-api","timestamp":"2026-03-05 19:42:13","warningCount":2}
+{"level":"debug","message":"Memory: 18.24MB / 21.80MB (83.70%)","service":"ezbar-api","timestamp":"2026-03-05 19:43:13"}
+{"level":"debug","message":"Memory: 18.58MB / 21.80MB (85.25%)","service":"ezbar-api","timestamp":"2026-03-05 19:44:13"}
+{"external":"3.71MB","heapTotal":"21.80MB","heapUsed":"18.58MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.25%","rss":"60.83MB","service":"ezbar-api","timestamp":"2026-03-05 19:44:13","warningCount":1}
+{"level":"debug","message":"Memory: 19.12MB / 22.30MB (85.75%)","service":"ezbar-api","timestamp":"2026-03-05 19:45:13"}
+{"external":"3.74MB","heapTotal":"22.30MB","heapUsed":"19.12MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.75%","rss":"61.48MB","service":"ezbar-api","timestamp":"2026-03-05 19:45:13","warningCount":2}
+{"level":"debug","message":"Memory: 18.85MB / 21.30MB (88.52%)","service":"ezbar-api","timestamp":"2026-03-05 19:46:13"}
+{"external":"3.77MB","heapTotal":"21.30MB","heapUsed":"18.85MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.52%","rss":"61.68MB","service":"ezbar-api","timestamp":"2026-03-05 19:46:13","warningCount":3}
+{"level":"debug","message":"Memory: 19.14MB / 21.30MB (89.87%)","service":"ezbar-api","timestamp":"2026-03-05 19:47:13"}
+{"external":"3.80MB","heapTotal":"21.30MB","heapUsed":"19.14MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.87%","rss":"61.68MB","service":"ezbar-api","timestamp":"2026-03-05 19:47:13","warningCount":4}
+{"level":"debug","message":"Memory: 18.84MB / 21.30MB (88.47%)","service":"ezbar-api","timestamp":"2026-03-05 19:48:13"}
+{"external":"3.83MB","heapTotal":"21.30MB","heapUsed":"18.84MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.47%","rss":"61.78MB","service":"ezbar-api","timestamp":"2026-03-05 19:48:13","warningCount":5}
+{"level":"debug","message":"Memory: 19.13MB / 21.30MB (89.83%)","service":"ezbar-api","timestamp":"2026-03-05 19:49:13"}
+{"external":"3.87MB","heapTotal":"21.30MB","heapUsed":"19.13MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.83%","rss":"62.16MB","service":"ezbar-api","timestamp":"2026-03-05 19:49:13","warningCount":6}
+{"level":"debug","message":"Memory: 19.41MB / 21.30MB (91.13%)","service":"ezbar-api","timestamp":"2026-03-05 19:50:13"}
+{"external":"3.90MB","heapTotal":"21.30MB","heapUsed":"19.41MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.13%","rss":"62.21MB","service":"ezbar-api","timestamp":"2026-03-05 19:50:13","warningCount":7}
+{"level":"debug","message":"Memory: 19.12MB / 21.30MB (89.79%)","service":"ezbar-api","timestamp":"2026-03-05 19:51:13"}
+{"external":"3.93MB","heapTotal":"21.30MB","heapUsed":"19.12MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.79%","rss":"61.54MB","service":"ezbar-api","timestamp":"2026-03-05 19:51:13","warningCount":8}
+{"level":"debug","message":"Memory: 19.40MB / 21.30MB (91.10%)","service":"ezbar-api","timestamp":"2026-03-05 19:52:13"}
+{"external":"3.97MB","heapTotal":"21.30MB","heapUsed":"19.40MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.10%","rss":"61.53MB","service":"ezbar-api","timestamp":"2026-03-05 19:52:13","warningCount":9}
+{"level":"debug","message":"Memory: 19.08MB / 21.30MB (89.59%)","service":"ezbar-api","timestamp":"2026-03-05 19:53:13"}
+{"external":"3.99MB","heapTotal":"21.30MB","heapUsed":"19.08MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.59%","rss":"61.54MB","service":"ezbar-api","timestamp":"2026-03-05 19:53:13","warningCount":10}
+{"level":"debug","message":"Memory: 19.36MB / 21.30MB (90.89%)","service":"ezbar-api","timestamp":"2026-03-05 19:54:13"}
+{"external":"4.03MB","heapTotal":"21.30MB","heapUsed":"19.36MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.89%","rss":"61.54MB","service":"ezbar-api","timestamp":"2026-03-05 19:54:13","warningCount":11}
+{"level":"debug","message":"Memory: 19.64MB / 21.30MB (92.23%)","service":"ezbar-api","timestamp":"2026-03-05 19:55:13"}
+{"external":"4.06MB","heapTotal":"21.30MB","heapUsed":"19.64MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.23%","rss":"61.55MB","service":"ezbar-api","timestamp":"2026-03-05 19:55:13","warningCount":12}
+{"level":"debug","message":"Memory: 19.35MB / 22.55MB (85.80%)","service":"ezbar-api","timestamp":"2026-03-05 19:56:13"}
+{"external":"4.09MB","heapTotal":"22.55MB","heapUsed":"19.35MB","level":"warn","message":"🟡 WARNING: Memory usage at 85.80%","rss":"61.61MB","service":"ezbar-api","timestamp":"2026-03-05 19:56:13","warningCount":13}
+{"level":"debug","message":"Memory: 19.63MB / 22.55MB (87.06%)","service":"ezbar-api","timestamp":"2026-03-05 19:57:13"}
+{"external":"4.12MB","heapTotal":"22.55MB","heapUsed":"19.63MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.06%","rss":"61.70MB","service":"ezbar-api","timestamp":"2026-03-05 19:57:13","warningCount":14}
+{"level":"debug","message":"Memory: 19.31MB / 21.55MB (89.63%)","service":"ezbar-api","timestamp":"2026-03-05 19:58:13"}
+{"external":"4.15MB","heapTotal":"21.55MB","heapUsed":"19.31MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.63%","rss":"61.79MB","service":"ezbar-api","timestamp":"2026-03-05 19:58:13","warningCount":15}
+{"level":"debug","message":"Memory: 19.60MB / 21.55MB (90.96%)","service":"ezbar-api","timestamp":"2026-03-05 19:59:13"}
+{"external":"4.18MB","heapTotal":"21.55MB","heapUsed":"19.60MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.96%","rss":"61.45MB","service":"ezbar-api","timestamp":"2026-03-05 19:59:13","warningCount":16}
+{"level":"debug","message":"Memory: 19.88MB / 21.55MB (92.24%)","service":"ezbar-api","timestamp":"2026-03-05 20:00:13"}
+{"external":"4.22MB","heapTotal":"21.55MB","heapUsed":"19.88MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.24%","rss":"61.46MB","service":"ezbar-api","timestamp":"2026-03-05 20:00:13","warningCount":17}
+{"level":"debug","message":"Memory: 19.58MB / 21.55MB (90.89%)","service":"ezbar-api","timestamp":"2026-03-05 20:01:13"}
+{"external":"4.25MB","heapTotal":"21.55MB","heapUsed":"19.58MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.89%","rss":"61.54MB","service":"ezbar-api","timestamp":"2026-03-05 20:01:13","warningCount":18}
+{"level":"debug","message":"Memory: 19.86MB / 21.55MB (92.17%)","service":"ezbar-api","timestamp":"2026-03-05 20:02:13"}
+{"external":"4.29MB","heapTotal":"21.55MB","heapUsed":"19.86MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.17%","rss":"61.61MB","service":"ezbar-api","timestamp":"2026-03-05 20:02:13","warningCount":19}
+{"level":"debug","message":"Memory: 19.54MB / 21.55MB (90.69%)","service":"ezbar-api","timestamp":"2026-03-05 20:03:13"}
+{"external":"4.31MB","heapTotal":"21.55MB","heapUsed":"19.54MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.69%","rss":"61.71MB","service":"ezbar-api","timestamp":"2026-03-05 20:03:13","warningCount":20}
+{"level":"debug","message":"Memory: 19.82MB / 21.55MB (91.97%)","service":"ezbar-api","timestamp":"2026-03-05 20:04:13"}
+{"external":"4.35MB","heapTotal":"21.55MB","heapUsed":"19.82MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.97%","rss":"61.71MB","service":"ezbar-api","timestamp":"2026-03-05 20:04:13","warningCount":21}
+{"level":"debug","message":"Memory: 20.09MB / 21.55MB (93.25%)","service":"ezbar-api","timestamp":"2026-03-05 20:05:13"}
+{"external":"4.38MB","heapTotal":"21.55MB","heapUsed":"20.09MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.25%","rss":"61.71MB","service":"ezbar-api","timestamp":"2026-03-05 20:05:13","warningCount":22}
+{"level":"debug","message":"Memory: 19.80MB / 21.80MB (90.82%)","service":"ezbar-api","timestamp":"2026-03-05 20:06:13"}
+{"external":"4.41MB","heapTotal":"21.80MB","heapUsed":"19.80MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.82%","rss":"61.75MB","service":"ezbar-api","timestamp":"2026-03-05 20:06:13","warningCount":23}
+{"level":"debug","message":"Memory: 20.08MB / 21.80MB (92.11%)","service":"ezbar-api","timestamp":"2026-03-05 20:07:13"}
+{"external":"4.44MB","heapTotal":"21.80MB","heapUsed":"20.08MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.11%","rss":"61.76MB","service":"ezbar-api","timestamp":"2026-03-05 20:07:13","warningCount":24}
+{"level":"debug","message":"Memory: 19.75MB / 22.80MB (86.64%)","service":"ezbar-api","timestamp":"2026-03-05 20:08:13"}
+{"external":"4.47MB","heapTotal":"22.80MB","heapUsed":"19.75MB","level":"warn","message":"🟡 WARNING: Memory usage at 86.64%","rss":"62.23MB","service":"ezbar-api","timestamp":"2026-03-05 20:08:13","warningCount":25}
+{"level":"debug","message":"Memory: 20.03MB / 22.80MB (87.88%)","service":"ezbar-api","timestamp":"2026-03-05 20:09:13"}
+{"external":"4.50MB","heapTotal":"22.80MB","heapUsed":"20.03MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.88%","rss":"61.98MB","service":"ezbar-api","timestamp":"2026-03-05 20:09:13","warningCount":26}
+{"level":"debug","message":"Memory: 20.31MB / 22.80MB (89.10%)","service":"ezbar-api","timestamp":"2026-03-05 20:10:13"}
+{"external":"4.54MB","heapTotal":"22.80MB","heapUsed":"20.31MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.10%","rss":"61.98MB","service":"ezbar-api","timestamp":"2026-03-05 20:10:13","warningCount":27}
+{"level":"debug","message":"Memory: 20.03MB / 21.80MB (91.89%)","service":"ezbar-api","timestamp":"2026-03-05 20:11:13"}
+{"external":"4.57MB","heapTotal":"21.80MB","heapUsed":"20.03MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.89%","rss":"62.06MB","service":"ezbar-api","timestamp":"2026-03-05 20:11:13","warningCount":28}
+{"level":"debug","message":"Memory: 20.31MB / 21.80MB (93.20%)","service":"ezbar-api","timestamp":"2026-03-05 20:12:13"}
+{"external":"4.61MB","heapTotal":"21.80MB","heapUsed":"20.31MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.20%","rss":"62.36MB","service":"ezbar-api","timestamp":"2026-03-05 20:12:13","warningCount":29}
+{"level":"debug","message":"Memory: 19.99MB / 21.80MB (91.73%)","service":"ezbar-api","timestamp":"2026-03-05 20:13:13"}
+{"external":"4.64MB","heapTotal":"21.80MB","heapUsed":"19.99MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.73%","rss":"62.37MB","service":"ezbar-api","timestamp":"2026-03-05 20:13:13","warningCount":30}
+{"level":"debug","message":"Memory: 20.27MB / 21.80MB (93.00%)","service":"ezbar-api","timestamp":"2026-03-05 20:14:13"}
+{"external":"4.67MB","heapTotal":"21.80MB","heapUsed":"20.27MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.00%","rss":"62.37MB","service":"ezbar-api","timestamp":"2026-03-05 20:14:13","warningCount":31}
+{"level":"debug","message":"Memory: 20.55MB / 21.80MB (94.29%)","service":"ezbar-api","timestamp":"2026-03-05 20:15:13"}
+{"external":"4.70MB","heapTotal":"21.80MB","heapUsed":"20.55MB","level":"warn","message":"🟡 WARNING: Memory usage at 94.29%","rss":"62.29MB","service":"ezbar-api","timestamp":"2026-03-05 20:15:13","warningCount":32}
+{"level":"debug","message":"Memory: 20.26MB / 22.05MB (91.88%)","service":"ezbar-api","timestamp":"2026-03-05 20:16:13"}
+{"external":"4.73MB","heapTotal":"22.05MB","heapUsed":"20.26MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.88%","rss":"62.49MB","service":"ezbar-api","timestamp":"2026-03-05 20:16:13","warningCount":33}
+{"level":"debug","message":"Memory: 20.53MB / 22.05MB (93.13%)","service":"ezbar-api","timestamp":"2026-03-05 20:17:13"}
+{"external":"4.76MB","heapTotal":"22.05MB","heapUsed":"20.53MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.13%","rss":"62.50MB","service":"ezbar-api","timestamp":"2026-03-05 20:17:13","warningCount":34}
+{"level":"debug","message":"Memory: 20.20MB / 22.05MB (91.63%)","service":"ezbar-api","timestamp":"2026-03-05 20:18:13"}
+{"external":"4.79MB","heapTotal":"22.05MB","heapUsed":"20.20MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.63%","rss":"55.23MB","service":"ezbar-api","timestamp":"2026-03-05 20:18:13","warningCount":35}
+{"level":"debug","message":"Memory: 20.48MB / 22.05MB (92.88%)","service":"ezbar-api","timestamp":"2026-03-05 20:19:13"}
+{"external":"4.82MB","heapTotal":"22.05MB","heapUsed":"20.48MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.88%","rss":"55.23MB","service":"ezbar-api","timestamp":"2026-03-05 20:19:13","warningCount":36}
+{"level":"debug","message":"Memory: 20.75MB / 22.05MB (94.13%)","service":"ezbar-api","timestamp":"2026-03-05 20:20:13"}
+{"external":"4.86MB","heapTotal":"22.05MB","heapUsed":"20.75MB","level":"warn","message":"🟡 WARNING: Memory usage at 94.13%","rss":"55.23MB","service":"ezbar-api","timestamp":"2026-03-05 20:20:13","warningCount":37}
+{"level":"debug","message":"Memory: 20.47MB / 23.05MB (88.81%)","service":"ezbar-api","timestamp":"2026-03-05 20:21:13"}
+{"external":"4.89MB","heapTotal":"23.05MB","heapUsed":"20.47MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.81%","rss":"55.38MB","service":"ezbar-api","timestamp":"2026-03-05 20:21:13","warningCount":38}
+{"level":"debug","message":"Memory: 20.74MB / 23.05MB (90.01%)","service":"ezbar-api","timestamp":"2026-03-05 20:22:13"}
+{"external":"4.93MB","heapTotal":"23.05MB","heapUsed":"20.74MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.01%","rss":"55.37MB","service":"ezbar-api","timestamp":"2026-03-05 20:22:13","warningCount":39}
+{"level":"debug","message":"Memory: 20.42MB / 22.30MB (91.60%)","service":"ezbar-api","timestamp":"2026-03-05 20:23:13"}
+{"external":"4.96MB","heapTotal":"22.30MB","heapUsed":"20.42MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.60%","rss":"52.20MB","service":"ezbar-api","timestamp":"2026-03-05 20:23:13","warningCount":40}
+{"level":"debug","message":"Memory: 20.71MB / 22.30MB (92.86%)","service":"ezbar-api","timestamp":"2026-03-05 20:24:13"}
+{"external":"4.99MB","heapTotal":"22.30MB","heapUsed":"20.71MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.86%","rss":"52.36MB","service":"ezbar-api","timestamp":"2026-03-05 20:24:13","warningCount":41}
+{"level":"debug","message":"Memory: 20.98MB / 22.30MB (94.10%)","service":"ezbar-api","timestamp":"2026-03-05 20:25:13"}
+{"external":"5.02MB","heapTotal":"22.30MB","heapUsed":"20.98MB","level":"warn","message":"🟡 WARNING: Memory usage at 94.10%","rss":"52.51MB","service":"ezbar-api","timestamp":"2026-03-05 20:25:13","warningCount":42}
+{"level":"debug","message":"Memory: 20.67MB / 22.30MB (92.71%)","service":"ezbar-api","timestamp":"2026-03-05 20:26:13"}
+{"external":"5.05MB","heapTotal":"22.30MB","heapUsed":"20.67MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.71%","rss":"52.68MB","service":"ezbar-api","timestamp":"2026-03-05 20:26:13","warningCount":43}
+{"level":"debug","message":"Memory: 20.95MB / 22.30MB (93.96%)","service":"ezbar-api","timestamp":"2026-03-05 20:27:13"}
+{"external":"5.08MB","heapTotal":"22.30MB","heapUsed":"20.95MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.96%","rss":"52.81MB","service":"ezbar-api","timestamp":"2026-03-05 20:27:13","warningCount":44}
+{"level":"debug","message":"Memory: 20.64MB / 22.55MB (91.53%)","service":"ezbar-api","timestamp":"2026-03-05 20:28:13"}
+{"external":"5.11MB","heapTotal":"22.55MB","heapUsed":"20.64MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.53%","rss":"51.46MB","service":"ezbar-api","timestamp":"2026-03-05 20:28:13","warningCount":45}
+{"level":"debug","message":"Memory: 20.91MB / 22.55MB (92.75%)","service":"ezbar-api","timestamp":"2026-03-05 20:29:13"}
+{"external":"5.14MB","heapTotal":"22.55MB","heapUsed":"20.91MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.75%","rss":"51.46MB","service":"ezbar-api","timestamp":"2026-03-05 20:29:13","warningCount":46}
+{"level":"debug","message":"Memory: 21.19MB / 22.55MB (93.99%)","service":"ezbar-api","timestamp":"2026-03-05 20:30:13"}
+{"external":"5.18MB","heapTotal":"22.55MB","heapUsed":"21.19MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.99%","rss":"51.12MB","service":"ezbar-api","timestamp":"2026-03-05 20:30:13","warningCount":47}
+{"level":"debug","message":"Memory: 20.91MB / 22.55MB (92.73%)","service":"ezbar-api","timestamp":"2026-03-05 20:31:13"}
+{"external":"5.21MB","heapTotal":"22.55MB","heapUsed":"20.91MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.73%","rss":"51.27MB","service":"ezbar-api","timestamp":"2026-03-05 20:31:13","warningCount":48}
+{"level":"debug","message":"Memory: 21.17MB / 22.55MB (93.90%)","service":"ezbar-api","timestamp":"2026-03-05 20:32:13"}
+{"external":"5.24MB","heapTotal":"22.55MB","heapUsed":"21.17MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.90%","rss":"51.33MB","service":"ezbar-api","timestamp":"2026-03-05 20:32:13","warningCount":49}
+{"level":"debug","message":"Memory: 20.87MB / 23.55MB (88.62%)","service":"ezbar-api","timestamp":"2026-03-05 20:33:13"}
+{"external":"5.28MB","heapTotal":"23.55MB","heapUsed":"20.87MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.62%","rss":"49.41MB","service":"ezbar-api","timestamp":"2026-03-05 20:33:13","warningCount":50}
+{"level":"debug","message":"Memory: 21.13MB / 23.55MB (89.74%)","service":"ezbar-api","timestamp":"2026-03-05 20:34:13"}
+{"external":"5.31MB","heapTotal":"23.55MB","heapUsed":"21.13MB","level":"warn","message":"🟡 WARNING: Memory usage at 89.74%","rss":"49.57MB","service":"ezbar-api","timestamp":"2026-03-05 20:34:13","warningCount":51}
+{"level":"debug","message":"Memory: 21.39MB / 23.55MB (90.86%)","service":"ezbar-api","timestamp":"2026-03-05 20:35:13"}
+{"external":"5.34MB","heapTotal":"23.55MB","heapUsed":"21.39MB","level":"warn","message":"🟡 WARNING: Memory usage at 90.86%","rss":"49.63MB","service":"ezbar-api","timestamp":"2026-03-05 20:35:13","warningCount":52}
+{"level":"debug","message":"Memory: 21.09MB / 22.80MB (92.53%)","service":"ezbar-api","timestamp":"2026-03-05 20:36:13"}
+{"external":"5.37MB","heapTotal":"22.80MB","heapUsed":"21.09MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.53%","rss":"49.77MB","service":"ezbar-api","timestamp":"2026-03-05 20:36:13","warningCount":53}
+{"level":"debug","message":"Memory: 21.36MB / 22.80MB (93.68%)","service":"ezbar-api","timestamp":"2026-03-05 20:37:13"}
+{"external":"5.40MB","heapTotal":"22.80MB","heapUsed":"21.36MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.68%","rss":"49.77MB","service":"ezbar-api","timestamp":"2026-03-05 20:37:13","warningCount":54}
+{"level":"debug","message":"Memory: 21.62MB / 22.80MB (94.84%)","service":"ezbar-api","timestamp":"2026-03-05 20:38:13"}
+{"external":"5.44MB","heapTotal":"22.80MB","heapUsed":"21.62MB","level":"warn","message":"🟡 WARNING: Memory usage at 94.84%","rss":"49.40MB","service":"ezbar-api","timestamp":"2026-03-05 20:38:13","warningCount":55}
+{"level":"debug","message":"Memory: 21.30MB / 22.80MB (93.45%)","service":"ezbar-api","timestamp":"2026-03-05 20:39:13"}
+{"external":"5.47MB","heapTotal":"22.80MB","heapUsed":"21.30MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.45%","rss":"49.46MB","service":"ezbar-api","timestamp":"2026-03-05 20:39:13","warningCount":56}
+{"level":"debug","message":"Memory: 21.58MB / 23.05MB (93.62%)","service":"ezbar-api","timestamp":"2026-03-05 20:40:13"}
+{"external":"5.50MB","heapTotal":"23.05MB","heapUsed":"21.58MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.62%","rss":"50.04MB","service":"ezbar-api","timestamp":"2026-03-05 20:40:13","warningCount":57}
+{"level":"debug","message":"Memory: 21.27MB / 23.30MB (91.28%)","service":"ezbar-api","timestamp":"2026-03-05 20:41:13"}
+{"external":"5.53MB","heapTotal":"23.30MB","heapUsed":"21.27MB","level":"warn","message":"🟡 WARNING: Memory usage at 91.28%","rss":"50.11MB","service":"ezbar-api","timestamp":"2026-03-05 20:41:13","warningCount":58}
+{"level":"debug","message":"Memory: 21.53MB / 23.30MB (92.43%)","service":"ezbar-api","timestamp":"2026-03-05 20:42:13"}
+{"external":"5.56MB","heapTotal":"23.30MB","heapUsed":"21.53MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.43%","rss":"50.11MB","service":"ezbar-api","timestamp":"2026-03-05 20:42:13","warningCount":59}
+{"level":"debug","message":"Memory: 21.79MB / 23.30MB (93.53%)","service":"ezbar-api","timestamp":"2026-03-05 20:43:13"}
+{"external":"5.59MB","heapTotal":"23.30MB","heapUsed":"21.79MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.53%","rss":"49.33MB","service":"ezbar-api","timestamp":"2026-03-05 20:43:13","warningCount":60}
+{"level":"debug","message":"Memory: 21.48MB / 23.30MB (92.21%)","service":"ezbar-api","timestamp":"2026-03-05 20:44:13"}
+{"external":"5.63MB","heapTotal":"23.30MB","heapUsed":"21.48MB","level":"warn","message":"🟡 WARNING: Memory usage at 92.21%","rss":"49.50MB","service":"ezbar-api","timestamp":"2026-03-05 20:44:13","warningCount":61}
+{"level":"debug","message":"Memory: 21.74MB / 23.30MB (93.31%)","service":"ezbar-api","timestamp":"2026-03-05 20:45:13"}
+{"external":"5.66MB","heapTotal":"23.30MB","heapUsed":"21.74MB","level":"warn","message":"🟡 WARNING: Memory usage at 93.31%","rss":"49.50MB","service":"ezbar-api","timestamp":"2026-03-05 20:45:13","warningCount":62}
+{"level":"debug","message":"Memory: 21.44MB / 24.55MB (87.35%)","service":"ezbar-api","timestamp":"2026-03-05 20:46:13"}
+{"external":"5.70MB","heapTotal":"24.55MB","heapUsed":"21.44MB","level":"warn","message":"🟡 WARNING: Memory usage at 87.35%","rss":"49.74MB","service":"ezbar-api","timestamp":"2026-03-05 20:46:13","warningCount":63}
+{"level":"debug","message":"Memory: 21.70MB / 24.55MB (88.39%)","service":"ezbar-api","timestamp":"2026-03-05 20:47:13"}
+{"external":"5.72MB","heapTotal":"24.55MB","heapUsed":"21.70MB","level":"warn","message":"🟡 WARNING: Memory usage at 88.39%","rss":"49.74MB","service":"ezbar-api","timestamp":"2026-03-05 20:47:13","warningCount":64}
