@@ -4,6 +4,10 @@ spring:
     username: root
     password: m3f1
     driver-class-name: org.mariadb.jdbc.Driver
+  security:
+    user:
+      name: admin
+      password: admin123
   jpa:
     hibernate:
       ddl-auto: update

@@ -16,6 +16,7 @@ export const obtenerProductos = async (req, res, next) => {
         p.ingredientes,
         p.extras,
         p.alergenos,
+        p.imagen_miniatura,
         c.nombre as categoria_nombre
       FROM productos p
       LEFT JOIN categorias c ON p.categoria_id = c.categoria_id
@@ -32,6 +33,7 @@ export const obtenerProductos = async (req, res, next) => {
       precio: typeof p.precio === 'string' ? parseFloat(p.precio) : p.precio,
       categoria_id: p.categoria_id,
       imagen_blob: p.imagen ? (Buffer.isBuffer(p.imagen) ? p.imagen.toString('base64') : p.imagen) : '',
+      imagen_miniatura: p.imagen_miniatura ? (Buffer.isBuffer(p.imagen_miniatura) ? p.imagen_miniatura.toString('base64') : p.imagen_miniatura) : '',
       imagen_url: p.url_imagen || '',
       ingredientes: p.ingredientes || '',
       extras: p.extras || '',
@@ -44,6 +46,7 @@ export const obtenerProductos = async (req, res, next) => {
 
     res.json(productos);
   } catch (error) {
+    logger.error(`❌ Error en obtenerProductos: ${error.message}`);
     next(error);
   }
 };
@@ -60,10 +63,11 @@ export const crearProducto = async (req, res, next) => {
 
     // Convertir Base64 a Buffer para almacenamiento binario
     const imagenBuffer = imagenBlob ? Buffer.from(imagenBlob, 'base64') : null;
+    const miniaturaBuffer = req.body.imagenMiniatura ? Buffer.from(req.body.imagenMiniatura, 'base64') : null;
 
     const [result] = await pool.query(
-      'INSERT INTO productos (nombre, descripcion, precio, categoria_id, imagen, ingredientes, extras, alergenos) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-      [nombre, descripcion || '', precio, categoria_id || null, imagenBuffer, ingredientes || '', extras || '', alergenos || '']
+      'INSERT INTO productos (nombre, descripcion, precio, categoria_id, imagen, imagen_miniatura, ingredientes, extras, alergenos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [nombre, descripcion || '', precio, categoria_id || null, imagenBuffer, miniaturaBuffer, ingredientes || '', extras || '', alergenos || '']
     );
 
     res.status(201).json({
@@ -91,6 +95,8 @@ export const actualizarProducto = async (req, res, next) => {
     const { id } = req.params;
     const { nombre, descripcion, precio, categoria_id, imagenBlob, ingredientes, extras, alergenos } = req.body;
 
+    console.log(`📦 [BACKEND] Actualizar producto ID ${id}: ${nombre}. Ingredientes: [${ingredientes}], Alergenos: [${alergenos}], Extras: [${extras}]`);
+
     // Validar que ID sea válido
     if (!id || isNaN(id)) {
       return res.status(400).json({ error: 'ID de producto inválido' });
@@ -108,6 +114,12 @@ export const actualizarProducto = async (req, res, next) => {
       query += ', imagen = ?';
       const imagenBuffer = imagenBlob ? Buffer.from(imagenBlob, 'base64') : null;
       params.push(imagenBuffer);
+    }
+
+    if (req.body.imagenMiniatura !== undefined) {
+      query += ', imagen_miniatura = ?';
+      const miniaturaBuffer = req.body.imagenMiniatura ? Buffer.from(req.body.imagenMiniatura, 'base64') : null;
+      params.push(miniaturaBuffer);
     }
 
     query += ' WHERE producto_id = ?';
@@ -140,6 +152,7 @@ export const actualizarProducto = async (req, res, next) => {
       precio: typeof producto.precio === 'string' ? parseFloat(producto.precio) : producto.precio,
       categoria_id: producto.categoria_id,
       imagen_blob: producto.imagen ? (Buffer.isBuffer(producto.imagen) ? producto.imagen.toString('base64') : producto.imagen) : '',
+      imagen_miniatura: producto.imagen_miniatura ? (Buffer.isBuffer(producto.imagen_miniatura) ? producto.imagen_miniatura.toString('base64') : producto.imagen_miniatura) : '',
       imagen_url: producto.url_imagen || '',
       ingredientes: producto.ingredientes || '',
       extras: producto.extras || '',
