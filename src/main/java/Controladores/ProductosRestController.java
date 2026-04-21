@@ -92,6 +92,12 @@ public class ProductosRestController {
                 existing.setStock_minimo(producto.getStock_minimo());
             if (producto.getUnidad_medida() != null)
                 existing.setUnidad_medida(producto.getUnidad_medida());
+            if (producto.getIngredientes() != null)
+                existing.setIngredientes(producto.getIngredientes());
+            if (producto.getAlergenos() != null)
+                existing.setAlergenos(producto.getAlergenos());
+            if (producto.getExtras() != null)
+                existing.setExtras(producto.getExtras());
 
             Productos guardado = repository.save(existing);
             logger.info("DEBUG: Producto {} guardado exitosamente con {} bytes de imagen", id,

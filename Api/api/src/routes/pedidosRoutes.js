@@ -8,6 +8,9 @@ router.post('/', pedidosController.crearPedido);
 // GET /api/pedidos - Obtiene todos los pedidos
 router.get('/', pedidosController.obtenerPedidos);
 
+// PUT /api/pedidos/:id - Actualiza un pedido (General)
+router.put('/:id', pedidosController.actualizarPedido);
+
 // GET /api/pedidos/:id/detalles - Obtiene los productos (detalles) de un pedido específico
 router.get('/:id/detalles', pedidosController.obtenerDetallesPedido);
 

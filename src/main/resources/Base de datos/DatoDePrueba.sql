@@ -56,6 +56,7 @@ INSERT INTO
         capacidad,
         ubicacion,
         estado,
+        nombre,
         pos_x,
         pos_y
     )
@@ -64,6 +65,7 @@ VALUES (
         4,
         'Terraza',
         'libre',
+        'Mesa 1 T',
         10.0,
         10.0
     ),
@@ -72,6 +74,7 @@ VALUES (
         4,
         'Terraza',
         'libre',
+        'Mesa 2 T',
         20.0,
         10.0
     ),
@@ -80,6 +83,7 @@ VALUES (
         6,
         'Terraza',
         'libre',
+        'Mesa 3 T',
         30.0,
         10.0
     ),
@@ -88,6 +92,7 @@ VALUES (
         2,
         'Terraza',
         'libre',
+        'Mesa 4 T',
         10.0,
         20.0
     ),
@@ -96,6 +101,7 @@ VALUES (
         4,
         'Terraza',
         'libre',
+        'Mesa 5 T',
         20.0,
         20.0
     );
@@ -107,6 +113,7 @@ INSERT INTO
         capacidad,
         ubicacion,
         estado,
+        nombre,
         pos_x,
         pos_y
     )
@@ -115,6 +122,7 @@ VALUES (
         4,
         'Interior',
         'libre',
+        'Mesa 1 I',
         10.0,
         10.0
     ),
@@ -123,6 +131,7 @@ VALUES (
         6,
         'Interior',
         'libre',
+        'Mesa 2 I',
         20.0,
         10.0
     ),
@@ -131,6 +140,7 @@ VALUES (
         2,
         'Interior',
         'libre',
+        'Mesa 3 I',
         30.0,
         10.0
     ),
@@ -139,6 +149,7 @@ VALUES (
         4,
         'Interior',
         'libre',
+        'Mesa 4 I',
         10.0,
         20.0
     );
@@ -149,6 +160,7 @@ INSERT INTO
         capacidad,
         ubicacion,
         estado,
+        nombre,
         pos_x,
         pos_y
     )
@@ -157,6 +169,7 @@ VALUES (
         1,
         'Barra',
         'libre',
+        'Mesa 1 B',
         5.0,
         5.0
     ),
@@ -165,6 +178,7 @@ VALUES (
         1,
         'Barra',
         'libre',
+        'Taburete 2',
         10.0,
         5.0
     ),
@@ -173,6 +187,7 @@ VALUES (
         1,
         'Barra',
         'libre',
+        'Taburete 3',
         15.0,
         5.0
     ),
@@ -181,6 +196,7 @@ VALUES (
         2,
         'Barra',
         'libre',
+        'Banqueta 4',
         20.0,
         5.0
     );

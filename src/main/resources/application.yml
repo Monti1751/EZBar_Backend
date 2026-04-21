@@ -3,6 +3,10 @@ spring:
     name: EZBar Backend API
   profiles:
     active: dev
+  security:
+    user:
+      name: admin
+      password: admin123
   jpa:
     properties:
       hibernate:

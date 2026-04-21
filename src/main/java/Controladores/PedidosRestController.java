@@ -36,15 +36,35 @@ public class PedidosRestController {
         return repository.save(pedido);
     }
 
-    // Actualizar un pedido (PUT /pedidos/{id})
     @PutMapping("/{id}")
-    @SuppressWarnings("null")
-    public Pedidos actualizar(@PathVariable int id, @RequestBody Pedidos pedido) {
-        if (repository.existsById(id)) {
-            pedido.setPedido_id(id);
-            return repository.save(pedido);
-        }
-        return null;
+    public Pedidos actualizar(@PathVariable int id, @RequestBody java.util.Map<String, Object> payload) {
+        System.out.println("🔄 Solicitud de actualización para Pedido ID: " + id + " con payload: " + payload);
+        return repository.findById(id).map(existente -> {
+            if (payload.containsKey("estado")) {
+                String nuevoEstadoStr = payload.get("estado").toString();
+                System.out.println("📍 Cambiando estado a: " + nuevoEstadoStr);
+                try {
+                    existente.setEstado(ClasesBD.Pedidos.Estado.valueOf(nuevoEstadoStr.toLowerCase()));
+                } catch (Exception e) {
+                    System.err.println("❌ Error al convertir enum estado: " + e.getMessage());
+                }
+            }
+            if (payload.containsKey("total_pedido")) {
+                existente.setTotal_pedido(new java.math.BigDecimal(payload.get("total_pedido").toString()));
+            }
+            if (payload.containsKey("numero_comensales")) {
+                existente.setNumero_comensales(Integer.parseInt(payload.get("numero_comensales").toString()));
+            }
+            if (payload.containsKey("observaciones")) {
+                existente.setObservaciones(payload.get("observaciones").toString());
+            }
+            Pedidos guardado = repository.save(existente);
+            System.out.println("✅ Pedido guardado con éxito. Nuevo estado en BD: " + guardado.getEstado());
+            return guardado;
+        }).orElseGet(() -> {
+            System.err.println("⚠️ Pedido no encontrado para actualizar: " + id);
+            return null;
+        });
     }
 
     // Inyección de repositorios necesarios para la lógica compleja de pedidos
@@ -157,6 +177,20 @@ public class PedidosRestController {
         pedidoActual.setTotal_pedido(nuevoTotal);
 
         return repository.save(pedidoActual); // Devolver el pedido actualizado
+    }
+
+    /**
+     * GET /pedidos/mesa/{mesaId}/activo
+     * Obtiene el pedido actualmente abierto de una mesa.
+     */
+    @GetMapping("/mesa/{mesaId}/activo")
+    public Pedidos obtenerPedidoActivoPorMesa(@PathVariable int mesaId) {
+        return repository.findAll().stream()
+                .filter(p -> p.getMesa().getMesa_id().equals(mesaId))
+                .filter(p -> p.getEstado() != ClasesBD.Pedidos.Estado.pagado
+                        && p.getEstado() != ClasesBD.Pedidos.Estado.cancelado)
+                .findFirst()
+                .orElse(null);
     }
 
     // Obtener detalles (productos) de un pedido específico
