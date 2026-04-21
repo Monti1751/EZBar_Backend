@@ -6,44 +6,14 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.6f9d719f9889acaeac60b13e4201a3eeddbb44c3-audit.json",
     "files": [
         {
-            "date": 1772213205138,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-27.log",
-            "hash": "f11ef753d935daf3a0d4d138924d0c03ae00dc77e71f2ff8ec947b9dd66cb5b1"
+            "date": 1774548202432,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-26.log",
+            "hash": "42ce059085e046438dabb696f6364b4dac8651ecf80c187d783c55a2e7b75179"
         },
         {
-            "date": 1772233248380,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-02-28.log",
-            "hash": "6ef6ae776af6d670371f946dbdde6e07ad40c4033766113b811d745dfa4ebf18"
-        },
-        {
-            "date": 1772661833766,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-04.log",
-            "hash": "4bd36470d75b4b9f9d892efa364a2fb2faea4414ec308f39f1ad61c3115f76ad"
-        },
-        {
-            "date": 1772665210901,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-05.log",
-            "hash": "f5499949fa931c2429f80522d92c2b539146863eb596049536e84c15ac61b315"
-        },
-        {
-            "date": 1773065664893,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-09.log",
-            "hash": "4aaa95c8ee550ca01d8780e608c38ef4b8455928ddb7f3455a1b43143c9b12be"
-        },
-        {
-            "date": 1773125927099,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-10.log",
-            "hash": "063ba12066e55c14ae9fabd9f36be29612e21886170986db25171be4584591f3"
-        },
-        {
-            "date": 1773350581007,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-12.log",
-            "hash": "e533fa428d4fa56abff18b5edcee3513442cde55fae5b30eb02283de5708b936"
-        },
-        {
-            "date": 1773356435761,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-13.log",
-            "hash": "83c6f1ceab7f5596ae90c0f04e4c629aa2a3e166802e7a786f2323ff8f6737d3"
+            "date": 1775235898906,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-04-03.log",
+            "hash": "f06e34ec83349da25764b06a7b1b5749f2f975396c58b6b3ef04c6cd6240a952"
         }
     ],
     "hashType": "sha256"
