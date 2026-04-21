@@ -7,6 +7,35 @@ target/
 # JaCoCo Test Coverage
 *.exec
 jacoco.xml
+
+# Logs
 *.log
-*audit.json
 logs/
+backend.log
+backend_direct.log
+build_fail.log
+build_log.txt
+compile.log
+compile_error.log
+compile_result.txt
+debug_run.log
+debug_run_2.log
+hs_err_pid*.log
+replay_pid*.log
+restart.log
+startup.log
+startup_debug.log
+startup_error.txt
+filelist.txt
+
+# Node
+node_modules/
+dist/
+.env*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db

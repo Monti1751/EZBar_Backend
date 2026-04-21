@@ -56,6 +56,18 @@ public class Productos {
     @JsonProperty("imagenBlob")
     private byte[] imagenBlob;
 
+    @Column(columnDefinition = "TEXT")
+    @JsonProperty("ingredientes")
+    private String ingredientes;
+
+    @Column(columnDefinition = "TEXT")
+    @JsonProperty("alergenos")
+    private String alergenos;
+
+    @Column(columnDefinition = "TEXT")
+    @JsonProperty("extras")
+    private String extras;
+
     public Productos() {
     }
 
@@ -188,5 +200,29 @@ public class Productos {
 
     public void setImagenBlob(byte[] imagenBlob) {
         this.imagenBlob = imagenBlob;
+    }
+
+    public String getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
+    public String getAlergenos() {
+        return alergenos;
+    }
+
+    public void setAlergenos(String alergenos) {
+        this.alergenos = alergenos;
+    }
+
+    public String getExtras() {
+        return extras;
+    }
+
+    public void setExtras(String extras) {
+        this.extras = extras;
     }
 }
