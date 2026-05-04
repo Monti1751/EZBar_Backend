@@ -50,8 +50,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/actuator/health").permitAll()
-                        .requestMatchers("/api/setup/**").permitAll()
-                        .requestMatchers("/api/login/**").permitAll()
+                        .requestMatchers("/api/setup/**", "/setup/**").permitAll()
+                        .requestMatchers("/api/login/**", "/login/**").permitAll()
+                        .requestMatchers("/api/pagos/**", "/pagos/**").permitAll()
+                        .requestMatchers("/api/pedidos/**", "/pedidos/**").permitAll()
                         .anyRequest().authenticated())
                 .cors()
                 .and()

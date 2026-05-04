@@ -6,49 +6,9 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.c9564433e6c3846cca00dcece9cda19ce2296b60-audit.json",
     "files": [
         {
-            "date": 1770294171620,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-05.log",
-            "hash": "0b099bd4ea943dcb5efd195d8c8348dc1c3bfe90b3937d5fd82dd56e99602094"
-        },
-        {
-            "date": 1770487040029,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-07.log",
-            "hash": "b684ebbc45a6d3cf6c917026e38573ec0081cc1724f4685614416157e26d7a5e"
-        },
-        {
-            "date": 1770505666015,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-08.log",
-            "hash": "93c653097cbd445bc86b14ec8f5c06667ff62f7a674e64a40262edd63e3618c9"
-        },
-        {
-            "date": 1771247499111,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-16.log",
-            "hash": "88cd3a3c3499ee8110888a07477ae304f073c4fe648d1a49dd59d914fa7c176a"
-        },
-        {
-            "date": 1771283062526,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-17.log",
-            "hash": "bb6c0c0d89f42eaca632039140c8f6f85aa6b0a4eef38670bef2e8a2ac10c615"
-        },
-        {
-            "date": 1771370852991,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-18.log",
-            "hash": "b7c81d355926ab462833f486251d0fab5c8d844545539a69d0774a6b42f61bc0"
-        },
-        {
-            "date": 1771689626685,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-21.log",
-            "hash": "3adf58d29fe44e15f23752f085c58db9b7857d5c7c129a6592d52438be0a854a"
-        },
-        {
-            "date": 1771785415901,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-22.log",
-            "hash": "c9bdf2d4c11dd002a7e5f6393e57ba009375937f0c8a09a27b0dc2a4f7c5e4ed"
-        },
-        {
-            "date": 1771801716240,
-            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-02-23.log",
-            "hash": "e37a2d9252da2ab848f4f2df2475fa7e37c127508e91d667397b3b3895280771"
+            "date": 1777915830892,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-05-04.log",
+            "hash": "33d9f5b091f432e5997ed17e80b7db445c9246cfe72dc0f5cbe32c8522ecb158"
         }
     ],
     "hashType": "sha256"
