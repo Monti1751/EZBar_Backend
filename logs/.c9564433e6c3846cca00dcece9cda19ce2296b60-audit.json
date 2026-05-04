@@ -6,11 +6,9 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.c9564433e6c3846cca00dcece9cda19ce2296b60-audit.json",
     "files": [
         {
-<<<<<<< HEAD
             "date": 1777915830892,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-05-04.log",
             "hash": "33d9f5b091f432e5997ed17e80b7db445c9246cfe72dc0f5cbe32c8522ecb158"
-=======
             "date": 1772661833815,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-03-04.log",
             "hash": "76a372a16a2f1e8fd6f63bef2aa7555944ad4bdb49b7c00f909e42fd0813303b"
@@ -54,7 +52,6 @@
             "date": 1775235899034,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\error-2026-04-03.log",
             "hash": "84a6393a4b422993d8febbb32404a985e7374cc439370820075f4f058a352399"
->>>>>>> 31b35450fb527d031b4a5262dff308796ee0dffd
         }
     ],
     "hashType": "sha256"

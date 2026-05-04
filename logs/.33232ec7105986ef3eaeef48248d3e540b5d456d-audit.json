@@ -6,15 +6,12 @@
     "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.33232ec7105986ef3eaeef48248d3e540b5d456d-audit.json",
     "files": [
         {
-<<<<<<< HEAD
             "date": 1777915830907,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\debug-2026-05-04.log",
             "hash": "2ec842c829e2a2d4615ec5d282569d50a4b89472e296a28276622023ed4f6303"
-=======
             "date": 1775235899071,
             "name": "D:\\GitHub\\EZBar_Backend\\logs\\debug-2026-04-03.log",
             "hash": "f119f78493faf641861d99c9375d452d5411ae7180a101240565d95046217bda"
->>>>>>> 31b35450fb527d031b4a5262dff308796ee0dffd
         }
     ],
     "hashType": "sha256"
