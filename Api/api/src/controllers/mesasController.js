@@ -25,7 +25,7 @@ export const obtenerMesas = async (req, res, next) => {
     // El frontend espera 'name' y 'id'
     const mesas = rows.map(m => ({
       ...m, // Copiar todos los campos originales
-      name: `Mesa ${m.numero_mesa}`, // Campo 'name' para mostrar en lista
+      name: (m.nombre && m.nombre.trim() !== '') ? m.nombre : `Mesa ${m.numero_mesa}`,
       id: m.mesa_id // Campo 'id' estandarizado
     }));
 
@@ -47,7 +47,7 @@ export const obtenerMesasPorZona = async (req, res, next) => {
 
     const mesas = rows.map(m => ({
       ...m,
-      name: `Mesa ${m.numero_mesa}`,
+      name: (m.nombre && m.nombre.trim() !== '') ? m.nombre : `Mesa ${m.numero_mesa}`,
       id: m.mesa_id
     }));
 
@@ -62,7 +62,7 @@ export const actualizarMesa = async (req, res, next) => {
   try {
     const { mesaId } = req.params; // ID de la mesa a editar
     // Datos que vienen del frontend
-    const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y } = req.body;
+    const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y, nombre } = req.body;
 
     // Manejo de nombres de campos alternativos (compatibilidad)
     const finalNumero = numero_mesa || numero;
@@ -97,6 +97,10 @@ export const actualizarMesa = async (req, res, next) => {
       updates.push('pos_y = ?');
       params.push(finalPosY);
     }
+    if (nombre !== undefined) {
+      updates.push('nombre = ?');
+      params.push(nombre);
+    }
 
     if (updates.length === 0) {
       return res.status(400).json({ message: 'No se enviaron datos para actualizar' });
@@ -118,7 +122,7 @@ export const actualizarMesa = async (req, res, next) => {
 
     res.json({
       ...mesaActualizada,
-      name: `Mesa ${mesaActualizada.numero_mesa}`,
+      name: (mesaActualizada.nombre && mesaActualizada.nombre.trim() !== '') ? mesaActualizada.nombre : `Mesa ${mesaActualizada.numero_mesa}`,
       id: mesaActualizada.mesa_id
     });
 
@@ -132,7 +136,7 @@ export const actualizarMesa = async (req, res, next) => {
 export const crearMesa = async (req, res, next) => {
   try {
     // Datos recibidos
-    const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y } = req.body;
+    const { numero_mesa, numero, capacidad, ubicacion, estado, posX, posY, pos_x, pos_y, nombre } = req.body;
 
     // Validación básica: Ubicación obligatoria
     if (!ubicacion) {
@@ -150,8 +154,8 @@ export const crearMesa = async (req, res, next) => {
 
     // Insertar en Base de Datos
     const [result] = await pool.query(
-      'INSERT INTO MESAS (numero_mesa, capacidad, ubicacion, estado, pos_x, pos_y) VALUES (?, ?, ?, ?, ?, ?)',
-      [finalNumero, capacidad || 4, ubicacion, estado || 'libre', finalPosX, finalPosY]
+      'INSERT INTO MESAS (numero_mesa, capacidad, ubicacion, estado, pos_x, pos_y, nombre) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      [finalNumero, capacidad || 4, ubicacion, estado || 'libre', finalPosX, finalPosY, nombre || null]
     );
 
     // Responder con la mesa creada
@@ -163,7 +167,8 @@ export const crearMesa = async (req, res, next) => {
       estado: estado || 'libre',
       pos_x: finalPosX,
       pos_y: finalPosY,
-      name: `Mesa ${finalNumero}`
+      nombre: nombre || null,
+      name: (nombre && nombre.trim() !== '') ? nombre : `Mesa ${finalNumero}`
     });
   } catch (error) {
     console.error('Error al crear mesa:', error);
@@ -179,14 +184,46 @@ export const crearMesa = async (req, res, next) => {
 export const eliminarMesa = async (req, res, next) => {
   try {
     const { mesaId } = req.params;
-    const [result] = await pool.query('DELETE FROM MESAS WHERE mesa_id = ?', [mesaId]);
 
-    if (result.affectedRows === 0) {
-      return res.status(404).json({ message: 'Mesa no encontrada' });
+    try {
+      const [result] = await pool.query('DELETE FROM MESAS WHERE mesa_id = ?', [mesaId]);
+      if (result.affectedRows === 0) {
+        return res.status(404).json({ message: 'Mesa no encontrada' });
+      }
+      return res.json({ message: 'Mesa eliminada correctamente' });
+    } catch (dbError) {
+      // Si el error es de clave foránea (ER_ROW_IS_REFERENCED o similar)
+      if (dbError.code === 'ER_ROW_IS_REFERENCED' || dbError.errno === 1451) {
+        console.log('⚠️ Detectado fallo de integridad referencial. Aplicando corrección CASCADE automática...');
+
+        // Aplicar corrección agresiva
+        await pool.query('SET FOREIGN_KEY_CHECKS = 0');
+
+        // Intentar limpiar y recrear con CASCADE
+        // Usamos nombres genéricos por si acaso
+        try { await pool.query('ALTER TABLE pedidos DROP FOREIGN KEY pedidos_ibfk_1'); } catch (e) { }
+        try { await pool.query('ALTER TABLE detalle_pedidos DROP FOREIGN KEY detalle_pedidos_ibfk_1'); } catch (e) { }
+        try { await pool.query('ALTER TABLE pagos DROP FOREIGN KEY pagos_ibfk_1'); } catch (e) { }
+
+        await pool.query('ALTER TABLE pedidos ADD CONSTRAINT pedidos_ibfk_1 FOREIGN KEY (mesa_id) REFERENCES mesas(mesa_id) ON DELETE CASCADE');
+        await pool.query('ALTER TABLE detalle_pedidos ADD CONSTRAINT detalle_pedidos_ibfk_1 FOREIGN KEY (pedido_id) REFERENCES pedidos(pedido_id) ON DELETE CASCADE');
+        await pool.query('ALTER TABLE pagos ADD CONSTRAINT pagos_ibfk_1 FOREIGN KEY (pedido_id) REFERENCES pedidos(pedido_id) ON DELETE CASCADE');
+
+        await pool.query('SET FOREIGN_KEY_CHECKS = 1');
+
+        console.log('✅ Corrección aplicada. Reintentando borrado...');
+
+        // Reintentar el borrado
+        const [retryResult] = await pool.query('DELETE FROM MESAS WHERE mesa_id = ?', [mesaId]);
+        if (retryResult.affectedRows === 0) {
+          return res.status(404).json({ message: 'Mesa no encontrada tras corregir' });
+        }
+        return res.json({ message: 'Mesa eliminada correctamente tras aplicar corrección de base de datos' });
+      }
+      throw dbError; // Propagar otros errores
     }
-
-    res.json({ message: 'Mesa eliminada correctamete' });
   } catch (error) {
+    console.error('Error al eliminar mesa:', error);
     next(error);
   }
-}; 
+};

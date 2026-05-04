@@ -97,6 +97,7 @@ CREATE TABLE IF NOT EXISTS MESAS (
         'ocupada',
         'reservada'
     ) DEFAULT 'libre',
+    nombre VARCHAR(100),
     pos_x DOUBLE DEFAULT 0,
     pos_y DOUBLE DEFAULT 0,
     UNIQUE (numero_mesa, ubicacion),
@@ -130,6 +131,10 @@ CREATE TABLE IF NOT EXISTS PRODUCTOS (
     activo BOOLEAN DEFAULT TRUE,
     url_imagen VARCHAR(255),
     imagen LONGBLOB,
+    ingredientes TEXT,
+    alergenos TEXT,
+    extras TEXT,
+    imagen_miniatura LONGBLOB,
     FOREIGN KEY (categoria_id) REFERENCES CATEGORIAS (categoria_id)
 );
 
@@ -165,7 +170,7 @@ CREATE TABLE IF NOT EXISTS PEDIDOS (
     observaciones TEXT,
     total_pedido DECIMAL(10, 2) DEFAULT 0,
     fecha_hora_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (mesa_id) REFERENCES MESAS (mesa_id),
+    FOREIGN KEY (mesa_id) REFERENCES MESAS (mesa_id) ON DELETE CASCADE,
     FOREIGN KEY (empleado_id) REFERENCES EMPLEADOS (empleado_id)
 );
 
@@ -179,7 +184,7 @@ CREATE TABLE IF NOT EXISTS DETALLE_PEDIDOS (
     cantidad DECIMAL(10, 2) DEFAULT 1,
     precio_unitario DECIMAL(10, 2) NOT NULL,
     total_linea DECIMAL(10, 2) NOT NULL,
-    FOREIGN KEY (pedido_id) REFERENCES PEDIDOS (pedido_id),
+    FOREIGN KEY (pedido_id) REFERENCES PEDIDOS (pedido_id) ON DELETE CASCADE,
     FOREIGN KEY (producto_id) REFERENCES PRODUCTOS (producto_id)
 );
 
@@ -198,7 +203,7 @@ CREATE TABLE IF NOT EXISTS PAGOS (
     monto DECIMAL(10, 2) NOT NULL,
     propina DECIMAL(10, 2) DEFAULT 0,
     fecha_hora_pago TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (pedido_id) REFERENCES PEDIDOS (pedido_id),
+    FOREIGN KEY (pedido_id) REFERENCES PEDIDOS (pedido_id) ON DELETE CASCADE,
     FOREIGN KEY (empleado_id) REFERENCES EMPLEADOS (empleado_id)
 );
 

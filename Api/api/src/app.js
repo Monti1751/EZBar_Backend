@@ -71,6 +71,7 @@ import zonasRoutes from './routes/zonasRoutes.js';
 import categoriasRoutes from './routes/categoriasRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import usuariosRoutes from './routes/usuariosRoutes.js';
+import pagosRoutes from './routes/pagosRoutes.js';
 
 // Import utilities
 import { verificarBackend, memoryMonitor } from './utils/index.js';
@@ -115,6 +116,7 @@ app.use('/api/zonas', cacheInvalidationMiddleware(), zonasRoutes);
 app.use('/api/categorias', cacheInvalidationMiddleware(), categoriasRoutes);
 app.use('/api/auth', authRoutes); // No caching for auth
 app.use('/api/usuarios', usuariosRoutes); // User management
+app.use('/api/pagos', pagosRoutes);
 
 // --- Health & Monitoring Endpoints ---
 

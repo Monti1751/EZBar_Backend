@@ -30,6 +30,20 @@ export const obtenerPedidos = async (req, res, next) => {
   }
 };
 
+// --- Actualizar un pedido (Proxy) ---
+export const actualizarPedido = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const response = await fetchWithRetry(`${CONFIG.BACKEND_URL}/pedidos/${id}`, {
+      method: 'PUT',
+      data: req.body
+    });
+    res.json(response.data);
+  } catch (error) {
+    next(error);
+  }
+};
+
 // --- Obtener detalles (productos) de un pedido ---
 export const obtenerDetallesPedido = async (req, res, next) => {
   let connection;
