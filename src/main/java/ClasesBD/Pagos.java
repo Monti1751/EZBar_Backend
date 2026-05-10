@@ -31,6 +31,12 @@ public class Pagos {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal monto;
 
+    @Column(precision = 10, scale = 2)
+    private BigDecimal monto_entregado;
+
+    @Column(precision = 10, scale = 2)
+    private BigDecimal cambio;
+
     @Column(precision = 10, scale = 2) // Default 0
     private BigDecimal propina = BigDecimal.ZERO;
 
@@ -41,12 +47,14 @@ public class Pagos {
     }
 
     public Pagos(Integer pago_id, Pedidos pedido, Empleados empleado, MetodoPago metodo_pago, BigDecimal monto,
-            BigDecimal propina, Timestamp fecha_hora_pago) {
+            BigDecimal monto_entregado, BigDecimal cambio, BigDecimal propina, Timestamp fecha_hora_pago) {
         this.pago_id = pago_id;
         this.pedido = pedido;
         this.empleado = empleado;
         this.metodo_pago = metodo_pago;
         this.monto = monto;
+        this.monto_entregado = monto_entregado;
+        this.cambio = cambio;
         this.propina = propina;
         this.fecha_hora_pago = fecha_hora_pago;
     }
@@ -105,5 +113,21 @@ public class Pagos {
 
     public void setFecha_hora_pago(Timestamp fecha_hora_pago) {
         this.fecha_hora_pago = fecha_hora_pago;
+    }
+
+    public BigDecimal getMonto_entregado() {
+        return monto_entregado;
+    }
+
+    public void setMonto_entregado(BigDecimal monto_entregado) {
+        this.monto_entregado = monto_entregado;
+    }
+
+    public BigDecimal getCambio() {
+        return cambio;
+    }
+
+    public void setCambio(BigDecimal cambio) {
+        this.cambio = cambio;
     }
 }
