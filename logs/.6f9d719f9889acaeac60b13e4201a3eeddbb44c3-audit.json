@@ -1,0 +1,23 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\GitHub\\EZBar_Backend\\logs\\.6f9d719f9889acaeac60b13e4201a3eeddbb44c3-audit.json",
+    "files": [
+        {
+            "date": 1777915830829,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-05-04.log",
+            "hash": "8d97ae22d8dbda2360338b446eeb974a4ba82c5da7f76df775502b8a1abdc20f"
+            "date": 1774548202432,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-03-26.log",
+            "hash": "42ce059085e046438dabb696f6364b4dac8651ecf80c187d783c55a2e7b75179"
+        },
+        {
+            "date": 1775235898906,
+            "name": "D:\\GitHub\\EZBar_Backend\\logs\\combined-2026-04-03.log",
+            "hash": "f06e34ec83349da25764b06a7b1b5749f2f975396c58b6b3ef04c6cd6240a952"
+        }
+    ],
+    "hashType": "sha256"
+}
