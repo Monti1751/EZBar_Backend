@@ -7,11 +7,10 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import com.ezbar.security.CustomUserDetailsService;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 /**
  * Configuración de seguridad.
@@ -21,16 +20,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${ezbar.security.https-required:false}")
+    @Value("${ezbar.security.https-required:true}")
     private boolean httpsRequired;
 
-    @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
-        UserDetails admin = User.withUsername("admin")
-                .password(encoder.encode("admin123"))
-                .roles("ADMIN")
-                .build();
-        return new InMemoryUserDetailsManager(admin);
+    private final CustomUserDetailsService userDetailsService;
+
+    public SecurityConfig(CustomUserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
     }
 
     /**
@@ -63,12 +59,13 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authz) -> authz
                         .requestMatchers("/actuator/health").permitAll()
-                        .requestMatchers("/setup/**").permitAll()
+                        .requestMatchers("/setup/**").hasRole("ADMIN")
                         .requestMatchers("/login/**").permitAll()
                         .anyRequest().authenticated())
                 .cors(cors -> cors.disable())
                 .csrf(csrf -> csrf.disable())
-                .httpBasic();
+                .userDetailsService(userDetailsService)
+                .httpBasic(withDefaults());
 
         return http.build();
     }

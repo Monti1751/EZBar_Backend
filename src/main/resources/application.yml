@@ -5,8 +5,9 @@ spring:
     active: dev
   security:
     user:
-      name: admin
-      password: admin123
+      # Credenciales eliminadas por seguridad. Se usa autenticación por Base de Datos.
+      name: ${SECURITY_USER_NAME:admin_disabled}
+      password: ${SECURITY_USER_PASSWORD:password_disabled}
   jpa:
     properties:
       hibernate:
@@ -32,4 +33,4 @@ ezbar:
   request:
     timeout-ms: 30000
   security:
-    https-required: false
+    https-required: false # Cambiar a true en producción para máxima seguridad

@@ -1,0 +1,21 @@
+package Repositorios;
+
+import ClasesBD.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+/**
+ * Repositorio para la entidad Usuario.
+ */
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+    
+    /**
+     * Busca un usuario por su nombre.
+     * 
+     * @param nombre El nombre del usuario
+     * @return Un Optional con el usuario si se encuentra
+     */
+    Optional<Usuario> findByNombre(String nombre);
+}

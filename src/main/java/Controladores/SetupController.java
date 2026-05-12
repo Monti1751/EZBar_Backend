@@ -53,7 +53,7 @@ public class SetupController {
         } catch (Exception e) {
             Map<String, Object> errorResponse = new HashMap<>();
             errorResponse.put("status", "error");
-            errorResponse.put("message", "Error initializing database: " + e.getMessage());
+            errorResponse.put("message", "Error al inicializar la base de datos. Consulte los logs del servidor para más detalles.");
             
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
