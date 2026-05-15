@@ -673,7 +673,7 @@ Este módulo Backend forma parte del proyecto completo **EZBar**, desarrollado p
 
 ### Versión
 - **Versión Actual**: 1.0.0
-- **Estado**: Alpha (En desarrollo activo)
+- **Estado**: En desarrollo activo
 - **Última Actualización**: 15 de mayo de 2026
 
 ---
